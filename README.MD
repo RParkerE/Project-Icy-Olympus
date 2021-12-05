@@ -1,5 +1,5 @@
 
-# Project Icy Olympius
+# Project Icy Olympus
 
 An app which allows users to see and contribute to a map collecting data on popular bars (eventually recomending spots based on similar demographics).
 
