@@ -7,7 +7,7 @@ An app which allows users to see and contribute to a map collecting data on popu
 
 - Install Python 3.8+
 - Run `pip3 install docker-compose`
-- Install Docker Desktop for your OS (here)[https://docs.docker.com/get-docker/]
+- Install Docker Desktop for your OS [here](https://docs.docker.com/get-docker/)
 - Run the following commands:
 - `docker-compose build`
 - `docker-compose up -d`
