@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel } from '@ionic/react';
 import ReactMapGL, { Layer, Source, Popup, GeolocateControl, Marker } from 'react-map-gl'
 import { useState, useEffect } from 'react';
 import './Tab3.css';
@@ -107,6 +107,16 @@ const Tab3: React.FC = () => {
   } else {
     return (
       <IonPage>
+        <IonHeader>
+          <IonSegment onIonChange={ () => setHeatLayer(!heatLayer) } value={heatLayer ? "heatmap" : "markermap"}>
+            <IonSegmentButton value="heatmap">
+              <IonLabel>HeatMap</IonLabel>
+            </IonSegmentButton>
+            <IonSegmentButton value="markermap">
+              <IonLabel>Markers</IonLabel>
+            </IonSegmentButton>
+          </IonSegment>
+        </IonHeader>
         <IonContent fullscreen>
           <ReactMapGL
             {...mapViewport}
@@ -114,12 +124,6 @@ const Tab3: React.FC = () => {
             mapStyle="mapbox://styles/mapbox/streets-v11"
             onViewportChange={setMapViewport}
           >
-            <IonButton 
-              color="primary" 
-              onClick={ () => setHeatLayer(!heatLayer) }
-            >
-              TOGGLE MAP
-            </IonButton>
             <GeolocateControl
               style={geolocateControlStyle}
               positionOptions={{enableHighAccuracy: true}}
