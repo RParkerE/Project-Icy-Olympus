@@ -17,7 +17,7 @@ const Tab2: React.FC = () => {
       events.map((event: any) => {
         //console.log(event['venue']['title']);
         //console.log(event['title']);
-        var content = event['venue']['title'] + ": " + event['drink_deals'] + " ALSO " + event['food_deals']
+        var content = [event['venue']['title'], event['drink_deals'], event['food_deals']]
         dailyDeals['deals'].push(content)
       });
       setIsLoading(false);
@@ -52,10 +52,26 @@ const Tab2: React.FC = () => {
           {dailyDeals['deals'].map((deal: any) => (
             <IonCard>
               <IonList>
-                <IonGrid class="deals">
+                <IonGrid>
+                  <IonRow>
+                    <IonCol class="ion-text-center">
+                      {deal[0]}
+                    </IonCol>
+                  </IonRow>
                   <IonRow>
                     <IonCol>
-                      {deal}
+                      {deal[1].map((drinks: any) => (
+                        <IonRow>
+                          {drinks}
+                        </IonRow>
+                      ))}
+                    </IonCol>
+                    <IonCol>
+                      {deal[2].map((foods: any) => (
+                        <IonRow>
+                          {foods}
+                        </IonRow>
+                      ))}
                     </IonCol>
                   </IonRow>
                 </IonGrid>
