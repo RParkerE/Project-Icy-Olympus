@@ -31,4 +31,5 @@ An app which allows users to see and contribute to a map collecting data on popu
 ## Authors
 
 - [@RParkerE](https://www.github.com/RParkerE)
+- [@florenm2](https://www.github.com/florenm2)
 

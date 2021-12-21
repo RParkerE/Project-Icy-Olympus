@@ -1,5 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel } from '@ionic/react';
-import ReactMapGL, { Layer, Source, Popup, GeolocateControl, Marker } from 'react-map-gl'
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange } from '@ionic/react';
+import ReactMapGL, { Layer, Source, GeolocateControl } from 'react-map-gl'
 import { useState, useEffect } from 'react';
 import './Tab3.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -21,6 +21,10 @@ const Tab3: React.FC = () => {
   const [barData, setBarData] = useState({
     type: 'FeatureCollection' as const,
     features: [] as any,
+  });
+
+  const [poiLayer, setPOILayer] = useState({
+    layers: [] as any,
   });
 
   const [isLoading, setIsLoading] = useState(true);
@@ -72,30 +76,6 @@ const Tab3: React.FC = () => {
     });
   }, []);
 
-  const ICON = `M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z`;
-
-  function Pins(props: any) {
-    const {data, onClick} = props;
-
-    return data.map((bar: any, index: any) => (
-      <Marker key={`marker-${index}`} longitude={bar['geometry']['coordinates'][0]} latitude={bar['geometry']['coordinates'][1]}>
-        <svg
-          height={20}
-          viewBox="0 0 24 24"
-          style={{
-            cursor: 'pointer',
-            fill: '#d00',
-            stroke: 'none',
-            transform: `translate(${-20 / 2}px,${-20}px)`
-          }}
-          onClick={() => onClick(bar)}
-        >
-          <path d={ICON} />
-        </svg>
-      </Marker>
-    ));
-  }
-
   if(isLoading) {
     return (
       <IonPage>
@@ -127,16 +107,18 @@ const Tab3: React.FC = () => {
             <GeolocateControl
               style={geolocateControlStyle}
               positionOptions={{enableHighAccuracy: true}}
-              trackUserLocation={true}
+              trackUserLocation={false}
+              showUserLocation={false}
               showAccuracyCircle={false}
               fitBoundsOptions={{maxZoom: 14}}
               auto
             />
             {barData && (
-              <Source type="geojson" data={barData}>
+              <Source id="pois" type="geojson" data={barData}>
                 <Layer {...{
                   id: 'barLayer',
                   type: 'heatmap',
+                  source: 'pois',
                   layout: {
                     'visibility': heatLayer ? 'visible' : 'none'
                   },
@@ -148,9 +130,21 @@ const Tab3: React.FC = () => {
                   }
                 }} />
                 {!heatLayer && (
-                  <Pins data={barData['features']} onClick={setPopupInfo}/>
+                  <Layer {...
+                    {
+                      id: 'pois',
+                      type: 'symbol',
+                      layout: {
+                        'visibility': !heatLayer ? 'visible' : 'none',
+                        'icon-image': `bar-15`,
+                        'icon-allow-overlap': true
+                      },
+                      paint: {
+                      }
+                    }
+                  } />
                 )}
-                {popupInfo && (
+                {/*popupInfo && (
                   <Popup
                     tipSize={5}
                     anchor="top"
@@ -167,28 +161,20 @@ const Tab3: React.FC = () => {
                       <p>{popupInfo['properties']['address']}</p>
                       <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
                     </IonModal>
-                    {/*
-                      <IonModal isOpen={showModal} cssClass="fullscreen">
-                        <PageModal>ADD FULL PAGE DATA OF BAR (VIBES, SPECIALS, ETC)</PageModal>
-                      </IonModal>
-                      
-                      CSS CONTENTS:
-                      ion-modal.fullscreen {
-                        --width: 100%;
-                        --height: 100%;
-                        --border-radius: 0;
-                      }
-                    */}
-                    {/*<div>
-                      <p>{popupInfo['properties']['name']}</p>
-                      <p>{popupInfo['properties']['address']}</p>
-                      <p>Current Crowd Level: {popupInfo['properties']['busyText']}</p>
-                    </div>*/}
                   </Popup>
-                )}
+                )*/}
               </Source>
             )}
           </ReactMapGL>
+          {!heatLayer && (
+          <div className="control-panel">
+            <h3> Find Your Perfect Bar</h3>
+            <p> Use the filters below to find your perfect local bar</p>
+            <hr />
+            <IonLabel>Crowd Size</IonLabel>
+            <IonRange min={1} max={5} step={1} value={3} snaps={true} ticks={false}></IonRange>
+          </div>
+          )}
         </IonContent>
       </IonPage>
     );
