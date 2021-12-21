@@ -25,9 +25,7 @@ const DealsList: React.FC = () => {
             <IonTitle>Today's Deals and Events</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent
-          className="inner-container"
-        >
+        <IonContent>
           <IonHeader collapse="condense">
             <IonToolbar>
               <IonTitle size="large">Today's Deals and Events</IonTitle>

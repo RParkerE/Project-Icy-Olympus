@@ -17,23 +17,30 @@ const DealCard: React.FC<DealCardProps> = ({
             <IonCardHeader
                 className="card-header"
             >
-                {deal?.venue?.title}
+                {deal?.venue}
             </IonCardHeader>
-            <IonCardContent
-                className="content-container"
-            >
+            <IonCardContent className="content-container">
                 <IonGrid>
                     <IonRow>
                         <IonCol>
-                            {deal?.drink_deals?.map((drinks: any) => (
+                            <IonHeader className="deals-section-header deals-subtitle">Drinks</IonHeader>
+                            <IonRow className="deals-days">{deal?.drink_deals?.days}</IonRow>
+                            <IonRow>
+                                {deal?.drink_deals?.hours}
+                            </IonRow>
+                            {deal?.drink_deals?.info?.map((drinks: any) => (
                                 <IonRow>
                                     {drinks}
                                 </IonRow>
                             ))}
                         </IonCol>
-
                         <IonCol>
-                            {deal?.food_deals?.map((food: any) => (
+                            <IonHeader className="deals-section-header deals-subtitle">Food</IonHeader>
+                            <IonRow className="deals-days">{deal?.food_deals?.days}</IonRow>
+                            <IonRow>
+                                {deal?.food_deals?.hours}
+                            </IonRow>
+                            {deal?.food_deals?.info?.map((food: any) => (
                                 <IonRow>
                                     {food}
                                 </IonRow>
@@ -41,7 +48,6 @@ const DealCard: React.FC<DealCardProps> = ({
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-
             </IonCardContent>
         </IonCard>
     )
