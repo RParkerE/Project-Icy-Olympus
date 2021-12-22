@@ -31,6 +31,8 @@ const Tab3: React.FC = () => {
   const [heatLayer, setHeatLayer] = useState(true);
   const [popupInfo, setPopupInfo] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
+  const [intensityFilter, setIntensityFilter] = useState(3);
   
   const day = ['sun', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat'];
 
@@ -116,7 +118,7 @@ const Tab3: React.FC = () => {
             {barData && (
               <Source id="pois" type="geojson" data={barData}>
                 <Layer {...{
-                  id: 'barLayer',
+                  id: 'heatLayer',
                   type: 'heatmap',
                   source: 'pois',
                   layout: {
@@ -140,7 +142,8 @@ const Tab3: React.FC = () => {
                         'icon-allow-overlap': true
                       },
                       paint: {
-                      }
+                      },
+                      filter: ['>=', 'busyLevel', intensityFilter]
                     }
                   } />
                 )}
@@ -172,7 +175,7 @@ const Tab3: React.FC = () => {
             <p> Use the filters below to find your perfect local bar</p>
             <hr />
             <IonLabel>Crowd Size</IonLabel>
-            <IonRange min={1} max={5} step={1} value={3} snaps={true} ticks={false}></IonRange>
+            <IonRange min={1} max={5} step={1} value={intensityFilter} snaps={true} ticks={false} onIonChange={e => setIntensityFilter(e.detail.value as any)}></IonRange>
           </div>
           )}
         </IonContent>
