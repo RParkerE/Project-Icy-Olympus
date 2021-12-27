@@ -1,0 +1,48 @@
+.background-container-v1{
+    background-image: url("deals-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+    background-size: cover;
+}
+.scroll-container{
+    overflow-y: scroll; 
+    height:100%;
+}
+.inner-container{
+  background-color: rgba(0,0,0,.5);
+  width:75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-container-v1{
+    font-family: Verdana, Tahoma, sans-serif;
+    background-color: rgba(236, 246, 253,1);
+    width: 98%;
+    margin-top: 40px;
+    color: rgb(50, 56, 70);
+}
+.content-container-v1{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.card-header-v1{
+    color: rgb(50, 56, 70);
+    font-size:x-large;
+    border-bottom: 1px solid gray;
+}
+.ion-grid {
+  --ion-grid-column-padding: 10px;
+}
+.ion-row-first-child {
+  font-weight: bold;
+}
+.ion-row-second-child {
+  color: #37586D;
+}
+.ion-row-deals{
+  background-color: rgba(120, 161, 187, .2);
+}
+.ion-col {
+  margin-left: 15px;
+}

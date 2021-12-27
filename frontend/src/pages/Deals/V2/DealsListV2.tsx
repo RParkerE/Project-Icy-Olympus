@@ -1,13 +1,13 @@
 import { IonCard, IonList, IonGrid, IonRow, IonCol, IonCardHeader, IonCardContent, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
-import './deals.css';
+import './dealsV2.css';
 
-import { useDeals, Deal } from '../../hooks/useDeals'
+import { useDeals, Deal } from '../../../hooks/useDeals'
 
 import DealCard from './DealCard'
 
-const DealsList: React.FC = () => {
+const DealsListV2: React.FC = () => {
   const { isLoading, deals } = useDeals()
-
+  
   if (isLoading) {
     return (
       <IonPage>
@@ -19,26 +19,25 @@ const DealsList: React.FC = () => {
   } else {
     return (
       <IonPage
-        className="outer-container">
+        className="outer-container background-container">
         <IonHeader>
           <IonToolbar>
             <IonTitle>Today's Deals and Events</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Today's Deals and Events</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-
-          {deals.map((deal: Deal) => (
-            <DealCard deal={deal}></DealCard>
-          ))}
+        <IonContent >
+          <div className="background-container">
+            <div className="scroll-container">
+              {deals.map((deal: Deal, index) => (
+                <DealCard deal={deal} defaultOpen={index===0}></DealCard>
+              ))}
+            </div>
+          </div>
         </IonContent>
+
       </IonPage>
     );
   }
 }
 
-export default DealsList
+export default DealsListV2

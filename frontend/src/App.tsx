@@ -13,6 +13,7 @@ import { beer, person, wallet } from 'ionicons/icons';
 import Tabs from './Tabs';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Deals from './pages/Deals';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,6 +43,12 @@ const App: React.FC = () => (
         </Route>
         <Route path="/signup">
           <Signup />
+        </Route>
+        <Route path="/deals-collapsable">
+          <Deals version={2}/>
+        </Route>
+        <Route path="/deals-tables">
+          <Deals version={1}/>
         </Route>
         <Route exact path="/">
           <Tabs />

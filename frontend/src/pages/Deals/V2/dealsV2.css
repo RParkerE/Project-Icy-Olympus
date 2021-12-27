@@ -1,0 +1,66 @@
+.page-header{
+    background-color: rgba(245,236,225,0.9);
+}
+.background-container{
+    background-image: url("deals-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.scroll-container{
+    overflow-y: scroll; 
+    height:100%;
+}
+.card-container{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: Verdana, Tahoma, sans-serif; */
+    color: black;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-weight: 400; 
+    background-color: #D1E1CB;
+    /* background-color: rgba(245,236,225,1); */
+}
+.content-container{
+    display:flex;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card-header{
+    box-shadow: none;
+    color: black;
+    font-size:x-large;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color:transparent !important;
+}
+.deals-section-header{
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: -20px;
+}
+.deals-subtitle{
+    color: black;
+    font-size: large;
+}
+.deals-days{
+    font-style: italic;
+    font-weight: 200;
+    font-size:small;
+}
+.collapse-arrow{
+    position: 'absolute';
+    top: '10px';
+    right: '10px';
+}
+.hours-label{
+    font-size:medium;
+    font-weight: 200;
+}
+.deals-details{
+    margin-left: 20px;
+}
