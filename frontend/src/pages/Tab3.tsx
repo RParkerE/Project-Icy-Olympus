@@ -35,8 +35,9 @@ const Tab3: React.FC = () => {
   const filter = useMemo(() => ['>=', 'busyLevel', intensityFilter], [intensityFilter]);
 
   const onClick = useCallback((event: any) => {
-    /*console.log(event.features);*/
-    setVenueInfo(event.features[0].properties);
+    if(event.features[0]){
+      setVenueInfo(event.features[0].properties);
+    }
   }, []);
 
   
