@@ -23,6 +23,7 @@ class SpecialsView(APIView):
 
         barnames = []
         specials = []
+        contacts = []
         jsonData = {}
 
         soup = BeautifulSoup(res.text, 'html.parser')
@@ -31,10 +32,13 @@ class SpecialsView(APIView):
                 for barname in litag.find_all('div', {'class': 'restaurant_title'}):
                     barnames.append(barname.text)
                 for ulmenus in litag.find_all('ul', {'class': 'list-unstyled clearfix'}):
-                    for menus in ulmenus.find_all('li'):
-                        splicedMenus = menus.text.split('\n')
+                    for divmenus in ulmenus.find_all('div', {'class': 'thum_text2'}):
+                        splicedMenus = divmenus.text.split('\n')
                         splicedMenus = [i for i in splicedMenus if i]
-                        specials.append(splicedMenus[1:-2])
+                        specials.append(splicedMenus)
+                    for divadd in litag.find_all('div', {'class': 'locaton_block hidden-xs'}):
+                        contacts.append(divadd.text.strip())
+                    
         #i = 0
         #j = 0
         #while i < len(barnames):
@@ -45,7 +49,7 @@ class SpecialsView(APIView):
         i = 0
         j = 0
         while i < len(barnames):
-            events[i] = {"venue": {"title": barnames[i]}, "drink_deals": specials[j], "food_deals": specials[j+1]}
+            events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": specials[j], "food_deals": specials[j+1]}
             i += 1
             j += 2
 
