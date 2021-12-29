@@ -38,7 +38,24 @@ const Tab3: React.FC = () => {
     if(event.features[0]){
       setVenueInfo(event.features[0].properties);
     }
+    else { 
+      setVenueInfo(null);
+    }
   }, []);
+
+  useEffect (() => {
+    const listener = (e: any) => {
+      if (e.key === "Escape") {
+        setVenueInfo(null);
+      }
+    }
+
+  window.addEventListener("keydown", listener);
+
+  return () => {
+    window.removeEventListener("keydown", listener);
+  }
+}, []);
 
   
   const day = ['sun', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat'];
@@ -158,7 +175,7 @@ const Tab3: React.FC = () => {
                 )}
                 {venueInfo && (
                   <IonSplitPane contentId="test">
-                    <IonMenu side="end" type="push" contentId="test">
+                    <IonMenu side="end" type="overlay" contentId="test">
                       <IonHeader>
                         <IonToolbar color="danger">
                           <IonTitle>{venueInfo['name']}</IonTitle>
