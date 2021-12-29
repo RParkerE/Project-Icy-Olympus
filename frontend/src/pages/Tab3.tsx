@@ -1,6 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange, IonSplitPane, IonMenu, IonList, IonItem } from '@ionic/react';
 import ReactMapGL, { Layer, Source, GeolocateControl } from 'react-map-gl'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import './Tab3.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -29,10 +29,34 @@ const Tab3: React.FC = () => {
 
   const [isLoading, setIsLoading] = useState(true);
   const [heatLayer, setHeatLayer] = useState(true);
-  const [popupInfo, setPopupInfo] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [venueInfo, setVenueInfo] = useState(null);
 
   const [intensityFilter, setIntensityFilter] = useState(3);
+  const filter = useMemo(() => ['>=', 'busyLevel', intensityFilter], [intensityFilter]);
+
+  const onClick = useCallback((event: any) => {
+    if(event.features[0]){
+      setVenueInfo(event.features[0].properties);
+    }
+    else { 
+      setVenueInfo(null);
+    }
+  }, []);
+
+  useEffect (() => {
+    const listener = (e: any) => {
+      if (e.key === "Escape") {
+        setVenueInfo(null);
+      }
+    }
+
+  window.addEventListener("keydown", listener);
+
+  return () => {
+    window.removeEventListener("keydown", listener);
+  }
+}, []);
+
   
   const day = ['sun', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat'];
 
@@ -105,6 +129,8 @@ const Tab3: React.FC = () => {
             mapboxApiAccessToken="pk.eyJ1IjoiZHJpbmtlZGluYXBwIiwiYSI6ImNraWlybzB5dDAxZGoyeHA1bnJ5OWFqZ2MifQ.Y5OWnIfI07LGjLDUccldjA"
             mapStyle="mapbox://styles/mapbox/streets-v11"
             onViewportChange={setMapViewport}
+            onClick={onClick}
+            interactiveLayerIds={['pois']}
           >
             <GeolocateControl
               style={geolocateControlStyle}
@@ -143,29 +169,23 @@ const Tab3: React.FC = () => {
                       },
                       paint: {
                       },
-                      filter: ['>=', 'busyLevel', intensityFilter]
+                      filter: filter
                     }
                   } />
                 )}
-                {/*popupInfo && (
-                  <Popup
-                    tipSize={5}
-                    anchor="top"
-                    longitude={popupInfo['geometry']['coordinates'][0]}
-                    latitude={popupInfo['geometry']['coordinates'][1]}
-                    closeOnClick={false}
-                    onClose={setPopupInfo}
-                  >
-                    <div>
-                      <IonButton onClick={() => setShowModal(true)}>Show Modal</IonButton>
-                    </div>
-                    <IonModal isOpen={showModal} cssClass="fullscreen">
-                      <p>{popupInfo['properties']['name']}</p>
-                      <p>{popupInfo['properties']['address']}</p>
-                      <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>
-                    </IonModal>
-                  </Popup>
-                )*/}
+                {venueInfo && (
+                  <IonSplitPane contentId="test">
+                    <IonMenu side="end" type="overlay" contentId="test">
+                      <IonHeader>
+                        <IonToolbar color="danger">
+                          <IonTitle>{venueInfo['name']}</IonTitle>
+                        </IonToolbar>
+                      </IonHeader>
+                      <IonContent>
+                      </IonContent>
+                    </IonMenu>
+                  </IonSplitPane>
+                )}
               </Source>
             )}
           </ReactMapGL>
