@@ -12,6 +12,7 @@ class Venues(models.Model):
    fri = models.JSONField()
    sat = models.JSONField()
    sun = models.JSONField()
+   yelp = models.JSONField()
 
    def _str_(self):
      return self.name
