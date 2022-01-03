@@ -12,9 +12,9 @@ def get_venues():
     all_vens = {}
     query_url = 'https://besttime.app/api/v1/venues/search'
     query_params = {
-        'api_key_private': 'pri_d70e9a2d714f4a23bee81ad6f4812da5',
-        'q': 'bars in Austin Texas',
-        'num': 125,
+        'api_key_private': 'pri_5dd620d1c61940d5a65a5d0b5b97ee3e',
+        'q': 'bars in Austin, TX',
+        'num': 85,
         'fast': False
     }
     query_response = requests.request("POST",query_url,params=query_params).json()
@@ -34,6 +34,7 @@ def get_venues():
         if str(list_response['job_finished']) == 'False':
             time.sleep(30)
             list_response = requests.request("GET",list_url,params=list_params).json()
+            print(list_response)
         else: break
 
     for venue in list_response['venues']:
@@ -44,15 +45,17 @@ def get_venues():
         forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
         venue_params = {
-            'api_key_public': 'pub_8af2a5d80f994a57852c80a8ebab9bce'
+            'api_key_public': 'pub_86f1a83c241546c4ad28082d5c7f4745'
         }
         forecast_params = {
-            'api_key_public': 'pub_8af2a5d80f994a57852c80a8ebab9bce',
+            'api_key_public': 'pub_86f1a83c241546c4ad28082d5c7f4745',
             'venue_id': venue_id,
         }
 
         venue_response = requests.request("GET",venue_url,params=venue_params).json()
         forecast_response = requests.request("GET",forecast_url,params=forecast_params).json()
+        print(venue_response)
+        print(forecast_response)
         try:
             lat = venue_response['venue_info']['venue_lat']
             lng = venue_response['venue_info']['venue_lng']
@@ -74,14 +77,25 @@ def get_venues():
             business_id = requests.request('GET', 'https://api.yelp.com/v3/businesses/matches', headers=headers, params=url_params).json()
             if(len(business_id['businesses']) > 0):
                 business_response = requests.request('GET', f"https://api.yelp.com/v3/businesses/{business_id['businesses'][0]['id']}", headers=headers, params={}).json()
+                vibes = {}
+                rating = float(business_response['rating'])
+                for category in business_response['categories']:
+                    vibes[category['title']] = 1
             else:
-                business_response = {}
+                vibes = {"Bar": 1}
+                rating = 0.0
 
-            v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],sat=analysis[5],sun=analysis[6],yelp=business_response)
+            v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],\
+                        tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],\
+                        sat=analysis[5],sun=analysis[6],rating=rating,vibes=vibes)
+
+            #v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],sat=analysis[5],sun=analysis[6],yelp=business_response)
             v.save()
             all_vens = Venues.objects.all().order_by('-id')
         except KeyError as ke:
             print(ke)
+
+        print(len(all_vens))
 
 class Command(BaseCommand):
 	def handle(self, *args, **options):

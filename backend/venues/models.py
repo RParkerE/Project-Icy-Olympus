@@ -12,7 +12,8 @@ class Venues(models.Model):
    fri = models.JSONField()
    sat = models.JSONField()
    sun = models.JSONField()
-   yelp = models.JSONField()
+   rating = models.DecimalField(max_digits=2, decimal_places=1)
+   vibes = models.JSONField()
 
    def _str_(self):
      return self.name
