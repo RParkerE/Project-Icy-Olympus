@@ -12,7 +12,7 @@ def get_venues():
     all_vens = {}
     query_url = 'https://besttime.app/api/v1/venues/search'
     query_params = {
-        'api_key_private': 'pri_4abf7368c716427ebc25ba0be0665730',
+        'api_key_private': 'pri_dd922266f2784d07ae96d7a46797b8dc',
         'q': 'bars in Austin, TX',
         'num': 30,
         'fast': False
@@ -45,10 +45,10 @@ def get_venues():
         forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
         venue_params = {
-            'api_key_public': 'pub_81a9cd9338f04ff3bc19104534635082'
+            'api_key_public': 'pub_db77211b03df4409a3e8a7fda97d0e05'
         }
         forecast_params = {
-            'api_key_public': 'pub_81a9cd9338f04ff3bc19104534635082',
+            'api_key_public': 'pub_db77211b03df4409a3e8a7fda97d0e05',
             'venue_id': venue_id,
         }
 
@@ -79,13 +79,17 @@ def get_venues():
                 rating = float(business_response['rating'])
                 for category in business_response['categories']:
                     vibes[category['title']] = 1
+                price = business_response['price']
+                images = business_response['photos']
             else:
                 vibes = {"Bar": 1}
                 rating = 0.0
+                price = '?'
+                images = {"None"}
 
             v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],\
                         tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],\
-                        sat=analysis[5],sun=analysis[6],rating=rating,vibes=vibes)
+                        sat=analysis[5],sun=analysis[6],rating=rating,vibes=vibes,price=price,images=images)
 
             #v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],sat=analysis[5],sun=analysis[6],yelp=business_response)
             v.save()

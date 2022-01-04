@@ -14,6 +14,8 @@ class Venues(models.Model):
    sun = models.JSONField()
    rating = models.DecimalField(max_digits=2, decimal_places=1)
    vibes = models.JSONField()
+   price = models.CharField(max_length=5)
+   images = models.JSONField()
 
    def _str_(self):
      return self.name

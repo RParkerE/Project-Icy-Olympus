@@ -87,8 +87,10 @@ const Tab3: React.FC = () => {
             address: bar.address,
             busyText: bar[today]['hour_analysis'][time]['intensity_txt'],
             busyLevel: intensity,
-            type: bar['vibes'],
-            rating: bar['rating']
+            types: Object.keys(bar['vibes']), // NEED TO MAKE THIS A LIST CURRENTLY SHOWS UP AS STRING
+            rating: bar['rating'],
+            price: bar['price'],
+            images: bar['images']
           },
           geometry: {
             type: "Point" as const,
@@ -176,6 +178,7 @@ const Tab3: React.FC = () => {
                   } />
                 )}
                 {venueInfo && (
+                  console.log(venueInfo['images']),
                   <IonSplitPane contentId="test">
                     <IonMenu side="end" type="overlay" contentId="test">
                       <IonHeader>
@@ -186,7 +189,9 @@ const Tab3: React.FC = () => {
                       <IonContent>
                         RATING: {venueInfo['rating']}
                         <br></br>
-                        VIBES: {venueInfo['type']}
+                        PRICE: {venueInfo['price']}
+                        <br></br>
+                        VIBES: {venueInfo['types']}
                       </IonContent>
                     </IonMenu>
                   </IonSplitPane>
