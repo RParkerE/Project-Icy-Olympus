@@ -12,9 +12,9 @@ def get_venues():
     all_vens = {}
     query_url = 'https://besttime.app/api/v1/venues/search'
     query_params = {
-        'api_key_private': 'pri_5dd620d1c61940d5a65a5d0b5b97ee3e',
+        'api_key_private': 'pri_4abf7368c716427ebc25ba0be0665730',
         'q': 'bars in Austin, TX',
-        'num': 85,
+        'num': 30,
         'fast': False
     }
     query_response = requests.request("POST",query_url,params=query_params).json()
@@ -34,28 +34,26 @@ def get_venues():
         if str(list_response['job_finished']) == 'False':
             time.sleep(30)
             list_response = requests.request("GET",list_url,params=list_params).json()
-            print(list_response)
         else: break
 
     for venue in list_response['venues']:
         venue_ids.append(venue['venue_id'])
+    print(len(venue_ids))
 
     for venue_id in venue_ids:
         venue_url = "https://besttime.app/api/v1/venues/" + venue_id
         forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
         venue_params = {
-            'api_key_public': 'pub_86f1a83c241546c4ad28082d5c7f4745'
+            'api_key_public': 'pub_81a9cd9338f04ff3bc19104534635082'
         }
         forecast_params = {
-            'api_key_public': 'pub_86f1a83c241546c4ad28082d5c7f4745',
+            'api_key_public': 'pub_81a9cd9338f04ff3bc19104534635082',
             'venue_id': venue_id,
         }
 
         venue_response = requests.request("GET",venue_url,params=venue_params).json()
         forecast_response = requests.request("GET",forecast_url,params=forecast_params).json()
-        print(venue_response)
-        print(forecast_response)
         try:
             lat = venue_response['venue_info']['venue_lat']
             lng = venue_response['venue_info']['venue_lng']

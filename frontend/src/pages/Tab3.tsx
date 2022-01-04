@@ -86,7 +86,9 @@ const Tab3: React.FC = () => {
             name: bar.name,
             address: bar.address,
             busyText: bar[today]['hour_analysis'][time]['intensity_txt'],
-            busyLevel: intensity
+            busyLevel: intensity,
+            type: bar['vibes'],
+            rating: bar['rating']
           },
           geometry: {
             type: "Point" as const,
@@ -182,6 +184,9 @@ const Tab3: React.FC = () => {
                         </IonToolbar>
                       </IonHeader>
                       <IonContent>
+                        RATING: {venueInfo['rating']}
+                        <br></br>
+                        VIBES: {venueInfo['type']}
                       </IonContent>
                     </IonMenu>
                   </IonSplitPane>
