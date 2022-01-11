@@ -16,13 +16,7 @@ class Venues(models.Model):
    vibes = models.JSONField()
    price = models.CharField(max_length=5)
    images = models.JSONField()
+   deals = models.JSONField()
 
    def _str_(self):
      return self.name
-"""
-class Specials(models.Model):
-  name = models.CharField(max_length=255)
-  address = models.TextField()
-  title = models.TextField()
-  description = models.TextField()
-"""
