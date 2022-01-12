@@ -1,4 +1,5 @@
-import { IonCard, IonList, IonGrid, IonRow, IonCol, IonCardHeader, IonCardContent, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
+import { Grid } from '@chakra-ui/react'
 import './dealsV1.css';
 
 import { useDeals, Deal } from '../../../hooks/useDeals'
@@ -32,10 +33,13 @@ const DealsList: React.FC = () => {
                   <IonTitle size="large">Today's Deals and Events</IonTitle>
                 </IonToolbar>
               </IonHeader>
+
               <div className="scroll-container">
-                {deals.map((deal: Deal) => (
-                  <DealCard deal={deal}></DealCard>
-                ))}
+                <Grid templateColumns='repeat(2, 1fr)' gap={6} mx={6} my={4}>
+                  {deals.map((deal: Deal) => (
+                    <DealCard deal={deal}></DealCard>
+                  ))}
+                </Grid>
               </div>
             </div>
           </div>
