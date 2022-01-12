@@ -47,7 +47,7 @@ def get_venues():
         j += 2
     jsonData["events"] = events
 
-    list_of_bars = ["Last Straw", "Pool Bar", "The Roosevelt Room", "Bar Ilegal", "Drink.Well.", "DuMont's Down Low", "Ellis", "Garage Bar", "Half Step", "Kitty Cohen's", 
+    list_of_bars = ["Last Straw", "Pool Bar", "The Roosevelt Room", "Bar Ilegal", "DuMont's Down Low", "Ellis", "Garage Bar", "Half Step", "Kitty Cohen's", 
                     "The Long Play Lounge", "Midnight Cowboy", "The Milonga Room", "Peche", "Small Victory", "Stay Gold", "Watertrade", "Whisler's", "The Cloak Room", 
                     "Deep Eddy Cabaret", "Dirty Bill's", "Lala's Little Nugget", "Nickel City", "Shangri-La", "The Skylark Lounge", "The Broken Spoke", "Donn's Depot",
                     "The White Horse", "Cosmic Coffee + Beer Garden", "Draught House Pub & Brewery", "Easy Tiger", "Little Darlin'", "Yellow Jacket Social Club", "APT 115", 
@@ -60,15 +60,16 @@ def get_venues():
                     "DuMont’s Down Low", "Ellis", "Foreign & Domestic", "Hideaway Kitchen & Bar", "Irene’s", "Nightcap", "Olive & June", "Péché", "Perla’s", "Scholz Garten", 
                     "She’s Not Here", "Trulucks", "Uncle Nicky’s"]
     for a_bar in list_of_bars:
+        print(a_bar)
         venue_ids = []
         venues = []
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_48a38d5dd2074daea5652b11fea9f788',
+            'api_key_private': 'pri_36c67cca244f437db8e52b90ae2f7502',
             'q': f'{a_bar} in Austin, TX',
-            'num': 2,
-            'fast': True,
+            'num': 5,
+            'fast': False,
             'opened': 'all'
         }
         query_response = requests.request("POST",query_url,params=query_params).json()
@@ -90,8 +91,6 @@ def get_venues():
                 list_response = requests.request("GET",list_url,params=list_params).json()
             else: break
 
-        print(list_response)
-
         for venue in list_response['venues']:
             venue_ids.append(venue['venue_id'])
 
@@ -100,16 +99,15 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_e449418def1d4314bbdb58d880153b2f'
+                'api_key_public': 'pub_488e6ae42ac849aaa7f797a8e016e644'
             }
             forecast_params = {
-                'api_key_public': 'pub_e449418def1d4314bbdb58d880153b2f',
+                'api_key_public': 'pub_488e6ae42ac849aaa7f797a8e016e644',
                 'venue_id': venue_id,
             }
 
             venue_response = requests.request("GET",venue_url,params=venue_params).json()
             forecast_response = requests.request("GET",forecast_url,params=forecast_params).json()
-            print(venue_response)
             try:
                 lat = venue_response['venue_info']['venue_lat']
                 lng = venue_response['venue_info']['venue_lng']
@@ -141,12 +139,11 @@ def get_venues():
                     vibes = {"Bar": 1}
                     rating = 0.0
                     price = '?'
-                    images = {"None"}
+                    images = ["None"]
 
                 deals = {"events": {"drink_deals": ["NONE"], "food_deals": ["NONE"]}}
                 for event in jsonData["events"]:
                     if name == event["venue"]["title"]:
-                        print(event)
                         deals = {"events" : event}
                         break
                     else:
@@ -155,6 +152,7 @@ def get_venues():
                 v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],\
                             tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],\
                             sat=analysis[5],sun=analysis[6],rating=rating,vibes=vibes,price=price,images=images,deals=deals)
+                print(v.vibes, v.images, v.deals)
 
                 #v = Venues(name=name,address=address,lat=lat,lng=lng,mon=analysis[0],tues=analysis[1],weds=analysis[2],thurs=analysis[3],fri=analysis[4],sat=analysis[5],sun=analysis[6],yelp=business_response)
                 v.save()
