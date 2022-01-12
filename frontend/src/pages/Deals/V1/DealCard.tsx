@@ -4,10 +4,12 @@ import {
     Box,
     ListItem, List,
     Flex,
+    Collapse,
     Text,
     Divider,
     useColorModeValue,
     Link,
+    Image,
 } from "@chakra-ui/react";
 
 import { Deal } from '../../../hooks/useDeals'
@@ -20,6 +22,11 @@ interface DealCardProps {
 const DealCard: React.FC<DealCardProps> = ({
     deal
 }) => {
+
+    const [showAllDeals, setShowAllDeals] = useState(false);
+    const [drinksActive, setDrinksActive] = useState(true);
+
+    const handleToggle = () => setShowAllDeals(!showAllDeals);
 
     return (
         <Flex
@@ -36,6 +43,20 @@ const DealCard: React.FC<DealCardProps> = ({
                 shadow="lg"
                 bg={useColorModeValue("white", "gray.800")}
             >
+                <Image
+                    transform="scale(1.0)"
+                    src={
+                        'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                    }
+                    alt="some text"
+                    objectFit="contain"
+                    width="100%"
+                    transition="0.3s ease-in-out"
+                    _hover={{
+                        transform: 'scale(1.05)',
+                    }}
+                    mb={4}
+                />
                 <Flex justifyContent="space-between" alignItems="center">
                     <Flex direction="column">
                         <chakra.span
@@ -61,6 +82,8 @@ const DealCard: React.FC<DealCardProps> = ({
                             fontWeight="700"
                             rounded="md"
                             _hover={{ bg: "gray.500" }}
+                            isActive={drinksActive}
+                            onClick={() => setDrinksActive(true)}
                         >
                             Drinks
                         </Link>}
@@ -74,6 +97,8 @@ const DealCard: React.FC<DealCardProps> = ({
                             fontWeight="700"
                             rounded="md"
                             _hover={{ bg: "gray.500" }}
+                            isActive={!drinksActive}
+                            onClick={() => setDrinksActive(false)}
                         >
                             Food
                         </Link>}
@@ -94,23 +119,23 @@ const DealCard: React.FC<DealCardProps> = ({
                     </Link>
                     <Divider mb={4} />
                     <Flex direction="row" justifyContent="space-between">
-
-                        <chakra.p >
+                        <Collapse startingHeight={200} in={showAllDeals}>
                             <List mt={2} color={useColorModeValue("gray.600", "gray.300")}>
-                                {deal?.drink_deals?.info?.map((drinks: any) => (
+                                {drinksActive ?
+                                    deal?.drink_deals?.info?.map((drinks: any) => (
+                                        <ListItem>
+                                            {drinks}
+                                        </ListItem>
+                                    ))
+                                :
+                                deal?.food_deals?.info?.map((food: any) => (
                                     <ListItem>
-                                        {drinks}
+                                        {food}
                                     </ListItem>
-                                ))}
+                                ))
+                            }
                             </List>
-                        </chakra.p>
-                        <List mt={2} color={useColorModeValue("gray.600", "gray.300")}>
-                            {deal?.drink_deals?.info?.map((drinks: any) => (
-                                <ListItem>
-                                    {drinks}
-                                </ListItem>
-                            ))}
-                        </List>
+                        </Collapse>
                     </Flex>
                 </Box>
 
@@ -119,8 +144,9 @@ const DealCard: React.FC<DealCardProps> = ({
                         <Link
                             color={useColorModeValue("blue.600", "blue.400")}
                             _hover={{ textDecor: "underline" }}
+                            onClick={handleToggle}
                         >
-                            Read more
+                            {showAllDeals ? "See less" : "See more"}
                         </Link>
 
                         <Flex alignItems="center">

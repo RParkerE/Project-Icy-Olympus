@@ -2,6 +2,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from
 import { Grid } from '@chakra-ui/react'
 import './dealsV1.css';
 
+import Header from '../../../components/header'
+
 import { useDeals, Deal } from '../../../hooks/useDeals'
 
 import DealCard from './DealCard'
@@ -20,19 +22,17 @@ const DealsList: React.FC = () => {
   } else {
     return (
       <IonPage>
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Today's Deals and Events</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <Header/>
+
         <IonContent >
           <div className="background-container-v1">
             <div className='inner-container'>
-              <IonHeader collapse="condense">
+              
+              {/* <IonHeader collapse="condense">
                 <IonToolbar>
                   <IonTitle size="large">Today's Deals and Events</IonTitle>
                 </IonToolbar>
-              </IonHeader>
+              </IonHeader> */}
 
               <div className="scroll-container">
                 <Grid templateColumns='repeat(2, 1fr)' gap={6} mx={6} my={4}>

@@ -1,12 +1,14 @@
 .background-container-v1{
-    background-image: url("deals-background.jpg");
+    /* background-image: url("deals-background.jpg"); */
+  background-color: rgba(5, 52, 83, 0.753);
+
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: lighten;
     background-size: cover;
 }
 .inner-container{
-  background-color: rgba(0,0,0,.5);
+  /* background-color: rgba(0,0,0,.5); */
   width:75%;
   margin-left: auto;
   margin-right: auto;
