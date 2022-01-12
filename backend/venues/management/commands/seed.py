@@ -47,18 +47,17 @@ def get_venues():
         j += 2
     jsonData["events"] = events
 
-    list_of_bars = ["Last Straw", "Pool Bar", "The Roosevelt Room", "Bar Ilegal", "DuMont's Down Low", "Ellis", "Garage Bar", "Half Step", "Kitty Cohen's", 
-                    "The Long Play Lounge", "Midnight Cowboy", "The Milonga Room", "Peche", "Small Victory", "Stay Gold", "Watertrade", "Whisler's", "The Cloak Room", 
+    list_of_bars = ["Arlo Grey", "Bar Peached", "Better Half Coffee & Cocktails", "Black Star Co-Op", "Central Standard", "Clark’s Oyster Bar", "Contigo", "Culinary Dropout", 
+                    "DuMont’s Down Low", "Ellis", "Foreign & Domestic", "Hideaway Kitchen & Bar", "Irene’s", "Nightcap", "Olive & June", "Péché", "Perla’s", "Scholz Garten", 
+                    "She’s Not Here", "Trulucks", "Uncle Nicky’s", "Last Straw", "Pool Bar", "The Roosevelt Room", "Bar Ilegal", "DuMont's Down Low", "Ellis", "Garage Bar", 
+                    "Half Step", "Kitty Cohen's", "The Long Play Lounge", "Midnight Cowboy", "The Milonga Room", "Peche", "Small Victory", "Stay Gold", "Watertrade", "Whisler's", "The Cloak Room", 
                     "Deep Eddy Cabaret", "Dirty Bill's", "Lala's Little Nugget", "Nickel City", "Shangri-La", "The Skylark Lounge", "The Broken Spoke", "Donn's Depot",
                     "The White Horse", "Cosmic Coffee + Beer Garden", "Draught House Pub & Brewery", "Easy Tiger", "Little Darlin'", "Yellow Jacket Social Club", "APT 115", 
                     "Aviary", "Hotel San José", "June's All Day", "Winebelly", "Bungalow", "Container Bar", "Parlor Room", "Idle Hands", "Stagger Lee", "Icenhauer's", "Reina's", 
                     "Unbarleivable", "Lucille", "The Tipsy Alchemist", "Banger's", "Anthem", "Casino El Camino", "Two Bucks", "Coyote Ugly Saloon", "Buckshot", "The Library",
                     "Pour Choices", "The Jackalope", "Blind Pig Pub", "Gnar Bar", "Friend's Bar", "Handle Bar", "Little Woodrow's", "Star Bar", "Cat's Pajamas", "Beez Kneez",
                     "Parlor and Yard", "POP", "Play", "Buford's", "The Ranch", "Key Bar", "WYLD", "Dogwood", "Wonderbar", "Kung Fu Saloon", "Green Light Social", "Concrete Cowboy",
-                    "Summit", "Hotel Vegas", "Volstead", "Latch Key", "The Lucky Duck", "Ego's", "White Tiger", "Cidercade", "77°", "Rose Room", "Punchbowl Social", "Anthem", 
-                    "Arlo Grey", "Bar Peached", "Better Half Coffee & Cocktails", "Black Star Co-Op", "Central Standard", "Clark’s Oyster Bar", "Contigo", "Culinary Dropout", 
-                    "DuMont’s Down Low", "Ellis", "Foreign & Domestic", "Hideaway Kitchen & Bar", "Irene’s", "Nightcap", "Olive & June", "Péché", "Perla’s", "Scholz Garten", 
-                    "She’s Not Here", "Trulucks", "Uncle Nicky’s"]
+                    "Summit", "Hotel Vegas", "Volstead", "Latch Key", "The Lucky Duck", "Ego's", "White Tiger", "Cidercade", "77°", "Rose Room", "Punchbowl Social"]
     for a_bar in list_of_bars:
         print(a_bar)
         venue_ids = []
@@ -66,9 +65,9 @@ def get_venues():
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_36c67cca244f437db8e52b90ae2f7502',
+            'api_key_private': 'pri_dbd47a1fc1544715b07fe7895c5eb852',
             'q': f'{a_bar} in Austin, TX',
-            'num': 5,
+            'num': 3,
             'fast': False,
             'opened': 'all'
         }
@@ -99,10 +98,10 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_488e6ae42ac849aaa7f797a8e016e644'
+                'api_key_public': 'pub_f03198a8878d40cb87e4f3aca3463f05'
             }
             forecast_params = {
-                'api_key_public': 'pub_488e6ae42ac849aaa7f797a8e016e644',
+                'api_key_public': 'pub_f03198a8878d40cb87e4f3aca3463f05',
                 'venue_id': venue_id,
             }
 
