@@ -10,7 +10,7 @@ class VenuesView(viewsets.ModelViewSet):
 
 class DealsView(viewsets.ModelViewSet):  
     serializer_class = DealsSerializer   
-    queryset = Venues.objects.all()
+    queryset = Venues.objects.exclude(deals__events__drink_deals=['NONE'])
 
 
 from django.http import JsonResponse 
