@@ -9,4 +9,4 @@ class VenuesSerializer(serializers.ModelSerializer):
 class DealsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Venues
-        fields = ('name', 'address', 'rating', 'images', 'deals')
+        fields = ('name', 'address', 'rating', 'images', 'price', 'deals')
