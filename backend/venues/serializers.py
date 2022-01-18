@@ -4,4 +4,9 @@ from .models import Venues
 class VenuesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Venues
-        fields = ('name', 'address', 'lat', 'lng', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat', 'sun', 'vibes', 'rating', 'price', 'images', 'deals')
+        fields = ('name', 'address', 'lat', 'lng', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat', 'sun', 'vibes', 'rating', 'price', 'images')
+
+class DealsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Venues
+        fields = ('name', 'address', 'rating', 'images', 'deals')

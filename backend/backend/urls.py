@@ -21,6 +21,7 @@ from venues import views
 
 router = routers.DefaultRouter()
 router.register(r'venues', views.VenuesView, 'venues')
+router.register(r'deals', views.DealsView, 'deals')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
