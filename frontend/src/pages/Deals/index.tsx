@@ -1,11 +1,20 @@
 import React, { FC } from "react";
-import DealsList from "./DealsList";
+import DealsList from "./V1/DealsList";
+import DealsListV2 from "./V2/DealsListV2";
 import { DealsProvider } from '../../hooks/useDeals'
 
-const Deals: FC = () => {
+interface Props{
+  version?: number
+}
+
+const Deals: FC<Props> = ( { version = 1, children } ) => {
+
+  
   return (
     <DealsProvider>
-      <DealsList/>
+
+      {version === 1? <DealsList/> : <DealsListV2/> }
+      
     </DealsProvider>
   )
 }
