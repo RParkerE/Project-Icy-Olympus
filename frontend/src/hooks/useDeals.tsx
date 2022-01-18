@@ -13,15 +13,20 @@ const DAYS_OF_THE_WEEK = [
 ,]
 
 export interface DealResponse {
-    venue: {
-        title?: string
-    },
-    drink_deals: string[],
-    food_deals: string[],
+    name?: string,
+    address?: string,
+    images?: string[],
+    rating?: string,
+    deals: {
+        events: {
+            drink_deals: string[],
+            food_deals: string[],
+        }
+    }
 }
 
 export interface Deal {
-    venue?: string,
+    name?: string,
     drink_deals?: DealData,
     food_deals?: DealData,
 }
@@ -62,9 +67,9 @@ const DealsProvider: FC = ({ children }) => {
         let resList: Deal[] = []
         response.forEach(res => {
             let curr: Deal = {
-                venue: res?.venue?.title,
-                drink_deals: digestDeals(res.drink_deals),
-                food_deals: digestDeals(res.food_deals),
+                name: res?.name,
+                drink_deals: digestDeals(res.deals.events.drink_deals),
+                food_deals: digestDeals(res.deals.events.food_deals),
             }
             resList.push(curr)
         });
@@ -76,8 +81,8 @@ const DealsProvider: FC = ({ children }) => {
         async function fetchData() {
 
             try {
-                const { data } = await Axios.get("http://localhost:8000/api/specials")
-                const res = data.events
+                const { data } = await Axios.get("http://localhost:8000/api/deals")
+                const res = data
                 await digestResponse(res)
                 setIsLoading(false)
             } catch (e) {

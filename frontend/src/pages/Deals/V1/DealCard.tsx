@@ -20,7 +20,7 @@ const DealCard: React.FC<DealCardProps> = ({
             <IonCardHeader
                 className="card-header-v1"
             >
-                {deal?.venue}
+                {deal?.name}
             </IonCardHeader>
             <IonCardContent
                 className="content-container-v1"

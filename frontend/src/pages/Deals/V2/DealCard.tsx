@@ -28,7 +28,7 @@ const DealCard: React.FC<DealCardProps> = ({
                 onClick={() => setOpen(!open)}
                 style={{ borderBottom: open ? '1px solid rgba(0, 0, 0, 0.2)' : 'transparent' }}
             >
-                {deal?.venue}
+                {deal?.name}
                 <div style={{ position: 'absolute', top: '10px', right: '10px' }}>
                     {open ?
                         <span className="bi bi-chevron-up"></span>

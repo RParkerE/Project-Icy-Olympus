@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import VenuesSerializer
+from .serializers import VenuesSerializer, DealsSerializer
 from rest_framework.views import APIView 
 from rest_framework import viewsets      
 from .models import Venues                 
@@ -7,6 +7,10 @@ from .models import Venues
 class VenuesView(viewsets.ModelViewSet):  
     serializer_class = VenuesSerializer   
     queryset = Venues.objects.all()
+
+class DealsView(viewsets.ModelViewSet):  
+    serializer_class = DealsSerializer   
+    queryset = Venues.objects.exclude(deals__events__drink_deals=['NONE'])
 
 
 from django.http import JsonResponse 
