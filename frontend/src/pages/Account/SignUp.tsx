@@ -9,8 +9,7 @@ const SignUp: React.FC = () => {
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
-		const token = axios.post("http://localhost:8000/user/create/", data);
-		//console.log(token);
+		axios.post("http://localhost:8000/user/create/", data);
 	};
 
 	return (
