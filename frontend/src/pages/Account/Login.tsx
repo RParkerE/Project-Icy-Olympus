@@ -1,16 +1,29 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
+import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useState } from 'react';
-import axios from 'axios';
+import { useContext } from 'react';
+import Axios from 'axios';
 import './SignUp.css';
 
 const Login: React.FC = () => {
 	const { control, setValue, handleSubmit, formState: {errors} } = useForm();
+	const { navigate } = useContext(NavContext);
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
-		axios.post("http://localhost:8000/token/obtain/", data)
+		fetchToken(data);
 	};
+
+	async function fetchToken(res: any) {
+		try {
+            const { data } = await Axios.post("http://localhost:8000/token/obtain/", res);
+            const token = data;
+            console.log(token);
+            localStorage.setItem("token", token);
+            navigate('/tabs'); //NOT WORKING WILL NEED A FIX
+        } catch (e) {
+            console.error(e);
+        }
+	}
 
 	return (
 		<IonPage>

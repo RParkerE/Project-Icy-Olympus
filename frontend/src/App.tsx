@@ -51,6 +51,9 @@ const App: React.FC = () => (
         <Route path="/deals-tables">
           <Deals version={1}/>
         </Route>
+        <Route path="/tabs">
+          <Tabs />
+        </Route>
         <Route exact path="/">
           <Tabs />
         </Route>

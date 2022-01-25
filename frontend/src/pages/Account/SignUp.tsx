@@ -1,15 +1,17 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
+import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useState } from 'react';
-import axios from 'axios';
+import { useState, useContext } from 'react';
+import Axios from 'axios';
 import './SignUp.css';
 
 const SignUp: React.FC = () => {
 	const { control, setValue, handleSubmit, formState: {errors} } = useForm();
+	const { navigate } = useContext(NavContext);
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
-		axios.post("http://localhost:8000/user/create/", data);
+		Axios.post("http://localhost:8000/user/create/", data);
+		navigate('/login');
 	};
 
 	return (
