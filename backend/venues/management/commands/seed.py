@@ -65,7 +65,7 @@ def get_venues():
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_dbd47a1fc1544715b07fe7895c5eb852',
+            'api_key_private': 'pri_c3f6620bd2634651be10e2905086b9e9',
             'q': f'{a_bar} in Austin, TX',
             'num': 3,
             'fast': False,
@@ -98,10 +98,10 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_f03198a8878d40cb87e4f3aca3463f05'
+                'api_key_public': 'pub_08b261b51cab47849701748248882802'
             }
             forecast_params = {
-                'api_key_public': 'pub_f03198a8878d40cb87e4f3aca3463f05',
+                'api_key_public': 'pub_08b261b51cab47849701748248882802',
                 'venue_id': venue_id,
             }
 

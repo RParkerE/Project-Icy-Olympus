@@ -10,7 +10,7 @@ class ObtainTokenPairedData(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
 class CustomUserCreate(APIView):
-    permission_classes = (permissions.AllowAny)
+    permission_classes = (permissions.AllowAny,)
 
     def post(self, request, format='json'):
         serializer = CustomUserSerializer(data=request.data)
