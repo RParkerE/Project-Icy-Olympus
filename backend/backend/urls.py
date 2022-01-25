@@ -16,15 +16,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from venues import views
+from venues import views as v_views
+from rest_framework_simplejwt import views as jwt_views
+from users import views as u_views
 
 
 router = routers.DefaultRouter()
-router.register(r'venues', views.VenuesView, 'venues')
-router.register(r'deals', views.DealsView, 'deals')
+router.register(r'venues', v_views.VenuesView, 'venues')
+router.register(r'deals', v_views.DealsView, 'deals')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/specials', views.SpecialsView.as_view(), name='specials')
+    path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
+    path('api/specials', v_views.SpecialsView.as_view(), name='specials'),
+    path('token/obtain/', u_views.ObtainTokenPairedData.as_view(), name='token_create'),
+    path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]
+

@@ -11,8 +11,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
 import Tabs from './Tabs';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+
+import SignUp from './pages/Account/SignUp';
 import Deals from './pages/Deals';
 
 /* Core CSS required for Ionic components to work properly */
@@ -38,11 +38,8 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/login">
-          <Login />
-        </Route>
         <Route path="/signup">
-          <Signup />
+          <SignUp />
         </Route>
         <Route path="/deals-collapsable">
           <Deals version={2}/>
