@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import MyTokenObtainPairSerializer, CustomUserSerializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from .models import CustomUser
 
 class ObtainTokenPairedData(TokenObtainPairView):
     permission_classes = (permissions.AllowAny,)
@@ -20,3 +21,15 @@ class CustomUserCreate(APIView):
                 json = serializer.data
                 return Response(json, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class CustomUserProfile(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        queryset = CustomUser.objects.all()
+        username = self.request.query_params.get('username', None)
+        if email is not None:
+            queryset = queryset.filter(username=username)
+        return queryset

@@ -51,9 +51,6 @@ const App: React.FC = () => (
         <Route path="/deals-tables">
           <Deals version={1}/>
         </Route>
-        <Route path="/tabs">
-          <Tabs />
-        </Route>
         <Route exact path="/">
           <Tabs />
         </Route>
@@ -63,3 +60,13 @@ const App: React.FC = () => (
 );
 
 export default App;
+
+/* ROUTE FOR REQUIRED AUTH
+<Route 
+  exact 
+  path="/"
+  render={() => {
+    return localStorage.getItem('token') ? <Tabs /> : <Login />;
+  }}>
+</Route>
+*/

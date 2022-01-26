@@ -29,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
+    path(r'accounts/(?P<username>.+)/', u_views.CustomUserProfile.as_view(), name="user_profile"),
     path('api/specials', v_views.SpecialsView.as_view(), name='specials'),
     path('token/obtain/', u_views.ObtainTokenPairedData.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),

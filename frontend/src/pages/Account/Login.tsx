@@ -1,12 +1,13 @@
-import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
 import Axios from 'axios';
 import './SignUp.css';
 
 const Login: React.FC = () => {
 	const { control, setValue, handleSubmit, formState: {errors} } = useForm();
-	const { navigate } = useContext(NavContext);
+	let history = useHistory();
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
@@ -19,7 +20,7 @@ const Login: React.FC = () => {
             const token = data;
             console.log(token);
             localStorage.setItem("token", token);
-            navigate('/tabs'); //NOT WORKING WILL NEED A FIX
+            history.push("/");
         } catch (e) {
             console.error(e);
         }
