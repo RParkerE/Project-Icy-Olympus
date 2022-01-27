@@ -1,6 +1,7 @@
 .background-container-v1{
     /* background-image: url("deals-background.jpg"); */
-  background-color: rgba(5, 52, 83, 0.753);
+  /* background-color: rgba(5, 52, 83, 0.753); */
+    background-color: #3C1F84;
 
     background-repeat: no-repeat;
     background-attachment: fixed;

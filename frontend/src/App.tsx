@@ -37,9 +37,20 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { extendTheme } from "@chakra-ui/react"
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#3C1F84",
+      // ...
+      900: "#1a202c",
+    },
+  },
+})
 
 const App: React.FC = () => (
-  <ChakraProvider>
+  <ChakraProvider theme={theme}>
     <IonApp>
       <IonReactRouter>
         <IonRouterOutlet>

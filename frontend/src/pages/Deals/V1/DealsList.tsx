@@ -1,5 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
-import { Grid } from '@chakra-ui/react'
+import { Box, Grid } from '@chakra-ui/react'
 import './dealsV1.css';
 
 import Header from '../../../components/header'
@@ -21,31 +21,27 @@ const DealsList: React.FC = () => {
     );
   } else {
     return (
-      <IonPage>
-        <Header/>
+      <Box bg="brand.100">
+        <IonPage>
+          {/* Testing without? */}
+          {/* <Header /> */}
 
-        <IonContent >
-          <div className="background-container-v1">
-            <div className='inner-container'>
-              
-              {/* <IonHeader collapse="condense">
-                <IonToolbar>
-                  <IonTitle size="large">Today's Deals and Events</IonTitle>
-                </IonToolbar>
-              </IonHeader> */}
-
-              <div className="scroll-container">
-                <Grid templateColumns='repeat(2, 1fr)' gap={6} mx={6} my={4}>
-                  {deals.map((deal: Deal) => (
-                    <DealCard deal={deal}></DealCard>
-                  ))}
-                </Grid>
+          <IonContent >
+            <div className="background-container-v1">
+              <div className='inner-container'>
+                <div className="scroll-container">
+                  <Grid templateColumns='repeat(2, 1fr)' gap={6} mx={6} my={4}>
+                    {deals.map((deal: Deal) => (
+                      <DealCard deal={deal}></DealCard>
+                    ))}
+                  </Grid>
+                </div>
               </div>
             </div>
-          </div>
-        </IonContent>
+          </IonContent>
 
-      </IonPage>
+        </IonPage>
+      </Box>
     );
   }
 }
