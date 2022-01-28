@@ -1,13 +1,12 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
+import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import { useHistory } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Axios from 'axios';
 import './SignUp.css';
 
 const Login: React.FC = () => {
 	const { control, setValue, handleSubmit, formState: {errors} } = useForm();
-	let history = useHistory();
+	const { navigate } = useContext(NavContext);
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
@@ -20,7 +19,7 @@ const Login: React.FC = () => {
             const token = data;
             console.log(token);
             localStorage.setItem("token", token);
-            history.push("/");
+            navigate('/');
         } catch (e) {
             console.error(e);
         }

@@ -1,20 +1,21 @@
 import { Redirect, Route } from 'react-router-dom';
 import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
+	IonApp,
+	IonIcon,
+	IonLabel,
+	IonRouterOutlet,
+	IonTabBar,
+	IonTabButton,
+	IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
-import Tabs from './Tabs';
 
 import SignUp from './pages/Account/SignUp';
 import Login from './pages/Account/Login';
 import Deals from './pages/Deals';
+import Tab1 from './pages/Tab1';
+import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,37 +37,66 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/signup">
-          <SignUp />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/deals-collapsable">
-          <Deals version={2}/>
-        </Route>
-        <Route path="/deals-tables">
-          <Deals version={1}/>
-        </Route>
-        <Route exact path="/">
-          <Tabs />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+	<IonApp>
+		<IonReactRouter>
+			<IonRouterOutlet>
+				<Route path="/signup">
+					<SignUp />
+				</Route>
+				<Route path="/login">
+					<Login />
+				</Route>
+				<Route path="/deals-collapsable">
+					<Deals version={2}/>
+				</Route>
+				<Route path="/deals-tables">
+					<Deals version={1}/>
+				</Route>
+				<Route exact path="/">
+					<IonTabs>
+						<IonRouterOutlet>
+							<Route exact path="/tab1">
+								<Tab1 />
+							</Route>
+							<Route exact path="/deals">
+								<Deals />
+							</Route>
+							<Route path="/tab3">
+								<Tab3 />
+							</Route>
+							<Route exact path="/">
+								<Redirect to="/tab1" />
+							</Route>
+						</IonRouterOutlet>
+						<IonTabBar slot="bottom">
+							<IonTabButton tab="tab1" href="/tab1">
+								<IonIcon icon={person} />
+								<IonLabel>Profile</IonLabel>
+							</IonTabButton>
+							<IonTabButton tab="deals" href="/deals">
+								<IonIcon icon={wallet} />
+								<IonLabel>Deals</IonLabel>
+							</IonTabButton>
+							<IonTabButton tab="tab3" href="/tab3">
+								<IonIcon icon={beer} />
+								<IonLabel>Bars</IonLabel>
+							</IonTabButton>
+						</IonTabBar>
+					</IonTabs>
+				</Route>
+			</IonRouterOutlet>
+		</IonReactRouter>
+	</IonApp>
 );
 
 export default App;
 
 /* ROUTE FOR REQUIRED AUTH
 <Route 
-  exact 
-  path="/"
-  render={() => {
-    return localStorage.getItem('token') ? <Tabs /> : <Login />;
-  }}>
+	exact 
+	path="/"
+	render={() => {
+		return localStorage.getItem('token') ? <Tabs /> : <Login />;
+	}}>
 </Route>
 */
