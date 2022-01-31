@@ -24,12 +24,10 @@ class CustomUserCreate(APIView):
 
 class CustomUserProfile(APIView):
     permission_classes = (permissions.IsAuthenticated,)
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
 
-    def get_queryset(self):
+    def get(self, request, username, format=None): 
         queryset = CustomUser.objects.all()
-        username = self.request.query_params.get('username', None)
-        if email is not None:
+        if username is not None:
             queryset = queryset.filter(username=username)
-        return queryset
+            serializer = CustomUserSerializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)

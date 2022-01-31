@@ -21,16 +21,16 @@ from rest_framework_simplejwt import views as jwt_views
 from users import views as u_views
 
 
-router = routers.DefaultRouter()
-router.register(r'venues', v_views.VenuesView, 'venues')
-router.register(r'deals', v_views.DealsView, 'deals')
+apiRouter = routers.DefaultRouter()
+apiRouter.register(r'venues', v_views.VenuesView, 'venues')
+apiRouter.register(r'deals', v_views.DealsView, 'deals')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
-    path(r'accounts/(?P<username>.+)/', u_views.CustomUserProfile.as_view(), name="user_profile"),
+    path('api/', include(apiRouter.urls)),
     path('api/specials', v_views.SpecialsView.as_view(), name='specials'),
+    path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
+    path('user/<str:username>/', u_views.CustomUserProfile.as_view(), name="profile"),
     path('token/obtain/', u_views.ObtainTokenPairedData.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]

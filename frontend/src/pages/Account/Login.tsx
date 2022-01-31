@@ -18,7 +18,8 @@ const Login: React.FC = () => {
             const { data } = await Axios.post("http://localhost:8000/token/obtain/", res);
             const token = data;
             console.log(token);
-            localStorage.setItem("token", token);
+            localStorage.setItem("accessToken", token.access);
+            localStorage.setItem("refreshToken", token.refresh);
             navigate('/');
         } catch (e) {
             console.error(e);
