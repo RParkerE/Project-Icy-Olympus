@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonTitle, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonPage, IonRow, IonText, IonToolbar } from '@ionic/react';
+import { ellipsisHorizontal, flameOutline } from "ionicons/icons";
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
@@ -11,11 +12,12 @@ const Tab1: React.FC = () => {
     is_premium: false,
     username: ''
   });
+  
   const auth = 'JWT ' + localStorage.getItem('accessToken')
-  console.log(auth)
+  const url = 'http://localhost:8000/user/' + localStorage.getItem('user')
 
   useEffect (() => {
-    fetch('http://localhost:8000/user/TestUser', { //TODO: Use username (save in localStorage at login ?) instead of hardcoded (ALSO it seems I can get any user)
+    fetch(url, { //TODO: Check security to make sure only able ot get my own details
       method: 'GET',
       headers: {
         Authorization: auth,
@@ -28,19 +30,83 @@ const Tab1: React.FC = () => {
     }
   )}, [])
   return (
-    <IonPage>
+    <IonPage className="home">
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{user.username}</IonTitle>
+          <IonButtons slot="end">
+            <IonButton color="light">
+              <IonIcon icon={ ellipsisHorizontal } />
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Profile</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
+      <IonContent>
+        <div className="topHeader"></div>
+        <IonGrid>
+          <IonRow className="ion-justify-content-center">
+            <IonCol size="12" className="ion-justify-content-center ion-align-items-center ion-text-center">
+              <IonCard className="profileHeader">
+
+                <IonCardContent>
+
+                  <IonRow>
+                    <IonCol size="4">
+                      <img src="/assets/alan.jpg" alt="avatar" className="avatar" />
+                    </IonCol>
+
+                    <IonCol size="8">
+                      <IonRow className="profileInfo">
+                        <IonCol size="12">
+                          <IonText color="dark" className="profileName">
+                            <p>{ user.username }</p>
+                          </IonText>
+                          <IonText color="medium">
+                            <p>{ user.email }</p>
+                          </IonText>
+                        </IonCol>
+                      </IonRow>
+
+                      <IonRow className="profileStats">
+
+                        <IonCol className="profileStat">
+                          
+                          <IonCardTitle>109</IonCardTitle>
+                          <IonCardSubtitle>Visited Bars</IonCardSubtitle>
+                        </IonCol>
+
+                        <IonCol className="profileStat">
+                          
+                          <IonCardTitle>12</IonCardTitle>
+                          <IonCardSubtitle>Favorited Bars</IonCardSubtitle>
+                        </IonCol>
+                      </IonRow>
+                    </IonCol>
+                  </IonRow>
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+
+          <IonRow className="profileStatusContainer">
+            <IonCol size="12">
+              <IonCard className="profileCard">
+
+                <IonCardHeader>
+                  <IonRow className="profileStatus">
+                    <IonIcon icon={ flameOutline } />
+                    <IonCardSubtitle>Top Vibes</IonCardSubtitle>
+                  </IonRow>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonText>
+                    <p>I love posting content related to Ionic React! Make sure to check out the Ionic React Hub!</p>
+                  </IonText>
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+        
       </IonContent>
     </IonPage>
   );

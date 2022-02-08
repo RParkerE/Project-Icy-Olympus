@@ -11,10 +11,9 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
 
-import SignUp from './pages/Account/SignUp';
-import Login from './pages/Account/Login';
 import Deals from './pages/Deals';
-import Tabs from './Tabs'
+import Tab1 from './pages/Tab1';
+import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,40 +34,42 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-	<IonApp>
-		<IonReactRouter>
+const Tabs: React.FC = () => (
+	<>
+		<IonTabs>
 			<IonRouterOutlet>
-				<Route path="/signup">
-					<SignUp />
-				</Route>
-				<Route path="/login">
-					<Login />
-				</Route>
-				<Route path="/deals-collapsable">
-					<Deals version={2}/>
-				</Route>
-				<Route path="/deals-tables">
-					<Deals version={1}/>
-				</Route>
-				<Route exact path="/">
-					<Tabs />
-				</Route>
 				<Route exact path="/tab1">
-					<Tabs />
+					<Tab1 />
 				</Route>
 				<Route exact path="/deals">
-					<Tabs />
+					<Deals />
 				</Route>
-				<Route exact path="/tab3">
-					<Tabs />
+				<Route path="/tab3">
+					<Tab3 />
+				</Route>
+				<Route exact path="/">
+					<Redirect to="/tab1" />
 				</Route>
 			</IonRouterOutlet>
-		</IonReactRouter>
-	</IonApp>
+			<IonTabBar slot="bottom">
+				<IonTabButton tab="tab1" href="/tab1">
+					<IonIcon icon={person} />
+					<IonLabel>Profile</IonLabel>
+				</IonTabButton>
+				<IonTabButton tab="deals" href="/deals">
+					<IonIcon icon={wallet} />
+					<IonLabel>Deals</IonLabel>
+				</IonTabButton>
+				<IonTabButton tab="tab3" href="/tab3">
+					<IonIcon icon={beer} />
+					<IonLabel>Bars</IonLabel>
+				</IonTabButton>
+			</IonTabBar>
+		</IonTabs>
+	</>
 );
 
-export default App;
+export default Tabs;
 
 /* ROUTE FOR REQUIRED AUTH
 <Route 
