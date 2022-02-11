@@ -15,7 +15,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Deals from './pages/Deals';
 
-// 1. import `ChakraProvider` component
+// Import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
 
 
@@ -43,7 +43,7 @@ const theme = extendTheme({
   colors: {
     brand: {
       100: "#3C1F84",
-      // ...
+      // will update these as we go
       900: "#1a202c",
     },
   },

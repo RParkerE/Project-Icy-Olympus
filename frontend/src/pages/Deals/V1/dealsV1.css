@@ -1,31 +1,19 @@
 .background-container-v1{
-    /* background-image: url("deals-background.jpg"); */
-  /* background-color: rgba(5, 52, 83, 0.753); */
     background-color: #3C1F84;
-
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: lighten;
     background-size: cover;
 }
 .inner-container{
-  /* background-color: rgba(0,0,0,.5); */
   width:75%;
   margin-left: auto;
   margin-right: auto;
-
-
 }
 .scroll-container{
     overflow-y: scroll; 
     height:100%;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* flex-wrap:wrap; */
-    /* align-items: flex-end; */
-
 }
-
 .card-container-v1{
     font-family: Verdana, Tahoma, sans-serif;
     background-color: rgba(236, 246, 253,1);
@@ -33,14 +21,6 @@
     margin-top: 40px;
     color: rgb(50, 56, 70);
 }
-/* .card-container-right-v1{
-  font-family: Verdana, Tahoma, sans-serif;
-  background-color: rgba(236, 246, 253,1);
-  width: 45%;
-  margin-top: 40px;
-  color: rgb(50, 56, 70);
-  align-self: end;
-} */
 .content-container-v1{
     margin: 0 !important;
     padding: 0 !important;

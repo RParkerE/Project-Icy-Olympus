@@ -1,8 +1,6 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner } from '@ionic/react';
+import { IonContent, IonPage, IonSpinner } from '@ionic/react';
 import { Box, Grid } from '@chakra-ui/react'
 import './dealsV1.css';
-
-import Header from '../../../components/header'
 
 import { useDeals, Deal } from '../../../hooks/useDeals'
 
@@ -23,9 +21,6 @@ const DealsList: React.FC = () => {
     return (
       <Box bg="brand.100">
         <IonPage>
-          {/* Testing without? */}
-          {/* <Header /> */}
-
           <IonContent >
             <div className="background-container-v1">
               <div className='inner-container'>

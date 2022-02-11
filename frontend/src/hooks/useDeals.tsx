@@ -16,19 +16,6 @@ export interface Response {
     events?: DealResponse[]
 }
 
-// export interface DealResponse {
-//     name?: string,
-//     address?: string,
-//     images?: string[],
-//     rating?: string,
-//     deals: {
-//         events: {
-//             drink_deals: string[],
-//             food_deals: string[],
-//         }
-//     }
-// }
-
 export interface DealResponse {
     drink_deals: string[],
     food_deals: string[],
@@ -44,8 +31,8 @@ export interface Deal {
 }
 
 export interface DealData {
-    days?: string, 
-    hours?: string, 
+    days?: string,
+    hours?: string,
     info?: string[],
 }
 
@@ -57,7 +44,7 @@ interface IDealsProviderContext {
 
 const DealsContext = createContext<IDealsProviderContext>({
     isLoading: true,
-    setIsLoading: () => {},
+    setIsLoading: () => { },
     deals: [],
 })
 
@@ -86,7 +73,7 @@ const DealsProvider: FC = ({ children }) => {
             }
             resList.push(curr)
         });
-        
+
         setDeals(resList)
     }
 
