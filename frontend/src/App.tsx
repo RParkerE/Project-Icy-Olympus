@@ -15,6 +15,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Deals from './pages/Deals';
 
+// Import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
+
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -33,29 +37,36 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { extendTheme } from "@chakra-ui/react"
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#3C1F84",
+      // will update these as we go
+      900: "#1a202c",
+    },
+  },
+})
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/signup">
-          <Signup />
-        </Route>
-        <Route path="/deals-collapsable">
-          <Deals version={2}/>
-        </Route>
-        <Route path="/deals-tables">
-          <Deals version={1}/>
-        </Route>
-        <Route exact path="/">
-          <Tabs />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+  <ChakraProvider theme={theme}>
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/">
+            <Tabs />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  </ChakraProvider>
 );
 
 export default App;
