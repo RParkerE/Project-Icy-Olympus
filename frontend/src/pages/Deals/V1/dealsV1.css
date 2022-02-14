@@ -1,24 +1,23 @@
 .background-container-v1{
-    background-image: url("deals-background.jpg");
+    background-color: #3C1F84;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: lighten;
     background-size: cover;
 }
-.scroll-container{
-    overflow-y: scroll; 
-    height:100%;
-}
 .inner-container{
-  background-color: rgba(0,0,0,.5);
   width:75%;
   margin-left: auto;
   margin-right: auto;
 }
+.scroll-container{
+    overflow-y: scroll; 
+    height:100%;
+}
 .card-container-v1{
     font-family: Verdana, Tahoma, sans-serif;
     background-color: rgba(236, 246, 253,1);
-    width: 98%;
+    width: 45%;
     margin-top: 40px;
     color: rgb(50, 56, 70);
 }

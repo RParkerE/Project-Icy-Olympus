@@ -12,16 +12,15 @@ const DAYS_OF_THE_WEEK = [
     "SUNDAY",
 ]
 
+export interface Response {
+    events?: DealResponse[]
+}
+
 export interface DealResponse {
-    name?: string,
-    address?: string,
-    images?: string[],
-    rating?: string,
-    deals: {
-        events: {
-            drink_deals: string[],
-            food_deals: string[],
-        }
+    drink_deals: string[],
+    food_deals: string[],
+    venue: {
+        title?: string
     }
 }
 
@@ -32,8 +31,8 @@ export interface Deal {
 }
 
 export interface DealData {
-    days?: string, 
-    hours?: string, 
+    days?: string,
+    hours?: string,
     info?: string[],
 }
 
@@ -45,7 +44,7 @@ interface IDealsProviderContext {
 
 const DealsContext = createContext<IDealsProviderContext>({
     isLoading: true,
-    setIsLoading: () => {},
+    setIsLoading: () => { },
     deals: [],
 })
 
@@ -63,17 +62,18 @@ const DealsProvider: FC = ({ children }) => {
         return dealData
     }
 
-    const digestResponse = async (response: DealResponse[]) => {
+    const digestResponse = async (response: Response) => {
         let resList: Deal[] = []
-        response.forEach(res => {
+
+        response.events?.forEach(res => {
             let curr: Deal = {
-                name: res?.name,
-                drink_deals: digestDeals(res.deals.events.drink_deals),
-                food_deals: digestDeals(res.deals.events.food_deals),
+                name: res?.venue?.title,
+                drink_deals: digestDeals(res.drink_deals),
+                food_deals: digestDeals(res.food_deals),
             }
             resList.push(curr)
         });
-        
+
         setDeals(resList)
     }
 
@@ -81,7 +81,7 @@ const DealsProvider: FC = ({ children }) => {
         async function fetchData() {
 
             try {
-                const { data } = await Axios.get("http://localhost:8000/api/deals")
+                const { data } = await Axios.get("http://localhost:8000/api/specials")
                 const res = data
                 await digestResponse(res)
                 setIsLoading(false)

@@ -16,6 +16,10 @@ import Login from './pages/Account/Login';
 import Deals from './pages/Deals';
 import Tabs from './Tabs'
 
+// Import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
+
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -34,41 +38,54 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { extendTheme } from "@chakra-ui/react"
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      100: "#3C1F84",
+      // will update these as we go
+      900: "#1a202c",
+    },
+  },
+})
 
 const App: React.FC = () => (
-	<IonApp>
-		<IonReactRouter>
-			<IonRouterOutlet>
-				<Route path="/signup">
-					<SignUp />
-				</Route>
-				<Route path="/login">
-					<Login />
-				</Route>
-				<Route path="/deals-collapsable">
-					<Deals version={2}/>
-				</Route>
-				<Route path="/deals-tables">
-					<Deals version={1}/>
-				</Route>
-				<Route exact path="/">
-					<Tabs />
-				</Route>
-				<Route exact path="/tab1"
-				render={() => {
-					const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
-					return auth ? <Tabs /> : <Login />;
-				}}>
-				</Route>
-				<Route exact path="/deals">
-					<Tabs />
-				</Route>
-				<Route exact path="/tab3">
-					<Tabs />
-				</Route>
-			</IonRouterOutlet>
-		</IonReactRouter>
-	</IonApp>
+	<ChakraProvider theme={theme}>
+		<IonApp>
+			<IonReactRouter>
+				<IonRouterOutlet>
+					<Route path="/signup">
+						<SignUp />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<Route path="/deals-collapsable">
+						<Deals version={2}/>
+					</Route>
+					<Route path="/deals-tables">
+						<Deals version={1}/>
+					</Route>
+					<Route exact path="/">
+						<Tabs />
+					</Route>
+					<Route exact path="/tab1"
+					render={() => {
+						const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
+						return auth ? <Tabs /> : <Login />;
+					}}>
+					</Route>
+					<Route exact path="/deals">
+						<Tabs />
+					</Route>
+					<Route exact path="/tab3">
+						<Tabs />
+					</Route>
+				</IonRouterOutlet>
+			</IonReactRouter>
+		</IonApp>
+	</ChakraProvider>
 );
 
 export default App;
