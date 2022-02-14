@@ -1,19 +1,20 @@
 import { Redirect, Route } from 'react-router-dom';
 import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
+	IonApp,
+	IonIcon,
+	IonLabel,
+	IonRouterOutlet,
+	IonTabBar,
+	IonTabButton,
+	IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
-import Tabs from './Tabs';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+
+import SignUp from './pages/Account/SignUp';
+import Login from './pages/Account/Login';
 import Deals from './pages/Deals';
+import Tabs from './Tabs'
 
 // Import `ChakraProvider` component
 import { ChakraProvider } from '@chakra-ui/react'
@@ -50,23 +51,41 @@ const theme = extendTheme({
 })
 
 const App: React.FC = () => (
-  <ChakraProvider theme={theme}>
-    <IonApp>
-      <IonReactRouter>
-        <IonRouterOutlet>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/">
-            <Tabs />
-          </Route>
-        </IonRouterOutlet>
-      </IonReactRouter>
-    </IonApp>
-  </ChakraProvider>
+	<ChakraProvider theme={theme}>
+		<IonApp>
+			<IonReactRouter>
+				<IonRouterOutlet>
+					<Route path="/signup">
+						<SignUp />
+					</Route>
+					<Route path="/login">
+						<Login />
+					</Route>
+					<Route path="/deals-collapsable">
+						<Deals version={2}/>
+					</Route>
+					<Route path="/deals-tables">
+						<Deals version={1}/>
+					</Route>
+					<Route exact path="/">
+						<Tabs />
+					</Route>
+					<Route exact path="/tab1"
+					render={() => {
+						const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
+						return auth ? <Tabs /> : <Login />;
+					}}>
+					</Route>
+					<Route exact path="/deals">
+						<Tabs />
+					</Route>
+					<Route exact path="/tab3">
+						<Tabs />
+					</Route>
+				</IonRouterOutlet>
+			</IonReactRouter>
+		</IonApp>
+	</ChakraProvider>
 );
 
 export default App;
