@@ -54,8 +54,11 @@ const App: React.FC = () => (
 				<Route exact path="/">
 					<Tabs />
 				</Route>
-				<Route exact path="/tab1">
-					<Tabs />
+				<Route exact path="/tab1"
+				render={() => {
+					const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
+					return auth ? <Tabs /> : <Login />;
+				}}>
 				</Route>
 				<Route exact path="/deals">
 					<Tabs />
@@ -69,13 +72,3 @@ const App: React.FC = () => (
 );
 
 export default App;
-
-/* ROUTE FOR REQUIRED AUTH
-<Route 
-	exact 
-	path="/"
-	render={() => {
-		return localStorage.getItem('token') ? <Tabs /> : <Login />;
-	}}>
-</Route>
-*/

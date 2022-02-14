@@ -25,7 +25,7 @@ const Tab1: React.FC = () => {
     })
     .then(async(data) => {
       const userObj = await data.json();
-      console.log(userObj);
+      (userObj.code == 'token_not_valid') ? localStorage.setItem('valid', 'false') : localStorage.setItem('valid', 'true')
       setUser(userObj[0]);
     }
   )}, [])
