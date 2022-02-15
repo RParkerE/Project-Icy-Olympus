@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import { Deal } from '../../../hooks/useDeals'
-import './dealsV1.css';
+import '../../../theme/css/dealsV1.css';
 
 interface DealCardProps {
     deal: Deal
@@ -88,7 +88,7 @@ const DealCard: React.FC<DealCardProps> = ({
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={drinksActive}
+                                // isActive={drinksActive}
                                 onClick={() => setDrinksActive(true)}
                             >
                                 Drinks
@@ -103,7 +103,7 @@ const DealCard: React.FC<DealCardProps> = ({
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={!drinksActive}
+                                // isActive={!drinksActive}
                                 onClick={() => setDrinksActive(false)}
                             >
                                 Food

@@ -1,6 +1,6 @@
 import { IonContent, IonPage, IonSpinner } from '@ionic/react';
 import { Box, Grid } from '@chakra-ui/react'
-import './dealsV1.css';
+import '../../../theme/css/dealsV1.css';
 
 import { useDeals, Deal } from '../../../hooks/useDeals'
 
