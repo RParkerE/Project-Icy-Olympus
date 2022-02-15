@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
     chakra,
     Box,
-    ListItem, List,
+    ListItem,
+    List,
     Flex,
     Collapse,
     Text,
@@ -82,13 +83,12 @@ const DealCard: React.FC<DealCardProps> = ({
                             {(deal?.drink_deals?.info && deal?.drink_deals?.info?.length > 0) && <Link
                                 px={6}
                                 py={3}
-                                bg={drinksActive ? "#14B5E1" : "gray"}
-                                color={drinksActive ? "gray.100" : "gray.600"}
+                                bg={!drinksActive ? "#14B5E1" : "gray"}
+                                color={!drinksActive ? "gray.100" : "gray.600"}
                                 fontSize="sm"
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={drinksActive}
                                 onClick={() => setDrinksActive(true)}
                             >
                                 Drinks
@@ -97,13 +97,12 @@ const DealCard: React.FC<DealCardProps> = ({
                                 px={6}
                                 py={3}
                                 ml={2}
-                                bg={!drinksActive ? "#14B5E1" : "gray"}
-                                color={!drinksActive ? "gray.100" : "gray.600"}
+                                bg={drinksActive ? "#14B5E1" : "gray"}
+                                color={drinksActive ? "gray.100" : "gray.600"}
                                 fontSize="sm"
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={!drinksActive}
                                 onClick={() => setDrinksActive(false)}
                             >
                                 Food
