@@ -27,7 +27,7 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 const SignUp: React.FC = () => {
-	const { control, setValue, handleSubmit, formState: { errors } } = useForm();
+	const { control, getValues, setValue, handleSubmit, formState: { errors } } = useForm();
 	const { navigate } = useContext(NavContext);
 
 	const onSubmit = (data: any) => {
@@ -41,7 +41,11 @@ const SignUp: React.FC = () => {
 	const debouncedSetValue = debounce(setValue, 300);
 
 	const printValue = (val: any) => {
+		console.group()
+		console.log("User just entered: ")
 		console.log({ val })
+		console.groupEnd()
+
 	}
 
 	const debouncedPrintValue = debounce(printValue, 300);
@@ -51,14 +55,16 @@ const SignUp: React.FC = () => {
 			minH={'100vh'}
 			align={'center'}
 			justify={'center'}
-			bg={useColorModeValue('gray.50', 'gray.800')}>
+			bg={useColorModeValue('gray.50', 'gray.800')}
+			background="radial-gradient(#68abdb, #3C1F84)"
+		>
 			<Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
 				<Stack align={'center'}>
-					<Heading fontSize={'4xl'} textAlign={'center'}>
+					<Heading fontSize={'4xl'} color={'white'} textAlign={'center'}>
 						Sign up
 					</Heading>
-					<Text fontSize={'lg'} color={'gray.600'}>
-						to enjoy all of our cool features ✌️
+					<Text fontSize={'lg'} color={'white'}>
+						to see what's happening ✌️
 					</Text>
 				</Stack>
 				<form onSubmit={handleSubmit(onSubmit)}>
@@ -84,7 +90,7 @@ const SignUp: React.FC = () => {
 											control={control}
 											name="firstName"
 											rules={{
-												required: true,
+												required: false,
 											}}
 										/>
 									</FormControl>
@@ -104,7 +110,7 @@ const SignUp: React.FC = () => {
 											control={control}
 											name="lastName"
 											rules={{
-												required: true,
+												required: false,
 											}}
 										/>
 									</FormControl>
@@ -153,6 +159,7 @@ const SignUp: React.FC = () => {
 											placeholder="Select A Date"
 											value={field.value}
 											onIonChange={e => setValue("birthday", e.detail.value)}
+										// onChange={e => debouncedPrintValue(e)}
 										/>
 									}
 									control={control}
@@ -169,15 +176,12 @@ const SignUp: React.FC = () => {
 
 								<Controller
 									render={({ field }) =>
-										<IonSelect
-											placeholder="Choose One"
-											value={field.value}
-											onIonChange={e => setValue("gender", e.detail.value)}
-										>
-											<IonSelectOption value="male">Male</IonSelectOption>
-											<IonSelectOption value="female">Female</IonSelectOption>
-											<IonSelectOption value="other">Other</IonSelectOption>
-										</IonSelect>
+										<Select placeholder='Select option' onChange={e => setValue("gender", e.target.value)}>
+											<option value='option1'>Female</option>
+											<option value='option2'>Male</option>
+											<option value='option2'>Other</option>
+											<option value='option3'>Prefer not to say</option>
+										</Select>
 									}
 									control={control}
 									name="gender"
@@ -185,25 +189,30 @@ const SignUp: React.FC = () => {
 										required: true,
 									}}
 								/>
-								{/* <Select placeholder='Select option'>
-								<option value='option1'>Female</option>
-								<option value='option2'>Male</option>
-								<option value='option2'>Other</option>
-								<option value='option3'>Prefer not to say</option>
-							</Select> */}
+
 							</FormControl>
 
-							<FormControl id="password" isRequired>
+							<FormControl id="password">
 								<FormLabel>Password</FormLabel>
-
 								<Controller
 									render={({ field }) =>
-										<IonInput
-											type="password"
-											placeholder="Password"
-											value={field.value}
-											onIonChange={e => setValue("password", e.detail.value)}
-										/>
+										<InputGroup>
+											<Input
+												type={showPassword ? 'text' : 'password'}
+												// placeholder="Password"
+												value={field.value}
+												onChange={e => setValue("password", e.target.value)}
+											/>
+											<InputRightElement h={'full'}>
+												<Button
+													variant={'ghost'}
+													onClick={() =>
+														setShowPassword((showPassword) => !showPassword)
+													}>
+													{showPassword ? <ViewIcon /> : <ViewOffIcon />}
+												</Button>
+											</InputRightElement>
+										</InputGroup>
 									}
 									control={control}
 									name="password"
@@ -215,20 +224,6 @@ const SignUp: React.FC = () => {
 										}
 									}}
 								/>
-
-								{/* 							
-							<InputGroup>
-								<Input type={showPassword ? 'text' : 'password'} />
-								<InputRightElement h={'full'}>
-									<Button
-										variant={'ghost'}
-										onClick={() =>
-											setShowPassword((showPassword) => !showPassword)
-										}>
-										{showPassword ? <ViewIcon /> : <ViewOffIcon />}
-									</Button>
-								</InputRightElement>
-							</InputGroup> */}
 							</FormControl>
 							<Stack spacing={10} pt={2}>
 								<Button
@@ -239,7 +234,9 @@ const SignUp: React.FC = () => {
 									_hover={{
 										bg: 'blue.500',
 									}}
-									type="submit">
+									type="submit"
+									onClick={() => console.log(getValues())}
+								>
 									Sign up
 								</Button>
 							</Stack>

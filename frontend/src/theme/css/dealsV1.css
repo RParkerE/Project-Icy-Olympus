@@ -1,5 +1,8 @@
 .background-container-v1{
-    background-color: #3C1F84;
+    /* background-color: #3C1F84; */
+    background:radial-gradient(#91c2e5, #3C1F84);
+    /* background: radial-gradient(ellipse at top, #9198e5, transparent),
+            radial-gradient(ellipse at bottom, #91c2e5, transparent); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: lighten;
