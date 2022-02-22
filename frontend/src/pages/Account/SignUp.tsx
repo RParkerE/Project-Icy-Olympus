@@ -19,26 +19,30 @@ const SignUp: React.FC = () => {
 		const url = "http://localhost:8000/user/isUserTaken/" + username;
 		const { data } = await Axios.get(url);
 		if (data == false) {
+			setValue("username", username);
+			console.log("WE HAVE THAT NAME AVAILABLE");
 			return true;
-			//setValue("username", username);
-		} else { return false; } //console.log("Username in use");
-	}
+		} else { return false; } 
+	};
 
 	const checkEmail = async (email: any) => {
 		const url = "http://localhost:8000/user/isEmailUsed/" + email;
 		const { data } = await Axios.get(url);
 		if (data == false) {
-			return true; //setValue("email", email);
-		} else { return false } //console.log("Email in use"); 
-	}
+			setValue("email", email);
+			console.log("WE HAVE THAT EMAIL AVAILABLE");
+			return true;
+		} else { return false }  
+	};
 
 	const ageFromDOB = (dob: any) => {
-		const today = new Date();
 		const age = differenceInYears(new Date(), parseISO(dob));
+		console.log(age);
 		if (age > 20) {
-			return true; //setValue("birthday", dob);
-		} else { return false; } //console.log("NOT 21!!!!"); 
-	}
+			setValue("birthday", dob);
+			return true;
+		} else { return false; }  
+	};
 
 	return (
 		<IonPage>
@@ -60,7 +64,7 @@ const SignUp: React.FC = () => {
 								control={control}
 								name="username"
 								rules={{
-									required: true,
+									//required: true,
 									validate: {
 										checkUsername: u => checkUsername(u) || "Username is already taken"
 									}
@@ -82,7 +86,7 @@ const SignUp: React.FC = () => {
 								control={control}
 								name="email"
 								rules={{
-									required: true,
+									//required: true,
 									validate: {
 										checkEmail: e => checkEmail(e) || "Email is already in use"
 									}
@@ -103,7 +107,7 @@ const SignUp: React.FC = () => {
 								control={control}
 								name="birthday"
 								rules={{
-									required: true,
+									//required: true,
 									validate: {
 										checkDOB: b => ageFromDOB(b) || "You are not 21"
 									}
@@ -133,23 +137,6 @@ const SignUp: React.FC = () => {
 								}} 
 							/>
 							<div>{errors.password?.message}</div>
-						</IonRow>
-						<IonRow>
-							<IonLabel>Retype Password: </IonLabel>
-							<Controller
-								render={({ field }) => 
-									<IonInput
-										id="password_repeat" 
-										placeholder="Retype Password"
-										type="password"
-								   />
-								}
-								control={control}
-								name="password_repeat"
-								rules={{
-									required: true,
-								}} 
-							/>
 						</IonRow>
 					</IonGrid>
 					<IonRow>
