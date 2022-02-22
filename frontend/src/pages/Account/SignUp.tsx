@@ -15,6 +15,22 @@ const SignUp: React.FC = () => {
 		navigate('/login');
 	};
 
+	const checkUsername = async (username: any) => {
+		const url = "http://localhost:8000/user/isUserTaken/" + username;
+		const { data } = await Axios.get(url);
+		if (data == false) {
+			setValue("username", username);
+		} else { console.log("Username in use"); }
+	}
+
+	const checkEmail = async (email: any) => {
+		const url = "http://localhost:8000/user/isEmailUsed/" + email;
+		const { data } = await Axios.get(url);
+		if (data == false) {
+			setValue("email", email);
+		} else { console.log("Email in use"); }
+	}
+
 	const ageFromDOB = (dob: any) => {
 		const today = new Date();
 		const age = differenceInYears(new Date(), parseISO(dob));
@@ -37,7 +53,7 @@ const SignUp: React.FC = () => {
 									<IonInput
 				                        placeholder="Username"
 				                        value={field.value}
-                    					onIonChange={e => setValue("username", e.detail.value)}
+                    					onIonChange={e => checkUsername(e.detail.value)}
 				                    />
 								}
 								control={control}
@@ -55,7 +71,7 @@ const SignUp: React.FC = () => {
 										type="email"
 				                        placeholder="example@gmail.com"
 				                        value={field.value}
-                    					onIonChange={e => setValue("email", e.detail.value)}
+                    					onIonChange={e => checkEmail(e.detail.value)}
 				                    />
 								}
 								control={control}
