@@ -31,3 +31,21 @@ class CustomUserProfile(APIView):
             queryset = queryset.filter(username=username)
             serializer = CustomUserSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+
+class CheckValidUser(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request, username, format=None):
+        if CustomUser.objects.filter(username=username).exists():
+            return Response(True)
+        else:
+            return Response(False)
+
+class CheckValidEmail(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request, email, format=None):
+        if CustomUser.objects.filter(email=email).exists():
+            return Response(True)
+        else:
+            return Response(False)

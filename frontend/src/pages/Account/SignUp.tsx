@@ -1,6 +1,7 @@
 import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel,IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useState, useContext } from 'react';
+import { parseISO, differenceInYears } from 'date-fns';
 import Axios from 'axios';
 import './SignUp.css';
 
@@ -13,6 +14,14 @@ const SignUp: React.FC = () => {
 		Axios.post("http://localhost:8000/user/create/", data);
 		navigate('/login');
 	};
+
+	const ageFromDOB = (dob: any) => {
+		const today = new Date();
+		const age = differenceInYears(new Date(), parseISO(dob));
+		if (age > 20) {
+			setValue("birthday", dob);
+		} else { console.log("NOT 21!!!!"); }
+	}
 
 	return (
 		<IonPage>
@@ -63,32 +72,11 @@ const SignUp: React.FC = () => {
 									<IonDatetime 
 										placeholder="Select A Date"
 										value={field.value}
-                    					onIonChange={e => setValue("birthday", e.detail.value)}
+                    					onIonChange={e => ageFromDOB(e.detail.value)}
                     				/>
 								}
 								control={control}
 								name="birthday"
-								rules={{
-									required: true,
-								}}
-							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>Gender: </IonLabel>
-		                	<Controller
-								render={({ field }) => 
-									<IonSelect
-				                        placeholder="Choose One"
-				                        value={field.value}
-                    					onIonChange={e => setValue("gender", e.detail.value)}
-				                    >
-				                    	<IonSelectOption value="male">Male</IonSelectOption>
-				                    	<IonSelectOption value="female">Female</IonSelectOption>
-				                    	<IonSelectOption value="other">Other</IonSelectOption>
-				                    </IonSelect>
-								}
-								control={control}
-								name="gender"
 								rules={{
 									required: true,
 								}}
@@ -118,11 +106,20 @@ const SignUp: React.FC = () => {
 		                </IonRow>
 		                <IonRow>
 		                	<IonLabel>Retype Password: </IonLabel>
-		                    <IonInput
-		                        id="password_repeat" 
-		                        placeholder="Retype Password"
-		                        type="password"
-		                   />
+		                	<Controller
+								render={({ field }) => 
+									<IonInput
+				                        id="password_repeat" 
+				                        placeholder="Retype Password"
+				                        type="password"
+				                   />
+								}
+								control={control}
+								name="password"
+								rules={{
+									required: true,
+								}} 
+							/>
 		                </IonRow>
 		            </IonGrid>
 		            <IonRow>

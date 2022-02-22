@@ -88,7 +88,6 @@ const DealCard: React.FC<DealCardProps> = ({
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={drinksActive}
                                 onClick={() => setDrinksActive(true)}
                             >
                                 Drinks
@@ -103,7 +102,6 @@ const DealCard: React.FC<DealCardProps> = ({
                                 fontWeight="700"
                                 rounded="md"
                                 _hover={{ bg: "gray.500" }}
-                                isActive={!drinksActive}
                                 onClick={() => setDrinksActive(false)}
                             >
                                 Food

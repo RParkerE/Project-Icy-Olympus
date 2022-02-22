@@ -72,7 +72,7 @@ const App: React.FC = () => (
 					</Route>
 					<Route exact path="/tab1"
 					render={() => {
-						const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
+						const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false;
 						return auth ? <Tabs /> : <Login />;
 					}}>
 					</Route>
