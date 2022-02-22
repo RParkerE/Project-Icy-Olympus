@@ -21,6 +21,8 @@ import {
 	useColorModeValue,
 } from '@chakra-ui/react';
 
+import debounce from 'lodash.debounce';
+
 const Login: React.FC = () => {
 	const { control, getValues, setValue, handleSubmit, formState: { errors } } = useForm();
 	const { navigate } = useContext(NavContext);
@@ -29,6 +31,9 @@ const Login: React.FC = () => {
 		console.log(JSON.stringify(data, null, 2));
 		fetchToken(data);
 	};
+
+	const debouncedSetValue = debounce(setValue, 300);
+
 
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -51,8 +56,6 @@ const Login: React.FC = () => {
 			align={'center'}
 			justify={'center'}
 			bg={useColorModeValue('gray.50', 'gray.800')}
-			// backgroundColor="#3C1F84"
-			// background="radial-gradient(#e66465, #9198e5)"
 			background="radial-gradient(#68abdb, #3C1F84)"
 		>
 			<Stack spacing={8} mx={'auto'} width={450} py={12} px={6}>
@@ -76,7 +79,6 @@ const Login: React.FC = () => {
 								<Controller
 									render={({ field }) =>
 										<Input
-											// placeholder="Username"
 											value={field.value}
 											onChange={e => setValue("username", e.target.value)}
 										/>
@@ -95,7 +97,6 @@ const Login: React.FC = () => {
 										<InputGroup>
 											<Input
 												type={showPassword ? 'text' : 'password'}
-												// placeholder="Password"
 												value={field.value}
 												onChange={e => setValue("password", e.target.value)}
 											/>
@@ -145,61 +146,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-
-
-
-
-{/* <IonPage>
-	        <IonHeader>
-	        </IonHeader>
-	        <IonContent>
-		        <form className='account-form' onSubmit={ handleSubmit(onSubmit) }>
-		            <IonGrid className='account-form-fields sign-up'>
-		                <IonRow>
-		                	<IonLabel>Username: </IonLabel>
-		                	<Controller
-								render={({ field }) => 
-									<IonInput
-				                        placeholder="JohnDoe123"
-				                        value={field.value}
-                    					onIonChange={e => setValue("username", e.detail.value)}
-				                    />
-								}
-								control={control}
-								name="username"
-								rules={{
-									required: true,
-								}} 
-							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>Password: </IonLabel>
-		                    <Controller
-								render={({ field }) => 
-									<IonInput
-										type="password"
-				                        placeholder="Password"
-				                        value={field.value}
-                    					onIonChange={e => setValue("password", e.detail.value)}
-				                    />
-								}
-								control={control}
-								name="password"
-								rules={{
-									required: true,
-									minLength: {
-		                                value: 8,
-		                                message: "Password must have at least 8 characters"
-		                            }
-								}} 
-							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonButton className='btn-submit-form' type="submit">
-		                		Login
-		                	</IonButton>
-	                	</IonRow>
-	                </IonGrid>
-		        </form>
-		    </IonContent>
-	    </IonPage> */}
