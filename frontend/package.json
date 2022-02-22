@@ -35,6 +35,7 @@
     "bootstrap-icons": "^1.7.2",
     "framer-motion": "4.1.17",
     "ionicons": "^5.4.0",
+    "lodash.debounce": "^4.0.8",
     "react": "^17.0.1",
     "react-bootstrap": "^2.0.4",
     "react-collapsible": "^2.8.4",
@@ -89,6 +90,7 @@
   "devDependencies": {
     "@capacitor/cli": "^3.3.1",
     "@ionic/lab": "3.2.10",
+    "@types/lodash.debounce": "^4.0.6",
     "@types/react-helmet": "^6.1.4"
   },
   "description": "An Ionic project"

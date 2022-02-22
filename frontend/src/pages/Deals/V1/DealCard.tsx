@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 import { Deal } from '../../../hooks/useDeals'
-import './dealsV1.css';
+import '../../../theme/css/dealsV1.css';
 
 interface DealCardProps {
     deal: Deal
