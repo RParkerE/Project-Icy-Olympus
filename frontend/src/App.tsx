@@ -67,12 +67,17 @@ const App: React.FC = () => (
 					<Route path="/deals-tables">
 						<Deals version={1}/>
 					</Route>
-					<Route exact path="/">
-						<Tabs />
+					<Route exact path="/"
+					render={() => {
+						const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
+						console.log(auth);
+						return auth ? <Tabs /> : <Login />;
+					}}>
 					</Route>
 					<Route exact path="/tab1"
 					render={() => {
-						const auth = localStorage.getItem('accessToken') ? (localStorage.getItem('valid') == 'true') : false
+						const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
+						console.log(auth);
 						return auth ? <Tabs /> : <Login />;
 					}}>
 					</Route>

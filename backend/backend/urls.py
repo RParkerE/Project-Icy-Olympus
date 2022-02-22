@@ -31,6 +31,8 @@ urlpatterns = [
     path('api/specials', v_views.SpecialsView.as_view(), name='specials'),
     path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
     path('user/<str:username>/', u_views.CustomUserProfile.as_view(), name="profile"),
+    path('user/isUserTaken/<str:username>/', u_views.CheckValidUser.as_view(), name="validUser"),
+    path('user/isEmailUsed/<str:email>/', u_views.CheckValidEmail.as_view(), name="validEmail"),
     path('token/obtain/', u_views.ObtainTokenPairedData.as_view(), name='token_create'),
     path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]

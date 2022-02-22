@@ -1,6 +1,7 @@
 import { NavContext, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonGrid, IonRow, IonInput, IonButton, IonDatetime, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { useState, useContext } from 'react';
+import { parseISO, differenceInYears } from 'date-fns';
 import Axios from 'axios';
 import './SignUp.css';
 
@@ -29,6 +30,35 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 const SignUp: React.FC = () => {
 	const { control, getValues, setValue, handleSubmit, formState: { errors } } = useForm();
 	const { navigate } = useContext(NavContext);
+
+	const checkUsername = async (username: any) => {
+		const url = "http://localhost:8000/user/isUserTaken/" + username;
+		const { data } = await Axios.get(url);
+		if (data == false) {
+			setValue("username", username);
+			console.log("WE HAVE THAT NAME AVAILABLE");
+			return true;
+		} else { return false; } 
+	};
+
+	const checkEmail = async (email: any) => {
+		const url = "http://localhost:8000/user/isEmailUsed/" + email;
+		const { data } = await Axios.get(url);
+		if (data == false) {
+			setValue("email", email);
+			console.log("WE HAVE THAT EMAIL AVAILABLE");
+			return true;
+		} else { return false }  
+	};
+
+	const ageFromDOB = (dob: any) => {
+		const age = differenceInYears(new Date(), parseISO(dob));
+		console.log(age);
+		if (age > 20) {
+			setValue("birthday", dob);
+			return true;
+		} else { return false; }  
+	};
 
 	const onSubmit = (data: any) => {
 		console.log(JSON.stringify(data, null, 2));
@@ -134,10 +164,13 @@ const SignUp: React.FC = () => {
 									control={control}
 									name="email"
 									rules={{
-										required: true,
+										validate: {
+											checkUsername: u => checkUsername(u) || "Username is already taken"
+										}
 									}}
 								/>
 							</FormControl>
+							<div>{errors.username?.message}</div>
 							<FormControl id="username" isRequired>
 								<FormLabel>Username</FormLabel>
 								<Controller
@@ -151,10 +184,13 @@ const SignUp: React.FC = () => {
 									control={control}
 									name="username"
 									rules={{
-										required: true,
+										validate: {
+											checkEmail: e => checkEmail(e) || "Email is already in use"
+										}
 									}}
 								/>
 							</FormControl>
+							<div>{errors.email?.message}</div>
 							<FormControl id="birthday" isRequired>
 								<FormLabel>Birthday: </FormLabel>
 								<Controller
@@ -169,33 +205,13 @@ const SignUp: React.FC = () => {
 									control={control}
 									name="birthday"
 									rules={{
-										required: true,
+										validate: {
+											checkDOB: b => ageFromDOB(b) || "You are not 21"
+										}
 									}}
 								/>
 							</FormControl>
-
-
-							<FormControl id="username" isRequired>
-								<FormLabel>Gender</FormLabel>
-
-								<Controller
-									render={({ field }) =>
-										<Select placeholder='Select option' onChange={e => setValue("gender", e.target.value)}>
-											<option value='option1'>Female</option>
-											<option value='option2'>Male</option>
-											<option value='option2'>Other</option>
-											<option value='option3'>Prefer not to say</option>
-										</Select>
-									}
-									control={control}
-									name="gender"
-									rules={{
-										required: true,
-									}}
-								/>
-
-							</FormControl>
-
+							<div>{errors.birthday?.message}</div>
 							<FormControl id="password">
 								<FormLabel>Password</FormLabel>
 								<Controller
@@ -229,6 +245,7 @@ const SignUp: React.FC = () => {
 									}}
 								/>
 							</FormControl>
+							<div>{errors.password?.message}</div>
 							<Stack spacing={10} pt={2}>
 								<Button
 									loadingText="Submitting"
