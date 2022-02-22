@@ -165,12 +165,12 @@ const SignUp: React.FC = () => {
 									name="email"
 									rules={{
 										validate: {
-											checkUsername: u => checkUsername(u) || "Username is already taken"
+											checkEmail: e => checkEmail(e) || "Email is already in use"
 										}
 									}}
 								/>
 							</FormControl>
-							<div>{errors.username?.message}</div>
+							<div>{errors.email?.message}</div>
 							<FormControl id="username" isRequired>
 								<FormLabel>Username</FormLabel>
 								<Controller
@@ -185,12 +185,12 @@ const SignUp: React.FC = () => {
 									name="username"
 									rules={{
 										validate: {
-											checkEmail: e => checkEmail(e) || "Email is already in use"
+											checkUsername: u => checkUsername(u) || "Username is already taken"
 										}
 									}}
 								/>
 							</FormControl>
-							<div>{errors.email?.message}</div>
+							<div>{errors.username?.message}</div>
 							<FormControl id="birthday" isRequired>
 								<FormLabel>Birthday: </FormLabel>
 								<Controller
