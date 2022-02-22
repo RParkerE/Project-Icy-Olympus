@@ -19,134 +19,148 @@ const SignUp: React.FC = () => {
 		const url = "http://localhost:8000/user/isUserTaken/" + username;
 		const { data } = await Axios.get(url);
 		if (data == false) {
-			setValue("username", username);
-		} else { console.log("Username in use"); }
+			return true;
+			//setValue("username", username);
+		} else { return false; } //console.log("Username in use");
 	}
 
 	const checkEmail = async (email: any) => {
 		const url = "http://localhost:8000/user/isEmailUsed/" + email;
 		const { data } = await Axios.get(url);
 		if (data == false) {
-			setValue("email", email);
-		} else { console.log("Email in use"); }
+			return true; //setValue("email", email);
+		} else { return false } //console.log("Email in use"); 
 	}
 
 	const ageFromDOB = (dob: any) => {
 		const today = new Date();
 		const age = differenceInYears(new Date(), parseISO(dob));
 		if (age > 20) {
-			setValue("birthday", dob);
-		} else { console.log("NOT 21!!!!"); }
+			return true; //setValue("birthday", dob);
+		} else { return false; } //console.log("NOT 21!!!!"); 
 	}
 
 	return (
 		<IonPage>
-	        <IonHeader>
-	        </IonHeader>
-	        <IonContent>
-		        <form className='account-form' onSubmit={ handleSubmit(onSubmit) }>
-		            <IonGrid className='account-form-fields sign-up'>
-		            	<IonRow>
-		                	<IonLabel>USERNAME: </IonLabel>
-		                	<Controller
+			<IonHeader>
+			</IonHeader>
+			<IonContent>
+				<form className='account-form' onSubmit={ handleSubmit(onSubmit) }>
+					<IonGrid className='account-form-fields sign-up'>
+						<IonRow>
+							<IonLabel>USERNAME: </IonLabel>
+							<Controller
 								render={({ field }) => 
 									<IonInput
-				                        placeholder="Username"
-				                        value={field.value}
-                    					onIonChange={e => checkUsername(e.detail.value)}
-				                    />
+										placeholder="Username"
+										value={field.value}
+										onIonChange={e => setValue("username", e.detail.value)}
+									/>
 								}
 								control={control}
 								name="username"
 								rules={{
 									required: true,
+									validate: {
+										checkUsername: u => checkUsername(u) || "Username is already taken"
+									}
 								}} 
 							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>EMAIL: </IonLabel>
-		                	<Controller
+							<div>{errors.username?.message}</div>
+						</IonRow>
+						<IonRow>
+							<IonLabel>EMAIL: </IonLabel>
+							<Controller
 								render={({ field }) => 
 									<IonInput
 										type="email"
-				                        placeholder="example@gmail.com"
-				                        value={field.value}
-                    					onIonChange={e => checkEmail(e.detail.value)}
-				                    />
+										placeholder="example@gmail.com"
+										value={field.value}
+										onIonChange={e => setValue("email", e.detail.value)}
+									/>
 								}
 								control={control}
 								name="email"
 								rules={{
 									required: true,
+									validate: {
+										checkEmail: e => checkEmail(e) || "Email is already in use"
+									}
 								}} 
 							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>Birthday: </IonLabel>
-		                    <Controller
+							<div>{errors.email?.message}</div>
+						</IonRow>
+						<IonRow>
+							<IonLabel>Birthday: </IonLabel>
+							<Controller
 								render={({ field }) => 
 									<IonDatetime 
 										placeholder="Select A Date"
 										value={field.value}
-                    					onIonChange={e => ageFromDOB(e.detail.value)}
-                    				/>
+										onIonChange={e => setValue("birthday", e.detail.value)}
+									/>
 								}
 								control={control}
 								name="birthday"
 								rules={{
 									required: true,
+									validate: {
+										checkDOB: b => ageFromDOB(b) || "You are not 21"
+									}
 								}}
 							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>Password: </IonLabel>
-		                    <Controller
+							<div>{errors.birthday?.message}</div>
+						</IonRow>
+						<IonRow>
+							<IonLabel>Password: </IonLabel>
+							<Controller
 								render={({ field }) => 
 									<IonInput
 										type="password"
-				                        placeholder="Password"
-				                        value={field.value}
-                    					onIonChange={e => setValue("password", e.detail.value)}
-				                    />
+										placeholder="Password"
+										value={field.value}
+										onIonChange={e => setValue("password", e.detail.value)}
+									/>
 								}
 								control={control}
 								name="password"
 								rules={{
 									required: true,
 									minLength: {
-		                                value: 8,
-		                                message: "Password must have at least 8 characters"
-		                            }
+										value: 8,
+										message: "Minimum 8 characters"
+									}
 								}} 
 							/>
-		                </IonRow>
-		                <IonRow>
-		                	<IonLabel>Retype Password: </IonLabel>
-		                	<Controller
+							<div>{errors.password?.message}</div>
+						</IonRow>
+						<IonRow>
+							<IonLabel>Retype Password: </IonLabel>
+							<Controller
 								render={({ field }) => 
 									<IonInput
-				                        id="password_repeat" 
-				                        placeholder="Retype Password"
-				                        type="password"
-				                   />
+										id="password_repeat" 
+										placeholder="Retype Password"
+										type="password"
+								   />
 								}
 								control={control}
-								name="password"
+								name="password_repeat"
 								rules={{
 									required: true,
 								}} 
 							/>
-		                </IonRow>
-		            </IonGrid>
-		            <IonRow>
-	                	<IonButton className='btn-submit-form' type="submit">
-	                		Sign Up
-	                	</IonButton>
-	                </IonRow>
-		        </form>
-		    </IonContent>
-	    </IonPage>
-    )
+						</IonRow>
+					</IonGrid>
+					<IonRow>
+						<IonButton className='btn-submit-form' type="submit">
+							Sign Up
+						</IonButton>
+					</IonRow>
+				</form>
+			</IonContent>
+		</IonPage>
+	)
 };
 
 export default SignUp;
