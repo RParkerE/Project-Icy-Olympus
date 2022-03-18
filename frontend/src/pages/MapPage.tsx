@@ -1,10 +1,13 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange, IonSplitPane, IonMenu, IonList, IonItem } from '@ionic/react';
 import ReactMapGL, { Layer, Source, GeolocateControl } from 'react-map-gl'
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import './Tab3.css';
+import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const Tab3: React.FC = () => {
+const MapPage: React.FC = () => {
+  const [showModal, setShowModal] = useState(false); //Set to true when bar is clicked on AND geolocation is at that bar (or within specified distance)
+
+
   const geolocateControlStyle= {
     right: 10,
     top: 10
@@ -177,6 +180,19 @@ const Tab3: React.FC = () => {
                     }
                   } />
                 )}
+                <IonModal isOpen={ showModal } cssClass='customStyle'>
+                  <IonButton>🏳️‍🌈</IonButton>
+                  <IonButton>💃</IonButton>
+                  <IonButton>🎸</IonButton>
+                  <IonButton>🍾</IonButton>
+                  <IonButton>🥃</IonButton>
+                  <IonButton>👙</IonButton>
+                  <IonButton>💋</IonButton>
+                  <IonButton>💕</IonButton>
+                  <IonButton>🤫</IonButton>
+                  <IonButton>💨</IonButton>
+                  <IonButton>🚩</IonButton>
+                </IonModal>
                 {venueInfo && (
                   console.log(venueInfo['images']),
                   <IonSplitPane contentId="test">
@@ -214,4 +230,4 @@ const Tab3: React.FC = () => {
   };
 };
 
-export default Tab3;
+export default MapPage;

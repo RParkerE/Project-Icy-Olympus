@@ -65,7 +65,7 @@ def get_venues():
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_c3f6620bd2634651be10e2905086b9e9',
+            'api_key_private': 'pri_c2e5af1d9ed24502b33115c4be23dfae',
             'q': f'{a_bar} in Austin, TX',
             'num': 3,
             'fast': False,
@@ -98,10 +98,10 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_08b261b51cab47849701748248882802'
+                'api_key_public': 'pub_cdaee1d662bc4df99702fad58434664b'
             }
             forecast_params = {
-                'api_key_public': 'pub_08b261b51cab47849701748248882802',
+                'api_key_public': 'pub_cdaee1d662bc4df99702fad58434664b',
                 'venue_id': venue_id,
             }
 
@@ -128,14 +128,12 @@ def get_venues():
                 business_id = requests.request('GET', 'https://api.yelp.com/v3/businesses/matches', headers=headers, params=url_params).json()
                 if(len(business_id['businesses']) > 0):
                     business_response = requests.request('GET', f"https://api.yelp.com/v3/businesses/{business_id['businesses'][0]['id']}", headers=headers, params={}).json()
-                    vibes = {}
+                    vibes = {'U+1F3F3,U+FE0F,U+200D,U+1F308': 1, 'U+1F483': 1, 'U+1F3B8': 1, 'U=1F37E': 1, 'U+1F943': 1, 'U+1F459': 1, 'U+1F48B': 1, 'U+1F495': 1, 'U+1F92B': 1, 'U+1F4A8': 1, 'U+1F6A9': 1, 'U+1F415': 1, 'U+1F379': 1, 'U+1F47E': 1, 'U+1F3C8': 1}
                     rating = float(business_response['rating'])
-                    for category in business_response['categories']:
-                        vibes[category['title']] = 1
                     price = business_response['price']
                     images = business_response['photos']
                 else:
-                    vibes = {"Bar": 1}
+                    vibes = {'U+1F3F3,U+FE0F,U+200D,U+1F308': 1, 'U+1F483': 1, 'U+1F3B8': 1, 'U=1F37E': 1, 'U+1F943': 1, 'U+1F459': 1, 'U+1F48B': 1, 'U+1F495': 1, 'U+1F92B': 1, 'U+1F4A8': 1, 'U+1F6A9': 1, 'U+1F415': 1, 'U+1F379': 1, 'U+1F47E': 1, 'U+1F3C8': 1}
                     rating = 0.0
                     price = '?'
                     images = ["None"]

@@ -16,9 +16,6 @@ class CustomUserSerializer(serializers.ModelSerializer):
 	username = serializers.CharField(required=True)
 	password = serializers.CharField(min_length=8, write_only=True)
 	birthday = serializers.DateTimeField(required=True)
-	gender = serializers.CharField(max_length=7)
-	race = serializers.CharField(max_length=17)
-	vibes = serializers.JSONField()
 	is_premium = serializers.BooleanField('premium status', default=False)
 
 	class Meta:

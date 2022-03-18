@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
     chakra,
     Box,
-    ListItem, List,
+    ListItem,
+    List,
     Flex,
     Collapse,
     Text,
@@ -13,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 import { Deal } from '../../../hooks/useDeals'
-import './dealsV1.css';
+import '../../../theme/css/dealsV1.css';
 
 interface DealCardProps {
     deal: Deal
@@ -82,8 +83,8 @@ const DealCard: React.FC<DealCardProps> = ({
                             {(deal?.drink_deals?.info && deal?.drink_deals?.info?.length > 0) && <Link
                                 px={6}
                                 py={3}
-                                bg={drinksActive ? "#14B5E1" : "gray"}
-                                color={drinksActive ? "gray.100" : "gray.600"}
+                                bg={!drinksActive ? "#14B5E1" : "gray"}
+                                color={!drinksActive ? "gray.100" : "gray.600"}
                                 fontSize="sm"
                                 fontWeight="700"
                                 rounded="md"
@@ -96,8 +97,8 @@ const DealCard: React.FC<DealCardProps> = ({
                                 px={6}
                                 py={3}
                                 ml={2}
-                                bg={!drinksActive ? "#14B5E1" : "gray"}
-                                color={!drinksActive ? "gray.100" : "gray.600"}
+                                bg={drinksActive ? "#14B5E1" : "gray"}
+                                color={drinksActive ? "gray.100" : "gray.600"}
                                 fontSize="sm"
                                 fontWeight="700"
                                 rounded="md"

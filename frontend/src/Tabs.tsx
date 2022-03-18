@@ -12,8 +12,8 @@ import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
 
 import Deals from './pages/Deals';
-import Tab1 from './pages/Tab1';
-import Tab3 from './pages/Tab3';
+import ProfilePage from './pages/ProfilePage';
+import MapPage from './pages/MapPage';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,21 +38,21 @@ const Tabs: React.FC = () => (
 	<>
 		<IonTabs>
 			<IonRouterOutlet>
-				<Route exact path="/tab1">
-					<Tab1 />
+				<Route exact path="/profile">
+					<ProfilePage />
 				</Route>
 				<Route exact path="/deals">
 					<Deals />
 				</Route>
-				<Route path="/tab3">
-					<Tab3 />
+				<Route path="/map">
+					<MapPage />
 				</Route>
 				<Route exact path="/">
-					<Redirect to="/tab1" />
+					<Redirect to="/profile" />
 				</Route>
 			</IonRouterOutlet>
 			<IonTabBar slot="bottom">
-				<IonTabButton tab="tab1" href="/tab1">
+				<IonTabButton tab="profile" href="/profile">
 					<IonIcon icon={person} />
 					<IonLabel>Profile</IonLabel>
 				</IonTabButton>
@@ -60,7 +60,7 @@ const Tabs: React.FC = () => (
 					<IonIcon icon={wallet} />
 					<IonLabel>Deals</IonLabel>
 				</IonTabButton>
-				<IonTabButton tab="tab3" href="/tab3">
+				<IonTabButton tab="map" href="/map">
 					<IonIcon icon={beer} />
 					<IonLabel>Bars</IonLabel>
 				</IonTabButton>
