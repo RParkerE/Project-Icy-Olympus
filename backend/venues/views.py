@@ -12,6 +12,14 @@ class DealsView(viewsets.ModelViewSet):
     serializer_class = DealsSerializer   
     queryset = Venues.objects.exclude(deals__events__drink_deals=['NONE'])
 
+class VoterView(viewsets.APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request, venue, vibe, format='json'):
+         bar = Venues.objects.get(name=venue)
+         bar.vibes.vibe += 1
+         bar.save()
+
 from django.http import JsonResponse 
 from bs4 import BeautifulSoup  
 import requests

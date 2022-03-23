@@ -6,7 +6,11 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MapPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false); //Set to true when bar is clicked on AND geolocation is at that bar (or within specified distance)
-
+  /*
+  const onVote = useCallback((data: any) => {
+    Axios.post("http://localhost:8000/venue/vote/", data);
+  }, []);
+  */
 
   const geolocateControlStyle= {
     right: 10,
