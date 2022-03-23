@@ -2,7 +2,8 @@ from django.shortcuts import render
 from .serializers import VenuesSerializer, DealsSerializer
 from rest_framework.views import APIView 
 from rest_framework import viewsets      
-from .models import Venues                 
+from .models import Venues   
+from rest_framework import status, permissions             
 
 class VenuesView(viewsets.ModelViewSet):  
     serializer_class = VenuesSerializer   
@@ -12,7 +13,7 @@ class DealsView(viewsets.ModelViewSet):
     serializer_class = DealsSerializer   
     queryset = Venues.objects.exclude(deals__events__drink_deals=['NONE'])
 
-class VoterView(viewsets.APIView):
+class VoterView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, venue, vibe, format='json'):

@@ -29,6 +29,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(apiRouter.urls)),
     path('api/specials', v_views.SpecialsView.as_view(), name='specials'),
+    path('venue/vote/', v_views.VoterView.as_view(), name='vibe_voting'),
     path('user/create/', u_views.CustomUserCreate.as_view(), name="create_user"),
     path('user/<str:username>/', u_views.CustomUserProfile.as_view(), name="profile"),
     path('user/isUserTaken/<str:username>/', u_views.CheckValidUser.as_view(), name="validUser"),
