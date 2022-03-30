@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange, IonSplitPane, IonMenu, IonList, IonItem } from '@ionic/react';
 import ReactMapGL, { Layer, Source, GeolocateControl } from 'react-map-gl'
 import { useState, useEffect, useMemo, useCallback } from 'react';
+import Axios from 'axios';
 import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -22,9 +23,10 @@ import {
 const MapPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false); //Set to true when bar is clicked on AND geolocation is at that bar (or within specified distance)
   
-  const onVote = useCallback((emoji: any, venue_info: any) => {
-    //Axios.post("http://localhost:8000/venue/vote/", venue_info.name, emoji);
-    console.log(venue_info.name, emoji);
+  const onVote = useCallback((vibe: any, venue: any) => {
+    const data = { 'venue': venue, 'vibe': vibe }
+    Axios.post("http://localhost:8000/venue/vote/", data)
+    //console.log(venue, vibe);
     //setShowModal(false);
   }, []);
   
@@ -228,17 +230,17 @@ const MapPage: React.FC = () => {
                         PRICE: {venueInfo['price']}
                         <br></br>
                         VIBES: {venueInfo['types']}
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="rainbow_flag">🏳️‍🌈</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="dancing_woman">💃</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="guitar">🎸</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="popping_bottle">🍾</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="whiskey_glass">🥃</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="bikini">👙</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="lips">💋</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="hearts">💕</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="shush_face">🤫</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="smoke">💨</Button>
-                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="red_flag">🚩</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="rainbow_flag">🏳️‍🌈</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="dancing_woman">💃</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="guitar">🎸</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="popping_bottle">🍾</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="whiskey_glass">🥃</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="bikini">👙</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="lips">💋</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="hearts">💕</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="shush_face">🤫</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="smoke">💨</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="red_flag">🚩</Button>
                       </IonContent>
                     </IonMenu>
                   </IonSplitPane>                
