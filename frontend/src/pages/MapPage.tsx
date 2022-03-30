@@ -4,13 +4,30 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Stack,
+  Button,
+  Heading,
+  InputGroup,
+  InputRightElement,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
+
 const MapPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false); //Set to true when bar is clicked on AND geolocation is at that bar (or within specified distance)
-  /*
-  const onVote = useCallback((data: any) => {
-    Axios.post("http://localhost:8000/venue/vote/", data);
+  
+  const onVote = useCallback((emoji: any, venue_info: any) => {
+    //Axios.post("http://localhost:8000/venue/vote/", venue_info.name, emoji);
+    console.log(venue_info.name, emoji);
+    //setShowModal(false);
   }, []);
-  */
+  
 
   const geolocateControlStyle= {
     right: 10,
@@ -184,21 +201,20 @@ const MapPage: React.FC = () => {
                     }
                   } />
                 )}
-                <IonModal isOpen={ showModal } cssClass='customStyle'>
-                  <IonButton>🏳️‍🌈</IonButton>
-                  <IonButton>💃</IonButton>
-                  <IonButton>🎸</IonButton>
-                  <IonButton>🍾</IonButton>
-                  <IonButton>🥃</IonButton>
-                  <IonButton>👙</IonButton>
-                  <IonButton>💋</IonButton>
-                  <IonButton>💕</IonButton>
-                  <IonButton>🤫</IonButton>
-                  <IonButton>💨</IonButton>
-                  <IonButton>🚩</IonButton>
-                </IonModal>
+                {/*<IonModal isOpen={ showModal } cssClass='customStyle'>
+                  <Button onClick={onVote} value="rainbow_flag">🏳️‍🌈</Button>
+                  <Button onClick={onVote} value="dancing_woman">💃</Button>
+                  <Button onClick={onVote} value="guitar">🎸</Button>
+                  <Button onClick={onVote} value="popping_bottle">🍾</Button>
+                  <Button onClick={onVote} value="whiskey_glass">🥃</Button>
+                  <Button onClick={onVote} value="bikini">👙</Button>
+                  <Button onClick={onVote} value="lips">💋</Button>
+                  <Button onClick={onVote} value="hearts">💕</Button>
+                  <Button onClick={onVote} value="shush_face">🤫</Button>
+                  <Button onClick={onVote} value="smoke">💨</Button>
+                  <Button onClick={onVote} value="red_flag">🚩</Button>
+                </IonModal>*/}
                 {venueInfo && (
-                  console.log(venueInfo['images']),
                   <IonSplitPane contentId="test">
                     <IonMenu side="end" type="overlay" contentId="test">
                       <IonHeader>
@@ -212,9 +228,20 @@ const MapPage: React.FC = () => {
                         PRICE: {venueInfo['price']}
                         <br></br>
                         VIBES: {venueInfo['types']}
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="rainbow_flag">🏳️‍🌈</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="dancing_woman">💃</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="guitar">🎸</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="popping_bottle">🍾</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="whiskey_glass">🥃</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="bikini">👙</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="lips">💋</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="hearts">💕</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="shush_face">🤫</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="smoke">💨</Button>
+                        <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo)} value="red_flag">🚩</Button>
                       </IonContent>
                     </IonMenu>
-                  </IonSplitPane>
+                  </IonSplitPane>                
                 )}
               </Source>
             )}
