@@ -63,27 +63,27 @@ const MapPage: React.FC = () => {
   /*const [vibesFilter, setVibesFilter] = useState([] as any);
   const vFilter = useMemo(() => ['>=', 'votes', vibesFilter], [vibesFilter]);*/
   const [rainbowflagFilter, setRainbowFlagFilter] = useState(false)
-  const rffilter = useMemo(() => ['>=', 'votes[rainbow_flag]', 2], [rainbowflagFilter]);
+  const rffilter = useMemo(() => ['>=', 'rainbow_flag', 2], [rainbowflagFilter]);
   const [dancingwomanFilter, setDancingWomanFilter] = useState(false)
-  const dwfilter = useMemo(() => ['>=', 'votes[dancing_woman]', 2], [dancingwomanFilter]);
+  const dwfilter = useMemo(() => ['>=', 'dancing_woman', 2], [dancingwomanFilter]);
   const [guitarFilter, setGuitarFilter] = useState(false)
-  const gfilter = useMemo(() => ['>=', 'votes[guitar]', 2], [guitarFilter]);
+  const gfilter = useMemo(() => ['>=', 'guitar', 2], [guitarFilter]);
   const [poppingbottleFilter, setPoppingBottleFilter] = useState(false)
-  const pbfilter = useMemo(() => ['>=', 'votes[popping_bottle]', 2], [poppingbottleFilter]);
+  const pbfilter = useMemo(() => ['>=', 'popping_bottle', 2], [poppingbottleFilter]);
   const [whiskeyglassFilter, setWhiskeyGlassFilter] = useState(false)
-  const wgfilter = useMemo(() => ['>=', 'votes[whiskey_glass]', 2], [whiskeyglassFilter]);
+  const wgfilter = useMemo(() => ['>=', 'whiskey_glass', 2], [whiskeyglassFilter]);
   const [bikiniFilter, setBikiniFilter] = useState(false)
-  const bfilter = useMemo(() => ['>=', 'votes[bikini]', 2], [bikiniFilter]);
+  const bfilter = useMemo(() => ['>=', 'bikini', 2], [bikiniFilter]);
   const [lipsFilter, setLipsFilter] = useState(false)
-  const lfilter = useMemo(() => ['>=', 'votes[lips]', 2], [lipsFilter]);
+  const lfilter = useMemo(() => ['>=', 'lips', 2], [lipsFilter]);
   const [heartsFilter, setHeartsFilter] = useState(false)
-  const hfilter = useMemo(() => ['>=', 'votes[hearts]', 2], [heartsFilter]);
+  const hfilter = useMemo(() => ['>=', 'hearts', 2], [heartsFilter]);
   const [shushfaceFilter, setShushFaceFilter] = useState(false)
-  const sffilter = useMemo(() => ['>=', 'votes[shush_face]', 2], [shushfaceFilter]);
+  const sffilter = useMemo(() => ['>=', 'shush_face', 2], [shushfaceFilter]);
   const [smokeFilter, setSmokeFilter] = useState(false)
-  const sfilter = useMemo(() => ['>=', 'votes[smoke]', 2], [smokeFilter]);
+  const sfilter = useMemo(() => ['>=', 'smoke', 2], [smokeFilter]);
   const [redflagFilter, setRedFlagFilter] = useState(false)
-  const redfilter = useMemo(() => ['>=', 'votes[red_flag]', 2], [redflagFilter]);
+  const redfilter = useMemo(() => ['>=', 'red_flag', 2], [redflagFilter]);
 
   const [filterList, setFilterList] = useState([] as any);
 
@@ -163,6 +163,17 @@ const MapPage: React.FC = () => {
             busyText: bar[today]['hour_analysis'][time]['intensity_txt'],
             busyLevel: intensity,
             votes: bar['vibes'],
+            rainbow_flag: bar['vibes']['rainbow_flag'],
+            dancing_woman: bar['vibes']['dancing_woman'],
+            guitar: bar['vibes']['guitar'],
+            popping_bottle: bar['vibes']['popping_bottle'],
+            whiskey_glass: bar['vibes']['whiskey_glass'],
+            bikini: bar['vibes']['bikini'],
+            lips: bar['vibes']['lips'],
+            hearts: bar['vibes']['hearts'],
+            shush_face: bar['vibes']['shush_face'],
+            smoke: bar['vibes']['smoke'],
+            red_flag: bar['vibes']['red_flag'],
             rating: bar['rating'],
             price: bar['price'],
             images: bar['images']
