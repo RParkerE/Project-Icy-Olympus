@@ -1,6 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSpinner, IonButton, IonModal, IonSegment, IonSegmentButton, IonLabel, IonRange, IonSplitPane, IonMenu, IonList, IonItem } from '@ionic/react';
 import ReactMapGL, { Layer, Source, GeolocateControl } from 'react-map-gl'
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useReducer } from 'react';
 import Axios from 'axios';
 import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -60,6 +60,33 @@ const MapPage: React.FC = () => {
   const [intensityFilter, setIntensityFilter] = useState(3);
   const filter = useMemo(() => ['>=', 'busyLevel', intensityFilter], [intensityFilter]);
 
+  /*const [vibesFilter, setVibesFilter] = useState([] as any);
+  const vFilter = useMemo(() => ['>=', 'votes', vibesFilter], [vibesFilter]);*/
+  const [rainbowflagFilter, setRainbowFlagFilter] = useState(false)
+  const rffilter = useMemo(() => ['>=', 'votes[rainbow_flag]', 2], [rainbowflagFilter]);
+  const [dancingwomanFilter, setDancingWomanFilter] = useState(false)
+  const dwfilter = useMemo(() => ['>=', 'votes[dancing_woman]', 2], [dancingwomanFilter]);
+  const [guitarFilter, setGuitarFilter] = useState(false)
+  const gfilter = useMemo(() => ['>=', 'votes[guitar]', 2], [guitarFilter]);
+  const [poppingbottleFilter, setPoppingBottleFilter] = useState(false)
+  const pbfilter = useMemo(() => ['>=', 'votes[popping_bottle]', 2], [poppingbottleFilter]);
+  const [whiskeyglassFilter, setWhiskeyGlassFilter] = useState(false)
+  const wgfilter = useMemo(() => ['>=', 'votes[whiskey_glass]', 2], [whiskeyglassFilter]);
+  const [bikiniFilter, setBikiniFilter] = useState(false)
+  const bfilter = useMemo(() => ['>=', 'votes[bikini]', 2], [bikiniFilter]);
+  const [lipsFilter, setLipsFilter] = useState(false)
+  const lfilter = useMemo(() => ['>=', 'votes[lips]', 2], [lipsFilter]);
+  const [heartsFilter, setHeartsFilter] = useState(false)
+  const hfilter = useMemo(() => ['>=', 'votes[hearts]', 2], [heartsFilter]);
+  const [shushfaceFilter, setShushFaceFilter] = useState(false)
+  const sffilter = useMemo(() => ['>=', 'votes[shush_face]', 2], [shushfaceFilter]);
+  const [smokeFilter, setSmokeFilter] = useState(false)
+  const sfilter = useMemo(() => ['>=', 'votes[smoke]', 2], [smokeFilter]);
+  const [redflagFilter, setRedFlagFilter] = useState(false)
+  const redfilter = useMemo(() => ['>=', 'votes[red_flag]', 2], [redflagFilter]);
+
+  const [filterList, setFilterList] = useState([] as any);
+
   const onClick = useCallback((event: any) => {
     if(event.features[0]){
       setVenueInfo(event.features[0].properties);
@@ -68,6 +95,28 @@ const MapPage: React.FC = () => {
       setVenueInfo(null);
     }
   }, []);
+
+  //const filterClick = (array: any, val: any, setter: any) => {
+  const filterClick = (val: any, setter: any, name: any) => {
+    if(val){
+      setter(false);
+      const newArray = filterList;
+      newArray.splice(newArray.indexOf(name), 1);
+      setFilterList(newArray);
+    } else {
+      setter(true);
+      const newArray = [...filterList, name];
+      setFilterList(newArray);
+    }
+    /*if(array.includes(val)){
+      const newArray = array.filter((e: any) => e !== val);
+      setter(newArray);
+    }
+    else { 
+      const newArray = [...array, val];
+      setter(newArray);
+    }*/
+  };
 
   useEffect (() => {
     const listener = (e: any) => {
@@ -113,7 +162,7 @@ const MapPage: React.FC = () => {
             address: bar.address,
             busyText: bar[today]['hour_analysis'][time]['intensity_txt'],
             busyLevel: intensity,
-            types: Object.keys(bar['vibes']), // NEED TO MAKE THIS A LIST CURRENTLY SHOWS UP AS STRING
+            votes: bar['vibes'],
             rating: bar['rating'],
             price: bar['price'],
             images: bar['images']
@@ -188,6 +237,7 @@ const MapPage: React.FC = () => {
                   }
                 }} />
                 {!heatLayer && (
+                  console.log(filterList),
                   <Layer {...
                     {
                       id: 'pois',
@@ -199,23 +249,10 @@ const MapPage: React.FC = () => {
                       },
                       paint: {
                       },
-                      filter: filter
+                      filter: ["all", filter, ...filterList]
                     }
                   } />
                 )}
-                {/*<IonModal isOpen={ showModal } cssClass='customStyle'>
-                  <Button onClick={onVote} value="rainbow_flag">🏳️‍🌈</Button>
-                  <Button onClick={onVote} value="dancing_woman">💃</Button>
-                  <Button onClick={onVote} value="guitar">🎸</Button>
-                  <Button onClick={onVote} value="popping_bottle">🍾</Button>
-                  <Button onClick={onVote} value="whiskey_glass">🥃</Button>
-                  <Button onClick={onVote} value="bikini">👙</Button>
-                  <Button onClick={onVote} value="lips">💋</Button>
-                  <Button onClick={onVote} value="hearts">💕</Button>
-                  <Button onClick={onVote} value="shush_face">🤫</Button>
-                  <Button onClick={onVote} value="smoke">💨</Button>
-                  <Button onClick={onVote} value="red_flag">🚩</Button>
-                </IonModal>*/}
                 {venueInfo && (
                   <IonSplitPane contentId="test">
                     <IonMenu side="end" type="overlay" contentId="test">
@@ -229,7 +266,7 @@ const MapPage: React.FC = () => {
                         <br></br>
                         PRICE: {venueInfo['price']}
                         <br></br>
-                        VIBES: {venueInfo['types']}
+                        VIBES: {venueInfo['votes']}
                         <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="rainbow_flag">🏳️‍🌈</Button>
                         <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="dancing_woman">💃</Button>
                         <Button onClick={(e) => onVote(e.currentTarget.value, venueInfo['address'])} value="guitar">🎸</Button>
@@ -255,6 +292,16 @@ const MapPage: React.FC = () => {
             <hr />
             <IonLabel>Crowd Size</IonLabel>
             <IonRange min={1} max={5} step={1} value={intensityFilter} snaps={true} ticks={false} onIonChange={e => setIntensityFilter(e.detail.value as any)}></IonRange>
+            <Button onClick={(e) => filterClick(rainbowflagFilter, setRainbowFlagFilter, rffilter)} value="rainbow_flag">🏳️‍🌈</Button>
+            <Button onClick={(e) => filterClick(dancingwomanFilter, setDancingWomanFilter, dwfilter)} value="dancing_woman">💃</Button>
+            <Button onClick={(e) => filterClick(guitarFilter, setGuitarFilter, gfilter)} value="guitar">🎸</Button>
+            <Button onClick={(e) => filterClick(poppingbottleFilter, setPoppingBottleFilter, pbfilter)} value="whiskey_glass">🥃</Button>
+            <Button onClick={(e) => filterClick(bikiniFilter, setBikiniFilter, bfilter)} value="bikini">👙</Button>
+            <Button onClick={(e) => filterClick(lipsFilter, setLipsFilter, lfilter)} value="lips">💋</Button>
+            <Button onClick={(e) => filterClick(heartsFilter, setHeartsFilter, hfilter)} value="hearts">💕</Button>
+            <Button onClick={(e) => filterClick(shushfaceFilter, setShushFaceFilter, sffilter)} value="shush_face">🤫</Button>
+            <Button onClick={(e) => filterClick(smokeFilter, setSmokeFilter, sfilter)} value="smoke">💨</Button>
+            <Button onClick={(e) => filterClick(redflagFilter, setRedFlagFilter, redfilter)} value="red_flag">🚩</Button>
           </div>
           )}
         </IonContent>
