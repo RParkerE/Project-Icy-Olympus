@@ -1,0 +1,36 @@
+ion-modal.fullscreen {
+    --width: 100%;
+    --height: 100%;
+    --border-radius: 0;
+}
+
+
+.control-panel {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 320px;
+  /* background: #3C1F84;  */
+  background: #251351;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 12px 24px;
+  margin: 20px;
+  font-size: 13px;
+  line-height: 2;
+  color: #91c2e5;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.side-piece{
+  background:radial-gradient(#91c2e5, #3C1F84);
+}
+
+.bar-info{
+  width:90%; 
+  color: rgb(50, 56, 70);
+  background-color: #FDEDEE;
+  min-height: 120px;
+  border-radius: 10px;
+}
+
