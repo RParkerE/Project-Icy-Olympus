@@ -53,7 +53,7 @@ def get_venues():
                     "Half Step", "Kitty Cohen's", "The Long Play Lounge", "Midnight Cowboy", "The Milonga Room", "Peche", "Small Victory", "Stay Gold", "Watertrade", "Whisler's", "The Cloak Room", 
                     "Deep Eddy Cabaret", "Dirty Bill's", "Lala's Little Nugget", "Nickel City", "Shangri-La", "The Skylark Lounge", "The Broken Spoke", "Donn's Depot",
                     "The White Horse", "Cosmic Coffee + Beer Garden", "Draught House Pub & Brewery", "Easy Tiger", "Little Darlin'", "Yellow Jacket Social Club", "APT 115", 
-                    "Aviary", "Hotel San José", "June's All Day", "Winebelly", "Bungalow", "Container Bar", "Parlor Room", "Idle Hands", "Stagger Lee", "Icenhauer's", "Reina's", 
+                    "Aviary", "Hotel San José", "June's All Day", "Winebelly", "Parlor Room", "Idle Hands", "Stagger Lee", "Icenhauer's", "Reina's", 
                     "Unbarleivable", "Lucille", "The Tipsy Alchemist", "Banger's", "Anthem", "Casino El Camino", "Two Bucks", "Coyote Ugly Saloon", "Buckshot", "The Library",
                     "Pour Choices", "The Jackalope", "Blind Pig Pub", "Gnar Bar", "Friend's Bar", "Handle Bar", "Little Woodrow's", "Star Bar", "Cat's Pajamas", "Beez Kneez",
                     "Parlor and Yard", "POP", "Play", "Buford's", "The Ranch", "Key Bar", "WYLD", "Dogwood", "Wonderbar", "Kung Fu Saloon", "Green Light Social", "Concrete Cowboy",
@@ -65,7 +65,7 @@ def get_venues():
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_c3f6620bd2634651be10e2905086b9e9',
+            'api_key_private': 'pri_ce5137ba25bf4a86862b67ab1c80ac78',
             'q': f'{a_bar} in Austin, TX',
             'num': 3,
             'fast': False,
@@ -98,10 +98,10 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_08b261b51cab47849701748248882802'
+                'api_key_public': 'pub_1e87d4e537e14f749408240a02300fab'
             }
             forecast_params = {
-                'api_key_public': 'pub_08b261b51cab47849701748248882802',
+                'api_key_public': 'pub_1e87d4e537e14f749408240a02300fab',
                 'venue_id': venue_id,
             }
 
@@ -128,14 +128,12 @@ def get_venues():
                 business_id = requests.request('GET', 'https://api.yelp.com/v3/businesses/matches', headers=headers, params=url_params).json()
                 if(len(business_id['businesses']) > 0):
                     business_response = requests.request('GET', f"https://api.yelp.com/v3/businesses/{business_id['businesses'][0]['id']}", headers=headers, params={}).json()
-                    vibes = {}
+                    vibes = {'rainbow_flag': 1, 'dancing_woman': 1, 'guitar': 1, 'popping_bottle': 1, 'whiskey_glass': 1, 'bikini': 1, 'lips': 1, 'hearts': 1, 'shush_face': 1, 'smoke': 1, 'red_flag': 1, 'dog': 1, 'tropical_drink': 1, 'arcade': 1, 'sports': 1}
                     rating = float(business_response['rating'])
-                    for category in business_response['categories']:
-                        vibes[category['title']] = 1
                     price = business_response['price']
                     images = business_response['photos']
                 else:
-                    vibes = {"Bar": 1}
+                    vibes = {'rainbow_flag': 1, 'dancing_woman': 1, 'guitar': 1, 'popping_bottle': 1, 'whiskey_glass': 1, 'bikini': 1, 'lips': 1, 'hearts': 1, 'shush_face': 1, 'smoke': 1, 'red_flag': 1, 'dog': 1, 'tropical_drink': 1, 'arcade': 1, 'sports': 1}
                     rating = 0.0
                     price = '?'
                     images = ["None"]

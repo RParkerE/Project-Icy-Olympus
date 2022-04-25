@@ -2,9 +2,9 @@ import { IonTitle, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader
 import { ellipsisHorizontal, flameOutline } from "ionicons/icons";
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Tab1.css';
+import './ProfilePage.css';
 
-const Tab1: React.FC = () => {
+const ProfilePage: React.FC = () => {
   const [user, setUser] = useState({
     birthday: '',
     email: '',
@@ -110,4 +110,4 @@ const Tab1: React.FC = () => {
     </IonPage>
   );
 };
-export default Tab1;
+export default ProfilePage;

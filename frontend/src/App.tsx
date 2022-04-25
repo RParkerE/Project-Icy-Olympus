@@ -74,7 +74,7 @@ const App: React.FC = () => (
 						return auth ? <Tabs /> : <Login />;
 					}}>
 					</Route>
-					<Route exact path="/tab1"
+					<Route exact path="/profile"
 					render={() => {
 						const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
 						console.log(auth);
@@ -84,7 +84,7 @@ const App: React.FC = () => (
 					<Route exact path="/deals">
 						<Tabs />
 					</Route>
-					<Route exact path="/tab3">
+					<Route exact path="/map">
 						<Tabs />
 					</Route>
 				</IonRouterOutlet>
