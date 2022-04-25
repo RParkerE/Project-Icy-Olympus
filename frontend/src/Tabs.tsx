@@ -13,7 +13,7 @@ import { beer, person, wallet } from 'ionicons/icons';
 
 import Deals from './pages/Deals';
 import Tab1 from './pages/Tab1';
-import Tab3 from './pages/Tab3';
+import Tab3 from './pages/Tab3/index';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
