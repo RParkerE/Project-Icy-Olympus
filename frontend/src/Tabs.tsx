@@ -12,9 +12,9 @@ import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
 
 import Deals from './pages/Deals';
-//import ProfilePage from './pages/ProfilePage';
-//import MapPage from './pages/MapPage';
-import Tab1 from './pages/Tab1';
+import ProfilePage from './pages/ProfilePage';
+import MapPage from './pages/MapPage';
+//import Tab1 from './pages/Tab1';
 import Tab3 from './pages/Tab3/index';
 
 /* Core CSS required for Ionic components to work properly */
@@ -45,6 +45,9 @@ const Tabs: React.FC = () => (
 				</Route>
 				<Route exact path="/deals">
 					<Deals />
+				</Route>
+				<Route path="/map-fe">
+					<Tab3 />
 				</Route>
 				<Route path="/map">
 					<MapPage />
