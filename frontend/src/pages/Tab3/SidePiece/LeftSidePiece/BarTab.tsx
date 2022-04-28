@@ -11,7 +11,7 @@ import {
     Heading,
     CloseButton,
 } from "@chakra-ui/react";
-import { Venue } from '../../../../hooks/useMapVenues';
+import { Venue } from '../../';
 
 interface Props {
     index: number
