@@ -33,13 +33,12 @@ import {
     DrawerContent,
     DrawerCloseButton,
 } from "@chakra-ui/react";
-import { VenueInfoState } from '../../indexTHIS'
-import { Venue } from '../../../../hooks/useMapVenues'
+import { Venue } from '../../';
 import BarTab from './BarTab'
 import Filters from './Filters'
 
 interface Props {
-    venueInfo: VenueInfoState
+    venueInfo: any
     removeVenue: (venue: Venue) => void
     isOpen: boolean
     onOpen: () => void
@@ -47,10 +46,7 @@ interface Props {
 }
 
 const LeftSidePiece: FC<Props> = ({ venueInfo, removeVenue, isOpen, onOpen, onClose }) => {
-    console.log("side piece")
-
-    // console.log({ venueInfo })
-    venueInfo.venues.map((venue) => console.log({ venue }))
+    venueInfo.venues.map((venue: any) => console.log({ venue }))
 
     return (
         <>
@@ -72,7 +68,7 @@ const LeftSidePiece: FC<Props> = ({ venueInfo, removeVenue, isOpen, onOpen, onCl
                         overflowY={'scroll'}
                         pl={6}
                     >
-                        {venueInfo.venues.map((venue, index) => {
+                        {venueInfo.venues.map((venue: any, index: any) => {
                             return <BarTab venue={venue} index={index} removeVenue={removeVenue} />
                         })}
 
