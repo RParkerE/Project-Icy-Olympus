@@ -87,6 +87,9 @@ const App: React.FC = () => (
 					<Route exact path="/map">
 						<Tabs />
 					</Route>
+					<Route exact path="/mapfe">
+						<Tabs />
+					</Route>
 				</IonRouterOutlet>
 			</IonReactRouter>
 		</IonApp>
