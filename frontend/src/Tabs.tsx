@@ -46,7 +46,7 @@ const Tabs: React.FC = () => (
 				<Route exact path="/deals">
 					<Deals />
 				</Route>
-				<Route path="/map-fe">
+				<Route path="/mapfe">
 					<Tab3 />
 				</Route>
 				<Route path="/map">
