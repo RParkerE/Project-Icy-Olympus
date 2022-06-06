@@ -67,7 +67,7 @@ class SpecialsView(APIView):
 		j = 0
 		while i < len(barnames):
 			try:
-				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j][0], "hours": specials[j][1], "info": specials[j]}, "food_deals": {"days": specials[j+1][0], "hours": specials[j+1][1], "info": specials[j+1]}}
+				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j][0], "hours": specials[j][1], "info": specials[j][2:]}, "food_deals": {"days": specials[j+1][0], "hours": specials[j+1][1], "info": specials[j+1][2:]}}
 			except:
 				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j], "hours": specials[j], "info": specials[j]}, "food_deals": {"days": specials[j+1], "hours": specials[j+1], "info": specials[j+1]}}
 			i += 1
