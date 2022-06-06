@@ -69,7 +69,13 @@ class SpecialsView(APIView):
 			try:
 				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j][0], "hours": specials[j][1], "info": specials[j][2:]}, "food_deals": {"days": specials[j+1][0], "hours": specials[j+1][1], "info": specials[j+1][2:]}}
 			except:
-				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j], "hours": specials[j], "info": specials[j]}, "food_deals": {"days": specials[j+1], "hours": specials[j+1], "info": specials[j+1]}}
+				try:
+					events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j][0], "hours": specials[j][1], "info": specials[j][2:]}, "food_deals": {"days": specials[j+1], "hours": specials[j+1], "info": specials[j+1]}}
+				except:
+					try:
+						events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j], "hours": specials[j], "info": specials[j]}, "food_deals": {"days": specials[j+1][0], "hours": specials[j+1][1], "info": specials[j+1][2:]}}
+					except:
+						events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": {"days": specials[j], "hours": specials[j], "info": specials[j]}, "food_deals": {"days": specials[j+1], "hours": specials[j+1], "info": specials[j+1]}}
 			i += 1
 			j += 2
 
