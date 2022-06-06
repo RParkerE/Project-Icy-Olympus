@@ -49,7 +49,8 @@ class SpecialsView(APIView):
 					barnames.append(barname.text)
 				for ulmenus in litag.find_all('ul', {'class': 'list-unstyled clearfix'}):
 					for divmenus in ulmenus.find_all('div', {'class': 'thum_text2'}):
-						splicedMenus = divmenus.text.split('\n')
+						splicedMenus = divmenus.get_text(separator=",").strip()
+						splicedMenus = splicedMenus.split('\n')
 						splicedMenus = [i for i in splicedMenus if i]
 						specials.append(splicedMenus)
 					for divadd in litag.find_all('div', {'class': 'locaton_block hidden-xs'}):
