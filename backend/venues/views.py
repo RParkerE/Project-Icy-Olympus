@@ -49,7 +49,8 @@ class SpecialsView(APIView):
 					barnames.append(barname.text)
 				for ulmenus in litag.find_all('ul', {'class': 'list-unstyled clearfix'}):
 					for divmenus in ulmenus.find_all('div', {'class': 'thum_text2'}):
-						splicedMenus = divmenus.text.split('\n')
+						splicedMenus = divmenus.get_text(separator=",").strip()
+						splicedMenus = splicedMenus.split(',')
 						splicedMenus = [i for i in splicedMenus if i]
 						specials.append(splicedMenus)
 					for divadd in litag.find_all('div', {'class': 'locaton_block hidden-xs'}):
@@ -65,7 +66,16 @@ class SpecialsView(APIView):
 		i = 0
 		j = 0
 		while i < len(barnames):
-			events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": specials[j], "food_deals": specials[j+1]}
+			try:
+				events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": [specials[j][0], specials[j][1], " ".join(specials[j][2:])], "food_deals": [specials[j+1][0], specials[j+1][1], " ".join(specials[j+1][2:])]}
+			except:
+				try:
+					events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": [specials[j][0], specials[j][1], " ".join(specials[j][2:])], "food_deals": [specials[j+1], specials[j+1], specials[j+1]]}
+				except:
+					try:
+						events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": [specials[j], specials[j], specials[j]], "food_deals": [specials[j+1][0], specials[j+1][1], " ".join(specials[j+1][2:])]}
+					except:
+						events[i] = {"venue": {"title": barnames[i], "address": contacts[i]}, "drink_deals": [specials[j], specials[j], specials[j]], "food_deals": [specials[j+1], specials[j+1], specials[j+1]]}
 			i += 1
 			j += 2
 

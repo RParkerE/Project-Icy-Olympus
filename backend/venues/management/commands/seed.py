@@ -26,7 +26,8 @@ def get_venues():
                 barnames.append(barname.text)
             for ulmenus in litag.find_all('ul', {'class': 'list-unstyled clearfix'}):
                 for divmenus in ulmenus.find_all('div', {'class': 'thum_text2'}):
-                    splicedMenus = divmenus.text.split('\n')
+                    splicedMenus = divmenus.get_text(separator=" ").strip()
+                    splicedMenus = splicedMenus.split('\n')
                     splicedMenus = [i for i in splicedMenus if i]
                     specials.append(splicedMenus)
                 for divadd in litag.find_all('div', {'class': 'locaton_block hidden-xs'}):
@@ -65,7 +66,7 @@ def get_venues():
         all_vens = {}
         query_url = 'https://besttime.app/api/v1/venues/search'
         query_params = {
-            'api_key_private': 'pri_ce5137ba25bf4a86862b67ab1c80ac78',
+            'api_key_private': 'pri_001c0e1c6fa34bbba87b39b66e597357',
             'q': f'{a_bar} in Austin, TX',
             'num': 3,
             'fast': False,
@@ -98,10 +99,10 @@ def get_venues():
             forecast_url = "https://besttime.app/api/v1/forecasts/week"
 
             venue_params = {
-                'api_key_public': 'pub_1e87d4e537e14f749408240a02300fab'
+                'api_key_public': 'pub_fcf01af5c9834207bb96f287d2ce33f1'
             }
             forecast_params = {
-                'api_key_public': 'pub_1e87d4e537e14f749408240a02300fab',
+                'api_key_public': 'pub_fcf01af5c9834207bb96f287d2ce33f1',
                 'venue_id': venue_id,
             }
 
