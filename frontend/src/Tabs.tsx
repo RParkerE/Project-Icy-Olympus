@@ -12,7 +12,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { beer, person, wallet } from 'ionicons/icons';
 
 import Deals from './pages/Deals';
-import ProfilePage from './pages/ProfilePage';
+import Profile from './pages/Profile/index';
 import MapPage from './pages/MapPage';
 //import Tab1 from './pages/Tab1';
 import Tab3 from './pages/Tab3/index';
@@ -41,7 +41,7 @@ const Tabs: React.FC = () => (
 		<IonTabs>
 			<IonRouterOutlet>
 				<Route exact path="/profile">
-					<ProfilePage />
+					<Profile />
 				</Route>
 				<Route exact path="/deals">
 					<Deals />
@@ -57,17 +57,17 @@ const Tabs: React.FC = () => (
 				</Route>
 			</IonRouterOutlet>
 			<IonTabBar slot="bottom">
-				<IonTabButton tab="profile" href="/profile">
-					<IonIcon icon={person} />
-					<IonLabel>Profile</IonLabel>
+				<IonTabButton tab="map" href="/map">
+					<IonIcon icon={beer} />
+					<IonLabel>Bars</IonLabel>
 				</IonTabButton>
 				<IonTabButton tab="deals" href="/deals">
 					<IonIcon icon={wallet} />
 					<IonLabel>Deals</IonLabel>
 				</IonTabButton>
-				<IonTabButton tab="map" href="/map">
-					<IonIcon icon={beer} />
-					<IonLabel>Bars</IonLabel>
+				<IonTabButton tab="profile" href="/profile">
+					<IonIcon icon={person} />
+					<IonLabel>Profile</IonLabel>
 				</IonTabButton>
 			</IonTabBar>
 		</IonTabs>
