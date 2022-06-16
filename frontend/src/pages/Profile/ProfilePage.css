@@ -1,5 +1,6 @@
 .home ion-header.header-md:after {
-     background: none;
+     /* background: none; */
+    background:radial-gradient(#91c2e5, #3C1F84);
 }
  .home ion-header, .home ion-toolbar {
      border: none !important;

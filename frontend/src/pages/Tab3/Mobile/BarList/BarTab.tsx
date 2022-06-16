@@ -28,6 +28,7 @@ const BarTab: FC<Props> = ({ index, venue, removeVenue }) => {
     console.log("bar tab")
     console.log({ venue })
     console.groupEnd()
+    // console.log()
 
     const x = venue.types
 
@@ -82,9 +83,9 @@ const BarTab: FC<Props> = ({ index, venue, removeVenue }) => {
                 <CloseButton size='sm' onClick={() => removeVenue(venue)} />
             </HStack>
 
-            <Box>
+            {/* <Box>
                 <Image src={'https://s3-media2.fl.yelpcdn.com/bphoto/uetzJU2vhzPOqLhINWkrdA/o.jpg'} alt={venue['name']}></Image>
-            </Box>
+            </Box> */}
             <Box
             // className="bar-info" 
             >

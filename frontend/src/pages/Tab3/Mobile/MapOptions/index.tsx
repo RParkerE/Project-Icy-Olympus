@@ -46,33 +46,10 @@ interface Props {
 const RightSidePiece: FC<Props> = ({ heatLayer, setHeatLayer, intensityFilter, setIntensityFilter }) => {
     console.log("inside right side piece")
 
-
-    const [isMobile, setIsMobile] = useState(false)
-
-    //choose the screen size 
-    const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-    }
-
-    // create an event listener
-    useEffect(() => {
-        window.addEventListener("resize", handleResize)
-        console.log({ window })
-        console.log(window.innerWidth)
-    })
-
-
     return (
-        // if(isMobile)
         <>
             <Box
-
-                margin={["2", "20"]}
-                className="right-piece"
+                className="map-options"
             >
                 <Box
                     py={3}

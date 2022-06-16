@@ -53,28 +53,28 @@ const LeftSidePiece: FC<Props> = ({ venueInfo, removeVenue, isOpen, onOpen, onCl
     return (
         <>
             <Slide
-                direction="left"
+                direction="bottom"
                 in={isOpen}
-                style={{ height: '100vh', width: '300px', zIndex: 100 }}
+                // style={{ height: '100vh', width: '300px', zIndex: 100 }}
                 className="side-piece"
             >
                 <HStack justifyContent={'end'}>
-                    <CloseButton size='lg' color="#FDEDEE" onClick={() => onClose()} />
-                </HStack>
+                    {/* <CloseButton size='lg' color="#FDEDEE" onClick={() => onClose()} /> */}
 
-                <VStack
-                    height="100%"
-                >
-                    <Box
-                        height="70%"
-                        overflowY={'scroll'}
+                    <HStack
+                        // height="100%"
+                        overflowX={'scroll'}
                     >
+                        {/* <Box
+                        // height="70%"
+                    > */}
                         {venueInfo.venues.map((venue: any, index: any) => {
                             return <BarTab venue={venue} index={index} removeVenue={removeVenue} />
                         })}
 
-                    </Box>
-                </VStack>
+                        {/* </Box> */}
+                    </HStack>
+                </HStack>
                 {/* <Filters intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter}></Filters> */}
             </Slide>
         </>

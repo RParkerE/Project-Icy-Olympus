@@ -19,6 +19,7 @@ import {
 	InputRightElement,
 	Text,
 	useColorModeValue,
+	Link,
 } from '@chakra-ui/react';
 
 import debounce from 'lodash.debounce';
@@ -34,6 +35,9 @@ const Login: React.FC = () => {
 
 	const debouncedSetValue = debounce(setValue, 300);
 
+	const redirectToSignUp = () => {
+		navigate('/signup');
+	}
 
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -137,6 +141,12 @@ const Login: React.FC = () => {
 									Login
 								</Button>
 							</Stack>
+							<Stack pt={6}>
+								<Text align={'center'}>
+									Don't have an account? <Link onClick={redirectToSignUp} color={'blue.400'}>Sign up</Link>
+								</Text>
+							</Stack>
+
 						</Stack>
 					</Box>
 				</form>

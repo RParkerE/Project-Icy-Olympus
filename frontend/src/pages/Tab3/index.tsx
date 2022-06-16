@@ -42,6 +42,9 @@ import {
 import { contains } from '@chakra-ui/utils';
 import LeftSidePiece from './SidePiece/LeftSidePiece';
 import RightSidePiece from './SidePiece/RightSidePiece';
+import MapOptions from './Mobile/MapOptions';
+import BarList from './Mobile/BarList';
+
 
 // consider making this a type? 
 export interface Venue {
@@ -52,7 +55,7 @@ export interface Venue {
     name: string
     price: string
     rating: string
-    types: string[]
+    types: any
 }
 
 type State = {
@@ -69,6 +72,25 @@ const initialState: State = {
 };
 
 const Tab3: React.FC = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 720)
+    //choose the screen size 
+    const handleResize = () => {
+        if (window.innerWidth < 720) {
+            setIsMobile(true)
+            console.log("trying to set it true")
+        } else {
+            setIsMobile(false)
+            console.log("sike")
+        }
+    }
+
+    // create an event listener
+    useEffect(() => {
+        window.addEventListener("resize", handleResize)
+        console.log({ window })
+        console.log(window.innerWidth)
+    })
+
     const geolocateControlStyle = {
         right: 10,
         top: 10
@@ -143,6 +165,10 @@ const Tab3: React.FC = () => {
         }
     }, [venueInfo])
 
+
+
+
+
     const day = ['sun', 'mon', 'tues', 'weds', 'thurs', 'fri', 'sat'];
 
     useEffect(() => {
@@ -172,7 +198,7 @@ const Tab3: React.FC = () => {
                             address: bar.address,
                             busyText: bar[today]['hour_analysis'][time]['intensity_txt'],
                             busyLevel: intensity,
-                            types: Object.keys(bar['vibes']), // NEED TO MAKE THIS A LIST CURRENTLY SHOWS UP AS STRING
+                            types: bar['vibes'], // NEED TO MAKE THIS A LIST CURRENTLY SHOWS UP AS STRING
                             rating: bar['rating'],
                             price: bar['price'],
                             images: bar['images']
@@ -191,7 +217,7 @@ const Tab3: React.FC = () => {
             });
     }, []);
     const { isOpen, onOpen, onClose } = useDisclosure()
-
+    console.log({ barData })
     const btnRef = useRef()
 
     if (isLoading) {
@@ -255,14 +281,22 @@ const Tab3: React.FC = () => {
                                 } />
                             )}
 
-                            {venueInfo.venues.length > 0 && (
-                                <LeftSidePiece venueInfo={venueInfo} removeVenue={removeVenue} isOpen={isOpen} onOpen={onOpen} onClose={() => onClose()} />
+                            {venueInfo.venues.length > 0 && !isMobile && (
+                                <LeftSidePiece venueInfo={venueInfo} removeVenue={removeVenue} isOpen={isOpen} onOpen={onOpen} onClose={() => onClose()} intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter} />
                             )}
 
                         </Source>
                     )}
                 </ReactMapGL>
-                <RightSidePiece heatLayer={heatLayer} setHeatLayer={setHeatLayer} intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter} />
+                {
+                    isMobile ?
+                        <MapOptions heatLayer={heatLayer} setHeatLayer={setHeatLayer} intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter} /> :
+                        <RightSidePiece heatLayer={heatLayer} setHeatLayer={setHeatLayer} intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter} />
+                }
+
+                {venueInfo.venues.length > 0 && isMobile && (
+                    <BarList venueInfo={venueInfo} removeVenue={removeVenue} isOpen={isOpen} onOpen={onOpen} onClose={() => onClose()} intensityFilter={intensityFilter} setIntensityFilter={setIntensityFilter} />
+                )}
             </IonPage >
         );
     };

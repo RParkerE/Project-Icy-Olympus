@@ -41,13 +41,13 @@ import './theme/variables.css';
 import { extendTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({
-  colors: {
-    brand: {
-      100: "#3C1F84",
-      // will update these as we go
-      900: "#1a202c",
-    },
-  },
+	colors: {
+		brand: {
+			100: "#3C1F84",
+			// will update these as we go
+			900: "#1a202c",
+		},
+	},
 })
 
 const App: React.FC = () => (
@@ -62,24 +62,24 @@ const App: React.FC = () => (
 						<Login />
 					</Route>
 					<Route path="/deals-collapsable">
-						<Deals version={2}/>
+						<Deals version={2} />
 					</Route>
 					<Route path="/deals-tables">
-						<Deals version={1}/>
+						<Deals version={1} />
 					</Route>
 					<Route exact path="/"
-					render={() => {
-						const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
-						console.log(auth);
-						return auth ? <Tabs /> : <Login />;
-					}}>
+						render={() => {
+							const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
+							console.log(auth);
+							return auth ? <Tabs /> : <Login />;
+						}}>
 					</Route>
 					<Route exact path="/profile"
-					render={() => {
-						const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
-						console.log(auth);
-						return auth ? <Tabs /> : <Login />;
-					}}>
+						render={() => {
+							const auth = (localStorage.getItem('accessToken') != null) ? (localStorage.getItem('user') != 'user1') : false;
+							console.log(auth);
+							return auth ? <Tabs /> : <Login />;
+						}}>
 					</Route>
 					<Route exact path="/deals">
 						<Tabs />

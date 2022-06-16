@@ -4,6 +4,36 @@ ion-modal.fullscreen {
     --border-radius: 0;
 }
 
+.map-options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #251351;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 12px 24px;
+  font-size: 13px;
+  line-height: 2;
+  color: #91c2e5;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.right-piece {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 320px;
+  background: #251351;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 12px 24px;
+  /* margin: 20px; */
+  font-size: 13px;
+  line-height: 2;
+  color: #91c2e5;
+  outline: none;
+  text-transform: uppercase;
+}
 
 .control-panel {
   position: absolute;
@@ -27,7 +57,6 @@ ion-modal.fullscreen {
 }
 
 .bar-info{
-  width:90%; 
   color: rgb(50, 56, 70);
   background-color: #FDEDEE;
   min-height: 120px;
