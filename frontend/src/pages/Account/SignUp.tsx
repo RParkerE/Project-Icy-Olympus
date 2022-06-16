@@ -38,7 +38,7 @@ const SignUp: React.FC = () => {
 			setValue("username", username);
 			console.log("WE HAVE THAT NAME AVAILABLE");
 			return true;
-		} else { return false; } 
+		} else { return false; }
 	};
 
 	const checkEmail = async (email: any) => {
@@ -48,7 +48,7 @@ const SignUp: React.FC = () => {
 			setValue("email", email);
 			console.log("WE HAVE THAT EMAIL AVAILABLE");
 			return true;
-		} else { return false }  
+		} else { return false }
 	};
 
 	const ageFromDOB = (dob: any) => {
@@ -57,7 +57,7 @@ const SignUp: React.FC = () => {
 		if (age > 20) {
 			setValue("birthday", dob);
 			return true;
-		} else { return false; }  
+		} else { return false; }
 	};
 
 	const onSubmit = (data: any) => {
@@ -91,6 +91,7 @@ const SignUp: React.FC = () => {
 			justify={'center'}
 			bg={useColorModeValue('gray.50', 'gray.800')}
 			background="radial-gradient(#68abdb, #3C1F84)"
+			overflowY={'scroll'}
 		>
 			<Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
 				<Stack align={'center'}>
