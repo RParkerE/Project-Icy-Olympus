@@ -9,3 +9,7 @@ class CustomUser(AbstractUser):
 	race = models.CharField(max_length=17, blank=True)
 	vibes = models.JSONField(null=True)
 	is_premium = models.BooleanField('premium status', default=False)
+	num_bars_rated = models.PositiveBigIntegerField(default=1)
+	vibe_votes = models.JSONField(null=True)
+	city = models.CharField(max_length=255, blank=True)
+	state = models.CharField(max_length=255, blank=True)

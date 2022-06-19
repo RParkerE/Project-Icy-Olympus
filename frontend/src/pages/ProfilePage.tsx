@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './ProfilePage.css';
 
+//TODO: Get IP Address -> Use IP Address to get city/state [curl ipinfo.io/IP_ADDR]
+
 const ProfilePage: React.FC = () => {
   const [user, setUser] = useState({
     birthday: '',

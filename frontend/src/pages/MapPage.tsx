@@ -20,6 +20,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
+//TODO: Get IP Address -> Use IP Address to get city/state [curl ipinfo.io/IP_ADDR]
+
 const MapPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false); //Set to true when bar is clicked on AND geolocation is at that bar (or within specified distance)
   

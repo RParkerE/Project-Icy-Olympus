@@ -20,6 +20,8 @@ interface DealCardProps {
     deal: Deal
 }
 
+//TODO: Get IP Address -> Use IP Address to get city/state [curl ipinfo.io/IP_ADDR]
+
 const DealCard: React.FC<DealCardProps> = ({
     deal
 }) => {
