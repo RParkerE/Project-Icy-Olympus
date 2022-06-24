@@ -231,6 +231,15 @@ const MapPage: React.FC = () => {
               showUserLocation={false}
               showAccuracyCircle={false}
               fitBoundsOptions={{maxZoom: 14}}
+              onGeolocate = {async (PositionOptions: any) => {
+                setUserLocation({
+                  ...userLocation,
+                  latitude: PositionOptions["coords"].latitude,
+                  longitude: PositionOptions["coords"].longitude,
+                });
+                const { data } = await Axios.get('http://api.positionstack.com/v1/reverse?access_key=59eb443a8d4dffc4563c7eb876b39195&query='+PositionOptions["coords"].latitude+','+PositionOptions["coords"].longitude+'&limit=1');
+                console.log(data);
+              }}
               auto
             />
             {barData && (
