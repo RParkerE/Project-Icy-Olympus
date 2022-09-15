@@ -21,11 +21,29 @@ build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.AppShe
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[F:/Project-Icy-Olympus/Project-Icy-Olympus/DealPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.DealPage.xaml
+build_metadata.AdditionalFiles.TargetPath = DealPage.xaml
+build_metadata.AdditionalFiles.RelativePath = DealPage.xaml
+
+[F:/Project-Icy-Olympus/Project-Icy-Olympus/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
+
 [F:/Project-Icy-Olympus/Project-Icy-Olympus/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[F:/Project-Icy-Olympus/Project-Icy-Olympus/MapPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.MapPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MapPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MapPage.xaml
 
 [F:/Project-Icy-Olympus/Project-Icy-Olympus/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -38,3 +56,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[F:/Project-Icy-Olympus/Project-Icy-Olympus/SignUpPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.SignUpPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SignUpPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SignUpPage.xaml

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Dg4OIo9KQ8qZ4ZWPC8U3cKqAXh+e9Dwc7B0FPEiP+H4mHs/lVl5ON/Q6WW9YYxEfcXEcw4GunFaz3x1GH08OPg==",
+  "dgSpecHash": "hbdtOigNSUm2EUnAMhIXuOXZo37DCcG33lSFC9mS91ExzWLRpKu1iZWlWLYGCtc2OoDaa4LlPoyZySCVModzkA==",
   "success": true,
   "projectFilePath": "F:\\Project-Icy-Olympus\\Project-Icy-Olympus\\Project-Icy-Olympus.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\rpell\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.403\\microsoft.maui.graphics.win2d.winui.desktop.6.0.403.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\microsoft.windowsappsdk\\1.1.3\\microsoft.windowsappsdk.1.1.3.nupkg.sha512",
+    "C:\\Users\\rpell\\.nuget\\packages\\monkeycache\\1.6.3\\monkeycache.1.6.3.nupkg.sha512",
+    "C:\\Users\\rpell\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",

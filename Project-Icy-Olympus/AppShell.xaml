@@ -6,9 +6,21 @@
     xmlns:local="clr-namespace:Project_Icy_Olympus"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Profile"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title="Deals"
+            ContentTemplate="{DataTemplate local:DealPage}"
+            Route="NewPage" />
+
+        <ShellContent
+            Title="Map"
+            ContentTemplate="{DataTemplate local:MapPage}"
+            Route="OtherNewPage" />
+    </TabBar>
 
 </Shell>
