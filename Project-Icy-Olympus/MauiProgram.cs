@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Maui;
-//using Project_Icy_Olympus.ViewModels;
+using Project_Icy_Olympus.Services;
 using Project_Icy_Olympus.Views;
 
 namespace Project_Icy_Olympus;
@@ -25,7 +25,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<SignUpPage>();
         builder.Services.AddSingleton<ProfilePage>();
 
-        //builder.Services.AddSingleton<LoginPageViewModel>();
+        builder.Services.AddSingleton<Auth>();
+        builder.Services.AddSingleton<Register>();
 
         return builder.Build();
 	}
