@@ -1,3 +1,5 @@
+CommunityToolkit.Maui.Core.dll
+CommunityToolkit.Maui.dll
 GoogleGson.dll
 Microsoft.Maui.Controls.Compatibility.dll
 Microsoft.Maui.Controls.dll
@@ -6,10 +8,12 @@ Microsoft.Maui.dll
 Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
 MonkeyCache.dll
+Plugin.InAppBilling.dll
 Xamarin.Android.Glide.Annotations.dll
 Xamarin.Android.Glide.DiskLruCache.dll
 Xamarin.Android.Glide.dll
 Xamarin.Android.Glide.GifDecoder.dll
+Xamarin.Android.Google.BillingClient.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Activity.Ktx.dll
 Xamarin.AndroidX.Annotation.dll
@@ -156,8 +160,3 @@ maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Xamarin.Google.Crypto.Tink.Android.aar
-FormsViewGroup.dll
-Sharpnado.Shadows.Android.dll
-Sharpnado.Tabs.Android.dll
-Xamarin.Forms.Platform.Android.dll
-Xamarin.Forms.Platform.dll

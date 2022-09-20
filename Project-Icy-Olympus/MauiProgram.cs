@@ -1,4 +1,8 @@
-﻿namespace Project_Icy_Olympus;
+﻿using CommunityToolkit.Maui;
+//using Project_Icy_Olympus.ViewModels;
+using Project_Icy_Olympus.Views;
+
+namespace Project_Icy_Olympus;
 
 public static class MauiProgram
 {
@@ -7,12 +11,22 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+                fonts.AddFont("FontAwesome.ttf", "FontAwesome");
+            });
 
-		return builder.Build();
+		builder.Services.AddSingleton<MapPage>();
+        builder.Services.AddSingleton<DealsPage>();
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<SignUpPage>();
+        builder.Services.AddSingleton<ProfilePage>();
+
+        //builder.Services.AddSingleton<LoginPageViewModel>();
+
+        return builder.Build();
 	}
 }
