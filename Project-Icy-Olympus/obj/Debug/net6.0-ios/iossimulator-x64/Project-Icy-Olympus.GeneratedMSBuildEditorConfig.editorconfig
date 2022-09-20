@@ -21,24 +21,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.AppShe
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[F:/Project-Icy-Olympus/Project-Icy-Olympus/Cells/DealCard.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.Cells.DealCard.xaml
-build_metadata.AdditionalFiles.TargetPath = Cells\DealCard.xaml
-build_metadata.AdditionalFiles.RelativePath = Cells\DealCard.xaml
-
-[F:/Project-Icy-Olympus/Project-Icy-Olympus/Cells/DrinkDealCard.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.Cells.DrinkDealCard.xaml
-build_metadata.AdditionalFiles.TargetPath = Cells\DrinkDealCard.xaml
-build_metadata.AdditionalFiles.RelativePath = Cells\DrinkDealCard.xaml
-
-[F:/Project-Icy-Olympus/Project-Icy-Olympus/Cells/FoodDealCard.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.Cells.FoodDealCard.xaml
-build_metadata.AdditionalFiles.TargetPath = Cells\FoodDealCard.xaml
-build_metadata.AdditionalFiles.RelativePath = Cells\FoodDealCard.xaml
-
 [F:/Project-Icy-Olympus/Project-Icy-Olympus/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Project_Icy_Olympus.LoginPage.xaml
