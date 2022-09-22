@@ -33,4 +33,37 @@ namespace Project_Icy_Olympus.Services
             return dealList;
         }
     }
+
+    /* NEED TO STORE GOOGLE_APPLICATION_CREDENTIALS FOR THIS TO WORK
+    public class DealService
+    {
+        List<Deal> dealList = new();
+        FirestoreDb db;
+
+        public DealService()
+        {
+            //this.db = FirestoreDb.Create("icyolympustest");
+        }
+
+        public async Task<List<Deal>> GetDeals()
+        {
+            if (dealList.Count > 0)
+                return dealList;
+
+            CollectionReference deals = db.Collection("Deals");
+            QuerySnapshot allDeals = await deals.GetSnapshotAsync();
+
+            if (allDeals != null)
+            {
+                foreach(DocumentSnapshot document in allDeals.Documents)
+                {
+                    Deal deal = document.ConvertTo<Deal>();
+                    dealList.Add(deal);
+                }
+            }
+
+            return dealList;
+        }
+    }
+    */
 }

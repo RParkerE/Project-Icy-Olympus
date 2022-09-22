@@ -19,6 +19,15 @@
         <member name="P:Project_Icy_Olympus.ViewModels.LoginPageViewModel.UserPassword">
             <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.LoginPageViewModel.userPassword"/>
         </member>
+        <member name="P:Project_Icy_Olympus.ViewModels.MapPageViewModel.CityMap">
+            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.MapPageViewModel.cityMap"/>
+        </member>
+        <member name="P:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.UserEmail">
+            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.userEmail"/>
+        </member>
+        <member name="P:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.UserPassword">
+            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.userPassword"/>
+        </member>
         <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
             <summary>
             Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color

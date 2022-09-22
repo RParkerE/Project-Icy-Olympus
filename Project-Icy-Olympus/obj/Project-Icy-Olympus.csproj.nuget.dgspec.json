@@ -73,6 +73,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.486, )",
@@ -85,11 +89,15 @@
             },
             "MonkeyCache": {
               "target": "Package",
-              "version": "[1.6.3, )"
+              "version": "[2.0.0-beta, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0-beta, )"
+            },
+            "Syncfusion.Maui.Maps": {
+              "target": "Package",
+              "version": "[20.2.50, )"
             }
           },
           "imports": [
@@ -137,6 +145,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.486, )",
@@ -149,11 +161,15 @@
             },
             "MonkeyCache": {
               "target": "Package",
-              "version": "[1.6.3, )"
+              "version": "[2.0.0-beta, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0-beta, )"
+            },
+            "Syncfusion.Maui.Maps": {
+              "target": "Package",
+              "version": "[20.2.50, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -206,6 +222,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.486, )",
@@ -218,11 +238,15 @@
             },
             "MonkeyCache": {
               "target": "Package",
-              "version": "[1.6.3, )"
+              "version": "[2.0.0-beta, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0-beta, )"
+            },
+            "Syncfusion.Maui.Maps": {
+              "target": "Package",
+              "version": "[20.2.50, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -276,6 +300,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.486, )",
@@ -294,11 +322,15 @@
             },
             "MonkeyCache": {
               "target": "Package",
-              "version": "[1.6.3, )"
+              "version": "[2.0.0-beta, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0-beta, )"
+            },
+            "Syncfusion.Maui.Maps": {
+              "target": "Package",
+              "version": "[20.2.50, )"
             }
           },
           "imports": [

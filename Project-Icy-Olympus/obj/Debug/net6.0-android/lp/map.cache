@@ -9,6 +9,8 @@ Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
 MonkeyCache.dll
 Plugin.InAppBilling.dll
+Syncfusion.Maui.Core.dll
+Syncfusion.Maui.Maps.dll
 Xamarin.Android.Glide.Annotations.dll
 Xamarin.Android.Glide.DiskLruCache.dll
 Xamarin.Android.Glide.dll

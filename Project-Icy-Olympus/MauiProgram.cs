@@ -2,6 +2,7 @@
 using Project_Icy_Olympus.Services;
 using Project_Icy_Olympus.ViewModels;
 using Project_Icy_Olympus.Views;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace Project_Icy_Olympus;
 
@@ -13,6 +14,7 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
+			.ConfigureSyncfusionCore()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -26,7 +28,8 @@ public static class MauiProgram
         builder.Services.AddTransient<SignUpPage>();
         builder.Services.AddTransient<ProfilePage>();
 
-		builder.Services.AddTransient<DealsPageViewModel>();
+        builder.Services.AddTransient<MapPageViewModel>();
+        builder.Services.AddTransient<DealsPageViewModel>();
 		builder.Services.AddTransient<LoginPageViewModel>();
 		builder.Services.AddTransient<SignUpPageViewModel>();
 
