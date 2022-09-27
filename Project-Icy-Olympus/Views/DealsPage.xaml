@@ -35,8 +35,11 @@
                                     VerticalOptions="Center">
                                         <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
                                         <Label Style="{StaticResource MediumLabel}" Text="{Binding Address}" />
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding FoodDeals}" />
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding DrinkDeals}" />
+                                        <!--
+                                        Make this where you can click on the deals card and it opens this info
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding FoodDeals.Deals}" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding DrinkDeals.Deals}" />
+                                        -->
                                     </StackLayout>
                                 </Grid>
                             </Frame>
