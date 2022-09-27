@@ -93,7 +93,7 @@
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.5.0-beta, )"
+              "version": "[6.6.1, )"
             },
             "Syncfusion.Maui.Maps": {
               "target": "Package",
@@ -165,7 +165,7 @@
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.5.0-beta, )"
+              "version": "[6.6.1, )"
             },
             "Syncfusion.Maui.Maps": {
               "target": "Package",
@@ -242,7 +242,7 @@
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.5.0-beta, )"
+              "version": "[6.6.1, )"
             },
             "Syncfusion.Maui.Maps": {
               "target": "Package",
@@ -326,7 +326,7 @@
             },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.5.0-beta, )"
+              "version": "[6.6.1, )"
             },
             "Syncfusion.Maui.Maps": {
               "target": "Package",

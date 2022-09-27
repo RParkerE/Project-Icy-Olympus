@@ -19,8 +19,8 @@
         <member name="P:Project_Icy_Olympus.ViewModels.LoginPageViewModel.UserPassword">
             <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.LoginPageViewModel.userPassword"/>
         </member>
-        <member name="P:Project_Icy_Olympus.ViewModels.MapPageViewModel.CityMap">
-            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.MapPageViewModel.cityMap"/>
+        <member name="P:Project_Icy_Olympus.ViewModels.MapPageViewModel.MyMap">
+            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.MapPageViewModel.myMap"/>
         </member>
         <member name="P:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.UserEmail">
             <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.userEmail"/>

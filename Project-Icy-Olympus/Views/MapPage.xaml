@@ -10,8 +10,7 @@
     <StackLayout>
         <map:SfMaps>
             <map:SfMaps.Layer>
-                <map:MapShapeLayer ShapesSource="{Binding CityMap}">
-                </map:MapShapeLayer>
+                <map:MapShapeLayer ShapesSource="{Binding MyMap}" />
             </map:SfMaps.Layer>
         </map:SfMaps>
 

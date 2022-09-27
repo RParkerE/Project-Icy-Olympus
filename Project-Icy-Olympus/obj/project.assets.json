@@ -661,7 +661,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -3642,7 +3642,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -6563,7 +6563,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -9484,7 +9484,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -12405,7 +12405,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -15326,7 +15326,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -18247,7 +18247,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -21172,7 +21172,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Google.BillingClient": "4.0.0",
@@ -24119,7 +24119,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -25988,7 +25988,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -28235,7 +28235,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -30482,7 +30482,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -32729,7 +32729,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -34976,7 +34976,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -37223,7 +37223,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -39474,7 +39474,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -41743,7 +41743,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -43612,7 +43612,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -45859,7 +45859,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -48106,7 +48106,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -50353,7 +50353,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -52600,7 +52600,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -54847,7 +54847,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -57098,7 +57098,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "dependencies": {
           "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
@@ -59493,7 +59493,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -61449,7 +61449,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -63783,7 +63783,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -66117,7 +66117,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -68451,7 +68451,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -70785,7 +70785,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -73119,7 +73119,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -75463,7 +75463,7 @@
           }
         }
       },
-      "Plugin.InAppBilling/6.5.0-beta": {
+      "Plugin.InAppBilling/6.6.1": {
         "type": "package",
         "compile": {
           "lib/net6.0-windows10.0.19041/Plugin.InAppBilling.dll": {
@@ -78825,10 +78825,10 @@
         "packageIcon.png"
       ]
     },
-    "Plugin.InAppBilling/6.5.0-beta": {
-      "sha512": "3ufyG/ROdgAOUzrFu5jeWNjqtguTeYk6dTQEf14DQeJV8ImyYFWIOynI/+7mvoVMyKNm+Fo4VV03ijN0BdhCNg==",
+    "Plugin.InAppBilling/6.6.1": {
+      "sha512": "K0HOaEqeb5eV4Wy0NAgjaAKtdBpJGTCSEnlGbLL9fyQRX41+46tKfTt26HJ5AqvSo7agpXYJzSEjIDoG0hWWsg==",
       "type": "package",
-      "path": "plugin.inappbilling/6.5.0-beta",
+      "path": "plugin.inappbilling/6.6.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -78869,7 +78869,7 @@
         "lib/xamarintvos10/Plugin.InAppBilling.dll",
         "lib/xamarintvos10/Plugin.InAppBilling.pdb",
         "lib/xamarintvos10/Plugin.InAppBilling.xml",
-        "plugin.inappbilling.6.5.0-beta.nupkg.sha512",
+        "plugin.inappbilling.6.6.1.nupkg.sha512",
         "plugin.inappbilling.nuspec",
         "readme.txt"
       ]
@@ -84929,7 +84929,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.486",
       "Microsoft.Maui.Extensions >= 6.0.486",
       "MonkeyCache >= 2.0.0-beta",
-      "Plugin.InAppBilling >= 6.5.0-beta",
+      "Plugin.InAppBilling >= 6.6.1",
       "Syncfusion.Maui.Maps >= 20.2.50"
     ],
     "net6.0-ios15.4": [
@@ -84940,7 +84940,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.486",
       "Microsoft.Maui.Extensions >= 6.0.486",
       "MonkeyCache >= 2.0.0-beta",
-      "Plugin.InAppBilling >= 6.5.0-beta",
+      "Plugin.InAppBilling >= 6.6.1",
       "Syncfusion.Maui.Maps >= 20.2.50",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
@@ -84952,7 +84952,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.486",
       "Microsoft.Maui.Extensions >= 6.0.486",
       "MonkeyCache >= 2.0.0-beta",
-      "Plugin.InAppBilling >= 6.5.0-beta",
+      "Plugin.InAppBilling >= 6.6.1",
       "Syncfusion.Maui.Maps >= 20.2.50",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
@@ -84965,7 +84965,7 @@
       "Microsoft.Maui.Extensions >= 6.0.486",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
       "MonkeyCache >= 2.0.0-beta",
-      "Plugin.InAppBilling >= 6.5.0-beta",
+      "Plugin.InAppBilling >= 6.6.1",
       "Syncfusion.Maui.Maps >= 20.2.50"
     ]
   },
@@ -85062,7 +85062,7 @@
           },
           "Plugin.InAppBilling": {
             "target": "Package",
-            "version": "[6.5.0-beta, )"
+            "version": "[6.6.1, )"
           },
           "Syncfusion.Maui.Maps": {
             "target": "Package",
@@ -85134,7 +85134,7 @@
           },
           "Plugin.InAppBilling": {
             "target": "Package",
-            "version": "[6.5.0-beta, )"
+            "version": "[6.6.1, )"
           },
           "Syncfusion.Maui.Maps": {
             "target": "Package",
@@ -85211,7 +85211,7 @@
           },
           "Plugin.InAppBilling": {
             "target": "Package",
-            "version": "[6.5.0-beta, )"
+            "version": "[6.6.1, )"
           },
           "Syncfusion.Maui.Maps": {
             "target": "Package",
@@ -85295,7 +85295,7 @@
           },
           "Plugin.InAppBilling": {
             "target": "Package",
-            "version": "[6.5.0-beta, )"
+            "version": "[6.6.1, )"
           },
           "Syncfusion.Maui.Maps": {
             "target": "Package",

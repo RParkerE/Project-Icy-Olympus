@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UCHLb+tPZES/NMlQGfcmmh2qVEfTPiCcZLgsAjfBZRJxDzfCCQ/pL/cRoFZSlIbygnZRhj9uLoPZ8BSQHyDSlQ==",
+  "dgSpecHash": "Cw9u48Oblhb4lkvVQP3sExcA2bFkgW4ZzZn8TbTJ1Lm63lYsQ03DDX24VRS1BFKsh8PdvXGZymSP5R3RSCGqwg==",
   "success": true,
   "projectFilePath": "F:\\Project-Icy-Olympus\\Project-Icy-Olympus\\Project-Icy-Olympus.csproj",
   "expectedPackageFiles": [
@@ -50,7 +50,7 @@
     "C:\\Users\\rpell\\.nuget\\packages\\monkeycache\\2.0.0-beta\\monkeycache.2.0.0-beta.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\plugin.inappbilling\\6.5.0-beta\\plugin.inappbilling.6.5.0-beta.nupkg.sha512",
+    "C:\\Users\\rpell\\.nuget\\packages\\plugin.inappbilling\\6.6.1\\plugin.inappbilling.6.6.1.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\runtime.any.system.collections\\4.0.11\\runtime.any.system.collections.4.0.11.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.0.1\\runtime.any.system.diagnostics.tools.4.0.1.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.1.0\\runtime.any.system.diagnostics.tracing.4.1.0.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using Project_Icy_Olympus.Models;
+﻿using Google.Cloud.Firestore;
+using Project_Icy_Olympus.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,44 +12,24 @@ namespace Project_Icy_Olympus.Services
     public class DealService
     {
         List<Deal> dealList = new();
-        HttpClient httpClient;
-
-        public DealService()
-        {
-            this.httpClient = new HttpClient();
-        }
-
-        public async Task<List<Deal>> GetDeals()
-        {
-            if (dealList.Count > 0)
-                return dealList;
-
-            var response = await httpClient.GetAsync("FIRESTORE_DATABASE_FOR_DEALS_IN_CITY_AND_DAY.JSON");
-
-            if (response.IsSuccessStatusCode)
-            {
-                dealList = await response.Content.ReadFromJsonAsync<List<Deal>>();
-            }
-
-            return dealList;
-        }
-    }
-
-    /* NEED TO STORE GOOGLE_APPLICATION_CREDENTIALS FOR THIS TO WORK
-    public class DealService
-    {
-        List<Deal> dealList = new();
         FirestoreDb db;
 
         public DealService()
         {
-            //this.db = FirestoreDb.Create("icyolympustest");
         }
 
         public async Task<List<Deal>> GetDeals()
         {
             if (dealList.Count > 0)
                 return dealList;
+
+            var localPath = Path.Combine(FileSystem.CacheDirectory, "icyolympustest-f2fb8b0c3281.json");
+            using var json = await FileSystem.OpenAppPackageFileAsync("icyolympustest-f2fb8b0c3281.json");
+            using var dest = File.Create(localPath);
+            await json.CopyToAsync(dest);
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", localPath);
+            dest.Close();
+            this.db = FirestoreDb.Create("icyolympustest");
 
             CollectionReference deals = db.Collection("Deals");
             QuerySnapshot allDeals = await deals.GetSnapshotAsync();
@@ -65,5 +46,5 @@ namespace Project_Icy_Olympus.Services
             return dealList;
         }
     }
-    */
+
 }

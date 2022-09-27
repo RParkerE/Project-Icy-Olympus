@@ -12,11 +12,11 @@ namespace Project_Icy_Olympus.ViewModels
     public partial class MapPageViewModel : BaseViewModel
     {
         [ObservableProperty]
-        public MapSource cityMap;
+        public MapSource myMap;
         public MapPageViewModel()
         {
             Title = "Maps";
-            CityMap = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+            MyMap = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
         }
     }
 }
