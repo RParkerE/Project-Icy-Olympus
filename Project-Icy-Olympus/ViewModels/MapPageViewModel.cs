@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Project_Icy_Olympus.Services;
-using Syncfusion.Maui.Maps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +11,13 @@ namespace Project_Icy_Olympus.ViewModels
     public partial class MapPageViewModel : BaseViewModel
     {
         [ObservableProperty]
-        public MapSource myMap;
+        ContentView myMap;
         public MapPageViewModel()
         {
             Title = "Maps";
-            MyMap = MapSource.FromUri(new Uri("https://cdn.syncfusion.com/maps/map-data/world-map.json"));
+            var mapControl = new Mapsui.UI.Maui.MapControl();
+            mapControl.Map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+            MyMap = mapControl;
         }
     }
 }

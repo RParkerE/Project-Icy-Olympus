@@ -2,7 +2,7 @@
 using Project_Icy_Olympus.Services;
 using Project_Icy_Olympus.ViewModels;
 using Project_Icy_Olympus.Views;
-using Syncfusion.Maui.Core.Hosting;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace Project_Icy_Olympus;
 
@@ -14,7 +14,7 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
-			.ConfigureSyncfusionCore()
+            .UseSkiaSharp()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -69,35 +69,39 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Firebase.Auth": {
+            "FirebaseAuthentication.net": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[3.7.2, )"
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Mapsui.Maui": {
+              "target": "Package",
+              "version": "[4.0.0-beta.5, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "MonkeyCache": {
               "target": "Package",
               "version": "[2.0.0-beta, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.6.1, )"
-            },
-            "Syncfusion.Maui.Maps": {
-              "target": "Package",
-              "version": "[20.2.50, )"
+              "version": "[6.6.2-beta, )"
             }
           },
           "imports": [
@@ -141,35 +145,39 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Firebase.Auth": {
+            "FirebaseAuthentication.net": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[3.7.2, )"
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Mapsui.Maui": {
+              "target": "Package",
+              "version": "[4.0.0-beta.5, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "MonkeyCache": {
               "target": "Package",
               "version": "[2.0.0-beta, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.6.1, )"
-            },
-            "Syncfusion.Maui.Maps": {
-              "target": "Package",
-              "version": "[20.2.50, )"
+              "version": "[6.6.2-beta, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -218,35 +226,39 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Firebase.Auth": {
+            "FirebaseAuthentication.net": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[3.7.2, )"
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Mapsui.Maui": {
+              "target": "Package",
+              "version": "[4.0.0-beta.5, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "MonkeyCache": {
               "target": "Package",
               "version": "[2.0.0-beta, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.6.1, )"
-            },
-            "Syncfusion.Maui.Maps": {
-              "target": "Package",
-              "version": "[20.2.50, )"
+              "version": "[6.6.2-beta, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -296,22 +308,26 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Firebase.Auth": {
+            "FirebaseAuthentication.net": {
               "target": "Package",
-              "version": "[1.0.0, )"
+              "version": "[3.7.2, )"
             },
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Mapsui.Maui": {
+              "target": "Package",
+              "version": "[4.0.0-beta.5, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "Microsoft.Maui.Extensions": {
               "target": "Package",
-              "version": "[6.0.486, )",
+              "version": "[6.0.536, )",
               "autoReferenced": true
             },
             "Microsoft.Windows.SDK.BuildTools": {
@@ -324,13 +340,13 @@
               "target": "Package",
               "version": "[2.0.0-beta, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Plugin.InAppBilling": {
               "target": "Package",
-              "version": "[6.6.1, )"
-            },
-            "Syncfusion.Maui.Maps": {
-              "target": "Package",
-              "version": "[20.2.50, )"
+              "version": "[6.6.2-beta, )"
             }
           },
           "imports": [

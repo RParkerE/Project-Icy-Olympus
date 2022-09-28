@@ -8,11 +8,6 @@
              x:Class="Project_Icy_Olympus.Views.MapPage"
              Title="MapPage">
     <StackLayout>
-        <map:SfMaps>
-            <map:SfMaps.Layer>
-                <map:MapShapeLayer ShapesSource="{Binding MyMap}" />
-            </map:SfMaps.Layer>
-        </map:SfMaps>
 
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                                IsRunning="{Binding IsBusy}"
