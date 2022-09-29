@@ -6,8 +6,9 @@
              x:DataType="viewmodels:DealsPageViewModel"
              x:Class="Project_Icy_Olympus.Views.DealsPage"
              Title="{Binding Title}">
+    
     <Grid
-        ColumnDefinitions="*,*"
+        ColumnDefinitions="*,Auto"
         ColumnSpacing="5"
         RowDefinitions="*,Auto"
         RowSpacing="0">
