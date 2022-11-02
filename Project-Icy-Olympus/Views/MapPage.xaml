@@ -8,11 +8,17 @@
              x:Class="Project_Icy_Olympus.Views.MapPage"
              Title="MapPage">
     <StackLayout>
-        <ActivityIndicator IsVisible="{Binding IsBusy}"
-                               IsRunning="{Binding IsBusy}"
-                               HorizontalOptions="FillAndExpand"
-                               VerticalOptions="CenterAndExpand"
-                               Grid.RowSpan="2"
-                               Grid.ColumnSpan="2"/>
+        <ContentView Content="{Binding MyMap}"
+                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                     AbsoluteLayout.LayoutFlags="All" 
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand" />
+        <Button Text="See Local Deals"
+                Command="{Binding GetPlacesCommand}"
+                IsEnabled="True"
+                Grid.Row="1"
+                Grid.Column="0"
+                Style="{StaticResource ButtonOutline}"
+                Margin="8"/>
     </StackLayout>
 </ContentPage>

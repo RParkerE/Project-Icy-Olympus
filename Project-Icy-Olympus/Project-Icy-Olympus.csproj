@@ -77,8 +77,8 @@
 	  <PackageReference Include="Google.Cloud.Firestore" Version="3.0.0" />
 	  <PackageReference Include="Mapsui.Maui" Version="4.0.0-beta.5" />
 	  <PackageReference Include="MonkeyCache" Version="2.0.0-beta" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	  <PackageReference Include="Plugin.InAppBilling" Version="6.6.2-beta" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+	  <PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>

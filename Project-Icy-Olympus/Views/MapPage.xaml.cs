@@ -9,6 +9,6 @@ public partial class MapPage : ContentPage
 		InitializeComponent();
         BindingContext = mapPageViewModel;
 
-        Content = mapPageViewModel.MyMap;
+        //Content = mapPageViewModel.MyMap;
     }
 }

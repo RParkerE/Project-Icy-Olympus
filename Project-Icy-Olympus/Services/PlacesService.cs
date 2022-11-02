@@ -20,11 +20,11 @@ namespace Project_Icy_Olympus.Services
 
         public async Task<List<Place>> GetPlaces()
         {
-        	if (placeList.Count > 0)
+            if (placeList.Count > 0)
                 return placeList;
 
-            var localPath = Path.Combine(FileSystem.CacheDirectory, "icyolympustest-f2fb8b0c3281.json");
-            using var json = await FileSystem.OpenAppPackageFileAsync("icyolympustest-f2fb8b0c3281.json");
+            var localPath = Path.Combine(FileSystem.CacheDirectory, "icyolympustest-22a62b6cfe7e.json");
+            using var json = await FileSystem.OpenAppPackageFileAsync("icyolympustest-22a62b6cfe7e.json");
             using var dest = File.Create(localPath);
             await json.CopyToAsync(dest);
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", localPath);
@@ -32,11 +32,11 @@ namespace Project_Icy_Olympus.Services
             this.db = FirestoreDb.Create("icyolympustest");
 
             CollectionReference places = db.Collection("Places");
-            QuerySnapshot allPlaces = await places.GetSnapshotAsync();
+            QuerySnapshot allDeals = await places.GetSnapshotAsync();
 
-            if (allPlaces != null)
+            if (allDeals != null)
             {
-                foreach(DocumentSnapshot document in allPlaces.Documents)
+                foreach (DocumentSnapshot document in allDeals.Documents)
                 {
                     Place place = document.ConvertTo<Place>();
                     placeList.Add(place);

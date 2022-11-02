@@ -36,6 +36,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<AuthService>();
         builder.Services.AddSingleton<RegisterService>();
 		builder.Services.AddTransient<DealService>();
+        builder.Services.AddTransient<PlacesService>();
 
         return builder.Build();
 	}

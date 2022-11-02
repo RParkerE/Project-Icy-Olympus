@@ -16,7 +16,7 @@ namespace Project_Icy_Olympus.Models
         public string Address { get; set; }
         [FirestoreProperty()]
         public BusyLevel MondayBusyLevel { get; set; }
-        [FirestoreProperty()]
+        /*[FirestoreProperty()]
         public BusyLevel TuesdayBusyLevel { get; set; }
         [FirestoreProperty()]
         public BusyLevel WednesdayBusyLevel { get; set; }
@@ -28,18 +28,18 @@ namespace Project_Icy_Olympus.Models
         public BusyLevel SaturdayBusyLevel { get; set; }
         [FirestoreProperty()]
         public BusyLevel SundayBusyLevel { get; set; }
-        /*[FirestoreProperty()]
+        [FirestoreProperty()]
         public string Vibes { get; set; }
         [FirestoreProperty()]
         public string Rating { get; set; }
         [FirestoreProperty()]
         public string Price { get; set; }
         [FirestoreProperty()]
-        public string Image { get; set; }
-        [FirestoreProperty()]*/
-        public double Latitude { get; set; }
+        public string Image { get; set; }*/
         [FirestoreProperty()]
-        public double Longitude { get; set; }
+        public double Lat { get; set; }
+        [FirestoreProperty()]
+        public double Lng{ get; set; }
     }
 
     [FirestoreData()]
