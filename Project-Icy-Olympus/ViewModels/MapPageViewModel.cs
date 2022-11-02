@@ -55,7 +55,9 @@ namespace Project_Icy_Olympus.ViewModels
                 MyMap = new MapControl();
                 MyMap.Map?.Layers.Add(OpenStreetMap.CreateTileLayer());
                 MyMap.Map?.Layers.Add(CreatePointLayer());
-                MyMap.Map.Home = n => n.NavigateTo(SphericalMercator.FromLonLat(new MPoint(-97.757955, 30.27302)), MyMap.Map.Resolutions[15]);
+                var atxLocation = new MPoint(-97.7404, 30.2747);
+                var sphericalMercatorCoordinate = SphericalMercator.FromLonLat(atxLocation.X, atxLocation.Y).ToMPoint();
+                MyMap.Navigator.NavigateTo(sphericalMercatorCoordinate, MyMap.Map.Resolutions[14]);
             }
         }
 
@@ -76,8 +78,8 @@ namespace Project_Icy_Olympus.ViewModels
 
             return places.Select(p => {
                 var feature = new PointFeature(SphericalMercator.FromLonLat(p.Lng, p.Lat).ToMPoint());
-                feature["name"] = p.Name;
                 //Add busy levels, vibes, etc here
+                feature["name"] = p.Name;
                 return feature;
             });
         }
