@@ -77,9 +77,17 @@ namespace Project_Icy_Olympus.ViewModels
             var places = Places;
 
             return places.Select(p => {
-                var feature = new PointFeature(SphericalMercator.FromLonLat(p.Lng, p.Lat).ToMPoint());
+                var feature = new PointFeature(SphericalMercator.FromLonLat(p.lng, p.lat).ToMPoint());
                 //Add busy levels, vibes, etc here
-                feature["name"] = p.Name;
+                feature["name"] = p.name;
+                feature["address"] = p.address;
+                feature["mon"] = p.mon;
+                feature["tues"] = p.tues;
+                feature["weds"] = p.weds;
+                feature["thurs"] = p.thurs;
+                feature["fri"] = p.fri;
+                feature["sat"] = p.sat;
+                feature["sun"] = p.sun;
                 return feature;
             });
         }

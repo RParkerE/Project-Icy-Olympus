@@ -11,24 +11,24 @@ namespace Project_Icy_Olympus.Models
     public class Place
     {
         [FirestoreProperty()]
-        public string Name { get; set; }
+        public string name { get; set; }
         [FirestoreProperty()]
-        public string Address { get; set; }
+        public string address { get; set; }
         [FirestoreProperty()]
-        public BusyLevel MondayBusyLevel { get; set; }
+        public BusyLevel mon { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel tues { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel weds { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel thurs { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel fri { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel sat { get; set; }
+        [FirestoreProperty()]
+        public BusyLevel sun { get; set; }
         /*[FirestoreProperty()]
-        public BusyLevel TuesdayBusyLevel { get; set; }
-        [FirestoreProperty()]
-        public BusyLevel WednesdayBusyLevel { get; set; }
-        [FirestoreProperty()]
-        public BusyLevel ThursdayBusyLevel { get; set; }
-        [FirestoreProperty()]
-        public BusyLevel FridayBusyLevel { get; set; }
-        [FirestoreProperty()]
-        public BusyLevel SaturdayBusyLevel { get; set; }
-        [FirestoreProperty()]
-        public BusyLevel SundayBusyLevel { get; set; }
-        [FirestoreProperty()]
         public string Vibes { get; set; }
         [FirestoreProperty()]
         public string Rating { get; set; }
@@ -37,68 +37,68 @@ namespace Project_Icy_Olympus.Models
         [FirestoreProperty()]
         public string Image { get; set; }*/
         [FirestoreProperty()]
-        public double Lat { get; set; }
+        public double lat { get; set; }
         [FirestoreProperty()]
-        public double Lng{ get; set; }
+        public double lng{ get; set; }
     }
 
     [FirestoreData()]
     public class BusyLevel
     {
         [FirestoreProperty()]
-        public DayInfo Day_Info { get; set; }
+        public DayInfo day_info { get; set; }
         [FirestoreProperty()]
-        public int[] Busy_Hours { get; set; }
+        public int[] busy_hours { get; set; }
         [FirestoreProperty()]
-        public int[] Quiet_Hours { get; set; }
+        public int[] quiet_hours { get; set; }
         [FirestoreProperty()]
-        public int[] Peak_Hours { get; set; }
+        public int[] peak_hours { get; set; }
         [FirestoreProperty()]
-        public SurgeHours Surge_Hours { get; set; }
+        public SurgeHours surge_hours { get; set; }
         [FirestoreProperty()]
-        public HourAnalysis[] Hour_Analysis { get; set; }
+        public HourAnalysis[] hour_analysis { get; set; }
         [FirestoreProperty()]
-        public int[] Day_Raw { get; set; }
+        public int[] day_raw { get; set; }
     }
 
     [FirestoreData()]
     public class DayInfo
     {
         [FirestoreProperty()]
-        public int Day_Int { get; set; }
+        public int day_int { get; set; }
         [FirestoreProperty()]
-        public int Day_Max { get; set; }
+        public int day_max { get; set; }
         [FirestoreProperty()]
-        public int Day_Mean { get; set; }
+        public int day_mean { get; set; }
         [FirestoreProperty()]
-        public int Day_Rank_Max { get; set; }
+        public int day_rank_max { get; set; }
         [FirestoreProperty()]
-        public int Day_Rank_Mean { get; set; }
+        public int day_rank_mean { get; set; }
         [FirestoreProperty()]
-        public string Day_Text { get; set; }
+        public string day_text { get; set; }
         [FirestoreProperty()]
-        public int Venue_Closed { get; set; }
+        public int venue_closed { get; set; }
         [FirestoreProperty()]
-        public int Venue_Open { get; set; }
+        public int venue_open { get; set; }
     }
 
     [FirestoreData()]
     public class SurgeHours
     {
         [FirestoreProperty()]
-        public int Most_People_Come { get; set; }
+        public int most_people_come { get; set; }
         [FirestoreProperty()]
-        public int Most_People_Leave { get; set; }
+        public int most_people_leave { get; set; }
     }
 
     [FirestoreData()]
     public class HourAnalysis
     {
         [FirestoreProperty()]
-        public int Hour { get; set; }
+        public int hour { get; set; }
         [FirestoreProperty()]
-        public string Intensity_Txt { get; set; }
+        public string intensity_txt { get; set; }
         [FirestoreProperty()]
-        public int Intensity_Nr { get; set; }
+        public int intensity_nr { get; set; }
     }
 }

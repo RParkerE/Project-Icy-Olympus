@@ -13,7 +13,7 @@
                      AbsoluteLayout.LayoutFlags="All" 
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand" />
-        <Button Text="See Local Deals"
+        <Button Text="See Local Bars"
                 Command="{Binding GetPlacesCommand}"
                 IsEnabled="True"
                 Grid.Row="1"

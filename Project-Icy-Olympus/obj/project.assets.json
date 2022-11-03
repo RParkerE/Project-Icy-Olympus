@@ -657,6 +657,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -3864,6 +3881,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -6988,6 +7022,23 @@
         },
         "runtime": {
           "lib/net6.0-android31.0/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -10120,6 +10171,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -13244,6 +13312,23 @@
         },
         "runtime": {
           "lib/net6.0-android31.0/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -16373,6 +16458,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -19495,6 +19597,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -22613,6 +22732,23 @@
         },
         "runtime": {
           "lib/net6.0-android31.0/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-android31.0/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -25759,6 +25895,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -27962,6 +28116,24 @@
         },
         "runtime": {
           "lib/net6.0-ios15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -30461,6 +30633,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -32956,6 +33146,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -35447,6 +35655,24 @@
         },
         "runtime": {
           "lib/net6.0-ios15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -37949,6 +38175,24 @@
         },
         "runtime": {
           "lib/net6.0-ios15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -40461,6 +40705,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -42962,6 +43224,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -45458,6 +45738,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -47649,6 +47947,24 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -50148,6 +50464,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -52639,6 +52973,24 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -55138,6 +55490,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -57629,6 +57999,24 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -60131,6 +60519,24 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -62625,6 +63031,24 @@
         },
         "runtime": {
           "lib/net6.0-maccatalyst15.2/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Runtime.InteropServices.NFloat.Internal": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -65273,6 +65697,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -67582,6 +68023,23 @@
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -70185,6 +70643,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -72780,6 +73255,23 @@
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -75383,6 +75875,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -77982,6 +78491,23 @@
           }
         }
       },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -80577,6 +81103,23 @@
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -83185,6 +83728,23 @@
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041/MonkeyCache.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonkeyCache.FileStore/1.6.3": {
+        "type": "package",
+        "dependencies": {
+          "MonkeyCache": "1.6.3",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -86877,6 +87437,51 @@
         "lib/net6.0/MonkeyCache.xml",
         "monkeycache.2.0.0-beta.nupkg.sha512",
         "monkeycache.nuspec"
+      ]
+    },
+    "MonkeyCache.FileStore/1.6.3": {
+      "sha512": "uc9rdTkIMvtf8aZzJHAcwPaVG09NQQkwKLdfh3fRKpqhm2GVx1hiWvgRYmc42Mjx7ECELn+1vg7Cn6KAWezZNw==",
+      "type": "package",
+      "path": "monkeycache.filestore/1.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid10.0/MonkeyCache.FileStore.dll",
+        "lib/monoandroid10.0/MonkeyCache.FileStore.pdb",
+        "lib/monoandroid10.0/MonkeyCache.FileStore.xml",
+        "lib/net461/MonkeyCache.FileStore.dll",
+        "lib/net461/MonkeyCache.FileStore.pdb",
+        "lib/net461/MonkeyCache.FileStore.xml",
+        "lib/net6.0-android31.0/MonkeyCache.FileStore.dll",
+        "lib/net6.0-android31.0/MonkeyCache.FileStore.pdb",
+        "lib/net6.0-android31.0/MonkeyCache.FileStore.xml",
+        "lib/net6.0-ios15.2/MonkeyCache.FileStore.dll",
+        "lib/net6.0-ios15.2/MonkeyCache.FileStore.pdb",
+        "lib/net6.0-ios15.2/MonkeyCache.FileStore.xml",
+        "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.dll",
+        "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.pdb",
+        "lib/net6.0-maccatalyst15.2/MonkeyCache.FileStore.xml",
+        "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.dll",
+        "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.pdb",
+        "lib/net6.0-windows10.0.19041/MonkeyCache.FileStore.xml",
+        "lib/netstandard2.0/MonkeyCache.FileStore.dll",
+        "lib/netstandard2.0/MonkeyCache.FileStore.pdb",
+        "lib/netstandard2.0/MonkeyCache.FileStore.xml",
+        "lib/uap10.0.16299/MonkeyCache.FileStore.dll",
+        "lib/uap10.0.16299/MonkeyCache.FileStore.pdb",
+        "lib/uap10.0.16299/MonkeyCache.FileStore.pri",
+        "lib/uap10.0.16299/MonkeyCache.FileStore.xml",
+        "lib/xamarinios10/MonkeyCache.FileStore.dll",
+        "lib/xamarinios10/MonkeyCache.FileStore.pdb",
+        "lib/xamarinios10/MonkeyCache.FileStore.xml",
+        "lib/xamarinmac20/MonkeyCache.FileStore.dll",
+        "lib/xamarinmac20/MonkeyCache.FileStore.pdb",
+        "lib/xamarinmac20/MonkeyCache.FileStore.xml",
+        "lib/xamarintvos10/MonkeyCache.FileStore.dll",
+        "lib/xamarintvos10/MonkeyCache.FileStore.pdb",
+        "lib/xamarintvos10/MonkeyCache.FileStore.xml",
+        "monkeycache.filestore.1.6.3.nupkg.sha512",
+        "monkeycache.filestore.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -93639,6 +94244,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.541",
       "Microsoft.Maui.Extensions >= 6.0.541",
       "MonkeyCache >= 2.0.0-beta",
+      "MonkeyCache.FileStore >= 1.6.3",
       "Newtonsoft.Json >= 13.0.2-beta2",
       "Plugin.InAppBilling >= 6.7.0"
     ],
@@ -93651,6 +94257,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.541",
       "Microsoft.Maui.Extensions >= 6.0.541",
       "MonkeyCache >= 2.0.0-beta",
+      "MonkeyCache.FileStore >= 1.6.3",
       "Newtonsoft.Json >= 13.0.2-beta2",
       "Plugin.InAppBilling >= 6.7.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
@@ -93664,6 +94271,7 @@
       "Microsoft.Maui.Dependencies >= 6.0.541",
       "Microsoft.Maui.Extensions >= 6.0.541",
       "MonkeyCache >= 2.0.0-beta",
+      "MonkeyCache.FileStore >= 1.6.3",
       "Newtonsoft.Json >= 13.0.2-beta2",
       "Plugin.InAppBilling >= 6.7.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
@@ -93678,6 +94286,7 @@
       "Microsoft.Maui.Extensions >= 6.0.541",
       "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
       "MonkeyCache >= 2.0.0-beta",
+      "MonkeyCache.FileStore >= 1.6.3",
       "Newtonsoft.Json >= 13.0.2-beta2",
       "Plugin.InAppBilling >= 6.7.0"
     ]
@@ -93777,6 +94386,10 @@
             "target": "Package",
             "version": "[2.0.0-beta, )"
           },
+          "MonkeyCache.FileStore": {
+            "target": "Package",
+            "version": "[1.6.3, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.2-beta2, )"
@@ -93852,6 +94465,10 @@
           "MonkeyCache": {
             "target": "Package",
             "version": "[2.0.0-beta, )"
+          },
+          "MonkeyCache.FileStore": {
+            "target": "Package",
+            "version": "[1.6.3, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -93933,6 +94550,10 @@
           "MonkeyCache": {
             "target": "Package",
             "version": "[2.0.0-beta, )"
+          },
+          "MonkeyCache.FileStore": {
+            "target": "Package",
+            "version": "[1.6.3, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -94021,6 +94642,10 @@
           "MonkeyCache": {
             "target": "Package",
             "version": "[2.0.0-beta, )"
+          },
+          "MonkeyCache.FileStore": {
+            "target": "Package",
+            "version": "[1.6.3, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
