@@ -48,6 +48,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.Maui.Graphics.dll",
 		"MonkeyCache.dll",
+		"MonkeyCache.FileStore.dll",
 		"NetTopologySuite.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.InAppBilling.dll",

@@ -15,6 +15,9 @@ using Mapsui.Styles;
 using Project_Icy_Olympus.Models;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using SkiaSharp;
+using Color = Mapsui.Styles.Color;
+using Mapsui.UI;
 
 namespace Project_Icy_Olympus.ViewModels
 {
@@ -58,6 +61,16 @@ namespace Project_Icy_Olympus.ViewModels
                 var atxLocation = new MPoint(-97.7404, 30.2747);
                 var sphericalMercatorCoordinate = SphericalMercator.FromLonLat(atxLocation.X, atxLocation.Y).ToMPoint();
                 MyMap.Navigator.NavigateTo(sphericalMercatorCoordinate, MyMap.Map.Resolutions[14]);
+                MyMap.Map.Info += MapOnInfo;
+            }
+        }
+        private static void MapOnInfo(object? sender, MapInfoEventArgs e)
+        {
+            var calloutStyle = e.MapInfo?.Feature?.Styles.Where(s => s is CalloutStyle).Cast<CalloutStyle>().FirstOrDefault();
+            if (calloutStyle != null)
+            {
+                calloutStyle.Enabled = !calloutStyle.Enabled;
+                e.MapInfo?.Layer?.DataHasChanged(); // To trigger a refresh of graphics.
             }
         }
 
@@ -67,8 +80,8 @@ namespace Project_Icy_Olympus.ViewModels
             {
                 Name = "Points",
                 IsMapInfoLayer = true,
-                Features = GetPlacesFromList(),
-                Style = SymbolStyles.CreatePinStyle()
+                Features = new Mapsui.Providers.MemoryProvider(GetPlacesFromList()).Features,
+                Style = new VectorStyle()//SymbolStyles.CreatePinStyle()
             };
         }
 
@@ -88,8 +101,25 @@ namespace Project_Icy_Olympus.ViewModels
                 feature["fri"] = p.fri;
                 feature["sat"] = p.sat;
                 feature["sun"] = p.sun;
+                var calloutStyle = CreateCalloutStyle(p.name);
+                feature.Styles.Add(calloutStyle);
                 return feature;
             });
+        }
+
+        private static CalloutStyle CreateCalloutStyle(string? name)
+        {
+            return new CalloutStyle
+            {
+                Title = name,
+                TitleFont = { FontFamily = null, Size = 12, Italic = false, Bold = true },
+                TitleFontColor = Color.Gray,
+                MaxWidth = 120,
+                RectRadius = 10,
+                ShadowWidth = 4,
+                Enabled = false,
+                SymbolOffset = new Offset(0, SymbolStyle.DefaultHeight * 0.3f)
+            };
         }
     }
 }

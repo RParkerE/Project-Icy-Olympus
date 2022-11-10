@@ -106,6 +106,10 @@
             "Plugin.InAppBilling": {
               "target": "Package",
               "version": "[6.7.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.3, )"
             }
           },
           "imports": [
@@ -186,6 +190,10 @@
             "Plugin.InAppBilling": {
               "target": "Package",
               "version": "[6.7.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.3, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -271,6 +279,10 @@
             "Plugin.InAppBilling": {
               "target": "Package",
               "version": "[6.7.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.3, )"
             },
             "System.Runtime.InteropServices.NFloat.Internal": {
               "target": "Package",
@@ -363,6 +375,10 @@
             "Plugin.InAppBilling": {
               "target": "Package",
               "version": "[6.7.0, )"
+            },
+            "SkiaSharp": {
+              "target": "Package",
+              "version": "[2.88.3, )"
             }
           },
           "imports": [

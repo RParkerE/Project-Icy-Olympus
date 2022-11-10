@@ -9,6 +9,7 @@ Microsoft.Maui.dll
 Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
 MonkeyCache.dll
+MonkeyCache.FileStore.dll
 Plugin.InAppBilling.dll
 SkiaSharp.dll
 SkiaSharp.Views.Android.dll
@@ -166,4 +167,3 @@ maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Xamarin.Google.Crypto.Tink.Android.aar
-MonkeyCache.FileStore.dll

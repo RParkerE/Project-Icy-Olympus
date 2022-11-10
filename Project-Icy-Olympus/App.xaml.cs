@@ -8,7 +8,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		Barrel.ApplicationId = AppInfo.PackageName;
+		//Barrel.ApplicationId = AppInfo.PackageName;
 
 		MainPage = new AppShell();
 	}
