@@ -29,6 +29,8 @@ namespace Project_Icy_Olympus.ViewModels
 
         public Command GetPlacesCommand { get; }
         PlacesService placesService;
+        private static List<CalloutStyle> calloutlist = new List<CalloutStyle>();
+
         public MapPageViewModel(PlacesService placesService)
         {
             Title = "Maps";
@@ -69,9 +71,16 @@ namespace Project_Icy_Olympus.ViewModels
             var calloutStyle = e.MapInfo?.Feature?.Styles.Where(s => s is CalloutStyle).Cast<CalloutStyle>().FirstOrDefault();
             if (calloutStyle != null)
             {
+                calloutlist.Add(calloutStyle);
+                foreach (var callout in calloutlist)
+                {
+                    callout.Enabled = false;
+                }
                 calloutStyle.Enabled = !calloutStyle.Enabled;
                 e.MapInfo?.Layer?.DataHasChanged(); // To trigger a refresh of graphics.
             }
+            if (calloutlist.Count > 1)
+                calloutlist.RemoveRange(0, calloutlist.Count - 1);
         }
 
         private MemoryLayer CreatePointLayer()
@@ -81,7 +90,7 @@ namespace Project_Icy_Olympus.ViewModels
                 Name = "Points",
                 IsMapInfoLayer = true,
                 Features = new Mapsui.Providers.MemoryProvider(GetPlacesFromList()).Features,
-                Style = new VectorStyle()//SymbolStyles.CreatePinStyle()
+                Style = SymbolStyles.CreatePinStyle() //<- Reference for custom marker: https://github.com/Mapsui/Mapsui/blob/master/Samples/Mapsui.Samples.Common/Maps/Callouts/CustomCalloutSample.cs#L64
             };
         }
 
@@ -113,7 +122,7 @@ namespace Project_Icy_Olympus.ViewModels
             {
                 Title = name,
                 TitleFont = { FontFamily = null, Size = 12, Italic = false, Bold = true },
-                TitleFontColor = Color.Gray,
+                TitleFontColor = Color.Violet,
                 MaxWidth = 120,
                 RectRadius = 10,
                 ShadowWidth = 4,
