@@ -50,7 +50,7 @@
             </CollectionView>
         </RefreshView>
 
-        <Button Text="See Local Deals"
+        <!--<Button Text="See Local Deals"
                 Command="{Binding GetDealsCommand}"
                 IsEnabled="{Binding IsNotBusy}"
                 Grid.Row="1"
@@ -63,7 +63,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Style="{StaticResource ButtonOutline}"
-                Margin="8"/>
+                Margin="8"/>-->
 
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"

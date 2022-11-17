@@ -11,4 +11,11 @@ public partial class MapPage : ContentPage
 
         //Content = mapPageViewModel.MyMap;
     }
+
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        await (BindingContext as MapPageViewModel).GetPlacesAsync();
+    }
 }

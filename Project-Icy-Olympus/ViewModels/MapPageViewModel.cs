@@ -38,7 +38,7 @@ namespace Project_Icy_Olympus.ViewModels
             GetPlacesCommand = new Command(async () => await GetPlacesAsync());
         }
 
-        async Task GetPlacesAsync()
+        public async Task GetPlacesAsync()
         {
             try
             {

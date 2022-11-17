@@ -13,12 +13,12 @@
                      AbsoluteLayout.LayoutFlags="All" 
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand" />
-        <Button Text="See Local Bars"
+        <!--<Button Text="See Local Bars"
                 Command="{Binding GetPlacesCommand}"
                 IsEnabled="True"
                 Grid.Row="1"
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
-                Margin="8"/>
+                Margin="8"/>-->
     </StackLayout>
 </ContentPage>

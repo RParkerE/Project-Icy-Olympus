@@ -28,7 +28,7 @@ namespace Project_Icy_Olympus.ViewModels
             GetDealsCommand = new Command(async () => await GetDealsAsync());
         }
 
-        async Task GetDealsAsync()
+        public async Task GetDealsAsync()
         {
             if (IsBusy)
                 return;

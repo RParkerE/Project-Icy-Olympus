@@ -9,4 +9,11 @@ public partial class DealsPage : ContentPage
 		InitializeComponent();
         BindingContext = dealsPageViewModel;
     }
+
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        await (BindingContext as DealsPageViewModel).GetDealsAsync();
+    }
 }
