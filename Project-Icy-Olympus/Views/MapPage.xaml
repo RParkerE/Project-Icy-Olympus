@@ -7,7 +7,11 @@
              x:DataType="viewmodels:MapPageViewModel"
              x:Class="Project_Icy_Olympus.Views.MapPage"
              Title="MapPage">
-    <StackLayout>
+    <Grid
+        ColumnDefinitions="*,Auto"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="0">
         <ContentView Content="{Binding MyMap}"
                      AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" 
@@ -20,5 +24,11 @@
                 Grid.Column="0"
                 Style="{StaticResource ButtonOutline}"
                 Margin="8"/>-->
-    </StackLayout>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           Grid.RowSpan="2"
+                           Grid.ColumnSpan="2"/>
+    </Grid>
 </ContentPage>

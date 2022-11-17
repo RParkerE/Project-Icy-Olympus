@@ -22,6 +22,9 @@
         <member name="P:Project_Icy_Olympus.ViewModels.MapPageViewModel.MyMap">
             <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.MapPageViewModel.myMap"/>
         </member>
+        <member name="P:Project_Icy_Olympus.ViewModels.MapPageViewModel.IsRefreshing">
+            <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.MapPageViewModel.isRefreshing"/>
+        </member>
         <member name="P:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.UserEmail">
             <inheritdoc cref="F:Project_Icy_Olympus.ViewModels.SignUpPageViewModel.userEmail"/>
         </member>

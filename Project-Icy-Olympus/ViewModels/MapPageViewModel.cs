@@ -25,6 +25,8 @@ namespace Project_Icy_Olympus.ViewModels
     {
         [ObservableProperty]
         MapControl myMap;
+        [ObservableProperty]
+        bool isRefreshing;
         public ObservableCollection<Place> Places { get; } = new();
 
         public Command GetPlacesCommand { get; }
@@ -40,8 +42,13 @@ namespace Project_Icy_Olympus.ViewModels
 
         public async Task GetPlacesAsync()
         {
+            if (IsBusy)
+                return;
+
             try
             {
+                IsBusy = true;
+
                 var places = await placesService.GetPlaces();
 
                 if (Places.Count != 0)
@@ -64,6 +71,9 @@ namespace Project_Icy_Olympus.ViewModels
                 var sphericalMercatorCoordinate = SphericalMercator.FromLonLat(atxLocation.X, atxLocation.Y).ToMPoint();
                 MyMap.Navigator.NavigateTo(sphericalMercatorCoordinate, MyMap.Map.Resolutions[14]);
                 MyMap.Map.Info += MapOnInfo;
+
+                IsBusy = false;
+                IsRefreshing = false;
             }
         }
         private static void MapOnInfo(object? sender, MapInfoEventArgs e)
