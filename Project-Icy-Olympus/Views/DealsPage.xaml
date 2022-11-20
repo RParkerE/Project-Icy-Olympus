@@ -16,26 +16,26 @@
                      Command="{Binding GetDealsCommand}"
                      IsRefreshing="{Binding IsRefreshing}">
             <CollectionView 
-                        ItemsSource="{Binding Deals}"
+                        ItemsSource="{Binding Venues}"
                         SelectionMode="None"
                         Grid.ColumnSpan="2">
                 <CollectionView.EmptyView>
                     <Label Text="No Data To Show Currently" />
                 </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Deal">
+                    <DataTemplate x:DataType="models:Venue">
                         <Grid Padding="10">
                             <Frame HeightRequest="125" Style="{StaticResource CardView}">
                                 <Grid Padding="0" ColumnDefinitions="125,*">
-                                    <Image Aspect="AspectFill" Source="{Binding Image}"
+                                    <Image Aspect="AspectFill" Source="{Binding images[0]}"
                                     HeightRequest="125"
                                     WidthRequest="125" />
                                     <StackLayout
                                     Grid.Column="1"
                                     Padding="10"
                                     VerticalOptions="Center">
-                                        <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding Address}" />
+                                        <Label Style="{StaticResource LargeLabel}" Text="{Binding name}" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding address}" />
                                         <!--
                                         Make this where you can click on the deals card and it opens this info
                                         <Label Style="{StaticResource SmallLabel}" Text="{Binding FoodDeals.Deals}" />

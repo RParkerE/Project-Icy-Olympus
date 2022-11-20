@@ -27,16 +27,16 @@ namespace Project_Icy_Olympus.ViewModels
         MapControl myMap;
         [ObservableProperty]
         bool isRefreshing;
-        public ObservableCollection<Place> Places { get; } = new();
+        public ObservableCollection<Venue> Venues { get; } = new();
 
         public Command GetPlacesCommand { get; }
-        PlacesService placesService;
+        VenuesService venuesService;
         private static List<CalloutStyle> calloutlist = new List<CalloutStyle>();
 
-        public MapPageViewModel(PlacesService placesService)
+        public MapPageViewModel(VenuesService venuesService)
         {
             Title = "Maps";
-            this.placesService = placesService;
+            this.venuesService = venuesService;
             GetPlacesCommand = new Command(async () => await GetPlacesAsync());
         }
 
@@ -49,13 +49,13 @@ namespace Project_Icy_Olympus.ViewModels
             {
                 IsBusy = true;
 
-                var places = await placesService.GetPlaces();
+                var places = await venuesService.GetVenues();
 
-                if (Places.Count != 0)
-                    Places.Clear();
+                if (Venues.Count != 0)
+                    Venues.Clear();
 
                 foreach (var place in places)
-                    Places.Add(place);
+                    Venues.Add(place);
             }
             catch (Exception ex)
             {
@@ -106,9 +106,9 @@ namespace Project_Icy_Olympus.ViewModels
 
         private IEnumerable<IFeature> GetPlacesFromList()
         {
-            var places = Places;
+            var venues = Venues;
 
-            return places.Select(p => {
+            return venues.Select(p => {
                 var feature = new PointFeature(SphericalMercator.FromLonLat(p.lng, p.lat).ToMPoint());
                 //Add busy levels, vibes, etc here
                 feature["name"] = p.name;

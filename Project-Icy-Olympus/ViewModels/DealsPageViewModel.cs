@@ -17,14 +17,14 @@ namespace Project_Icy_Olympus.ViewModels
         [ObservableProperty]
         bool isRefreshing;
 
-        public ObservableCollection<Deal> Deals { get; } = new();
+        public ObservableCollection<Venue> Venues { get; } = new();
         public Command GetDealsCommand { get; }
-        DealService dealService;
+        VenuesService venuesService;
 
-        public DealsPageViewModel(DealService dealService)
+        public DealsPageViewModel(VenuesService venuesService)
         {
             Title = "Deal Finder";
-            this.dealService = dealService;
+            this.venuesService = venuesService;
             GetDealsCommand = new Command(async () => await GetDealsAsync());
         }
 
@@ -37,13 +37,13 @@ namespace Project_Icy_Olympus.ViewModels
             {
                 IsBusy = true;
 
-                var deals = await dealService.GetDeals();
+                var deals = await venuesService.GetVenues();
 
-                if (Deals.Count != 0)
-                    Deals.Clear();
+                if (Venues.Count != 0)
+                    Venues.Clear();
 
                 foreach(var deal in deals)
-                    Deals.Add(deal);
+                    Venues.Add(deal);
             }
             catch(Exception ex)
             {
