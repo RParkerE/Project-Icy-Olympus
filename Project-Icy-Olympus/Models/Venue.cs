@@ -33,11 +33,11 @@ namespace Project_Icy_Olympus.Models
         [FirestoreProperty()]
         public Vibes vibes { get; set; }
         [FirestoreProperty()]
-        public int rating { get; set; }
+        public long rating { get; set; }
         [FirestoreProperty()]
         public string price { get; set; }
         [FirestoreProperty()]
-        public string[] images { get; set; }
+        public List<string> images { get; set; }
         [FirestoreProperty()]
         public Deals deals { get; set; }
         [FirestoreProperty()]
@@ -51,35 +51,35 @@ namespace Project_Icy_Olympus.Models
     public class Vibes
     {
         [FirestoreProperty()]
-        public int arcade { get; set; }
+        public long arcade { get; set; }
         [FirestoreProperty()]
-        public int bikini { get; set; }
+        public long bikini { get; set; }
         [FirestoreProperty()]
-        public int dancing_woman { get; set; }
+        public long dancing_woman { get; set; }
         [FirestoreProperty()]
-        public int dog { get; set; }
+        public long dog { get; set; }
         [FirestoreProperty()]
-        public int guitar { get; set; }
+        public long guitar { get; set; }
         [FirestoreProperty()]
-        public int hearts { get; set; }
+        public long hearts { get; set; }
         [FirestoreProperty()]
-        public int lips { get; set; }
+        public long lips { get; set; }
         [FirestoreProperty()]
-        public int popping_bottle { get; set; }
+        public long popping_bottle { get; set; }
         [FirestoreProperty()]
-        public int rainbow_flag { get; set; }
+        public long rainbow_flag { get; set; }
         [FirestoreProperty()]
-        public int red_flag { get; set; }
+        public long red_flag { get; set; }
         [FirestoreProperty()]
-        public int shush_face { get; set; }
+        public long shush_face { get; set; }
         [FirestoreProperty()]
-        public int smoke { get; set; }
+        public long smoke { get; set; }
         [FirestoreProperty()]
-        public int sports { get; set; }
+        public long sports { get; set; }
         [FirestoreProperty()]
-        public int tropica_drink { get; set; }
+        public long tropical_drink { get; set; }
         [FirestoreProperty()]
-        public int whiskey_glass { get; set; }
+        public long whiskey_glass { get; set; }
     }
 
     [FirestoreData()]
@@ -93,70 +93,94 @@ namespace Project_Icy_Olympus.Models
     public class Events
     {
         [FirestoreProperty()]
-        public string[] drink_deals { get; set; }
+        public List<string> drink_deals { get; set; }
         [FirestoreProperty()]
-        public string[] food_deals { get; set; }
+        public List<string> food_deals { get; set; }
         [FirestoreProperty()]
-        public string[] venue { get; set; }
+        public Place venue { get; set; }
+    }
+
+    [FirestoreData()]
+    public class Place
+    {
+        [FirestoreProperty()]
+        public string address { get; set; }
+        [FirestoreProperty()]
+        public string title { get; set; }
     }
 
     [FirestoreData()]
     public class BusyLevel
     {
         [FirestoreProperty()]
+        public List<long> busy_hours { get; set; }
+        [FirestoreProperty()]
         public DayInfo day_info { get; set; }
         [FirestoreProperty()]
-        public int[] busy_hours { get; set; }
+        public List<long> day_raw { get; set; }
         [FirestoreProperty()]
-        public int[] quiet_hours { get; set; }
+        public List<HourAnalysis> hour_analysis { get; set; }
         [FirestoreProperty()]
-        public int[] peak_hours { get; set; }
+        public List<PeakHours> peak_hours { get; set; }
+        [FirestoreProperty()]
+        public List<long> quiet_hours { get; set; }
         [FirestoreProperty()]
         public SurgeHours surge_hours { get; set; }
+    }
+
+    [FirestoreData()]
+    public class PeakHours
+    {
         [FirestoreProperty()]
-        public HourAnalysis[] hour_analysis { get; set; }
+        public long peak_delta_mean_week { get; set; }
         [FirestoreProperty()]
-        public int[] day_raw { get; set; }
+        public long peak_end { get; set; }
+        [FirestoreProperty]
+        public long peak_start { get; set; }
+        [FirestoreProperty]
+        public long peak_intensity { get; set; }
+        [FirestoreProperty]
+        public long peak_max { get; set; }
     }
 
     [FirestoreData()]
     public class DayInfo
     {
         [FirestoreProperty()]
-        public int day_int { get; set; }
+        public long day_int { get; set; }
         [FirestoreProperty()]
-        public int day_max { get; set; }
+        public long day_max { get; set; }
         [FirestoreProperty()]
-        public int day_mean { get; set; }
+        public long day_mean { get; set; }
         [FirestoreProperty()]
-        public int day_rank_max { get; set; }
+        public long day_rank_max { get; set; }
         [FirestoreProperty()]
-        public int day_rank_mean { get; set; }
+        public long day_rank_mean { get; set; }
         [FirestoreProperty()]
         public string day_text { get; set; }
         [FirestoreProperty()]
-        public int venue_closed { get; set; }
+        public dynamic venue_closed { get; set; }
         [FirestoreProperty()]
-        public int venue_open { get; set; }
+        public dynamic venue_open { get; set; }
     }
 
     [FirestoreData()]
     public class SurgeHours
     {
         [FirestoreProperty()]
-        public int most_people_come { get; set; }
+        public dynamic most_people_come { get; set; }
         [FirestoreProperty()]
-        public int most_people_leave { get; set; }
+        public dynamic most_people_leave { get; set; }
     }
 
     [FirestoreData()]
     public class HourAnalysis
     {
         [FirestoreProperty()]
-        public int hour { get; set; }
+        public long hour { get; set; }
         [FirestoreProperty()]
         public string intensity_txt { get; set; }
         [FirestoreProperty()]
-        public int intensity_nr { get; set; }
+        public dynamic intensity_nr { get; set; }
     }
 }

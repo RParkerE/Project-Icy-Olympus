@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Project_Icy_Olympus.Models;
 using Project_Icy_Olympus.Services;
+using Syncfusion.Maui.ListView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Debug = System.Diagnostics.Debug;
 
 namespace Project_Icy_Olympus.ViewModels
 {
@@ -42,8 +42,10 @@ namespace Project_Icy_Olympus.ViewModels
                 if (Venues.Count != 0)
                     Venues.Clear();
 
-                foreach(var deal in deals)
+                foreach (var deal in deals)
+                {
                     Venues.Add(deal);
+                }
             }
             catch(Exception ex)
             {

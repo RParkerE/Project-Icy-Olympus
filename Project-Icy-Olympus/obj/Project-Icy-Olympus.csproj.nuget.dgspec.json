@@ -116,7 +116,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2-beta2, )"
+              "version": "[13.0.2, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
@@ -125,6 +125,10 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
+            },
+            "Syncfusion.Maui.ListView": {
+              "target": "Package",
+              "version": "[20.3.60, )"
             },
             "Xamarin.Android.Glide": {
               "target": "Package",
@@ -270,7 +274,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2-beta2, )"
+              "version": "[13.0.2, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
@@ -279,6 +283,10 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
+            },
+            "Syncfusion.Maui.ListView": {
+              "target": "Package",
+              "version": "[20.3.60, )"
             }
           },
           "imports": [
@@ -369,7 +377,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2-beta2, )"
+              "version": "[13.0.2, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
@@ -378,6 +386,10 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
+            },
+            "Syncfusion.Maui.ListView": {
+              "target": "Package",
+              "version": "[20.3.60, )"
             }
           },
           "imports": [
@@ -485,7 +497,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2-beta2, )"
+              "version": "[13.0.2, )"
             },
             "Plugin.InAppBilling": {
               "target": "Package",
@@ -494,6 +506,10 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
+            },
+            "Syncfusion.Maui.ListView": {
+              "target": "Package",
+              "version": "[20.3.60, )"
             }
           },
           "imports": [

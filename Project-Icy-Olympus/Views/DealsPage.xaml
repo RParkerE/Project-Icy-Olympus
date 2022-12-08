@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
              xmlns:models="clr-namespace:Project_Icy_Olympus.Models"
              xmlns:viewmodels="clr-namespace:Project_Icy_Olympus.ViewModels"
              x:DataType="viewmodels:DealsPageViewModel"
@@ -15,6 +16,33 @@
         <RefreshView Grid.ColumnSpan="2"
                      Command="{Binding GetDealsCommand}"
                      IsRefreshing="{Binding IsRefreshing}">
+            <!--<syncfusion:SfListView x:Name="listView" ItemsSource="{Binding Venues}"
+                        AutoFitMode="DynamicHeight" SelectionMode="None" ItemSpacing="0,2.5,0,2.5">
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Venue">
+                        <Grid x:Name="grid" VerticalOptions="FillAndExpand" BackgroundColor="White" HorizontalOptions="FillAndExpand" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height ="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid RowSpacing="0">
+                                <Image Aspect="AspectFill" Source="{Binding images[0]}"
+                                    HeightRequest="125"
+                                    WidthRequest="125" />
+                                <Label Style="{StaticResource LargeLabel}" Text="{Binding name}" />
+                                <Label Style="{StaticResource SmallLabel}" Text="{Binding address}" />
+                            </Grid>
+
+                            Expandable view
+                            <Grid x:Name="ExpandGrid" IsVisible="{Binding IsVisible}" ColumnSpacing="0" RowSpacing="0" Grid.Row="1" Padding="10,0,0,0"
+                                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Label Style="{StaticResource SmallLabel}" Text="{Binding deals.events.food_deals[0]}" />
+                                <Label Style="{StaticResource SmallLabel}" Text="{Binding deals.events.drink_deals[0]}" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>-->
             <CollectionView 
                         ItemsSource="{Binding Venues}"
                         SelectionMode="None"
@@ -25,7 +53,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Venue">
                         <Grid Padding="10">
-                            <Frame HeightRequest="125" Style="{StaticResource CardView}">
+                            <Frame HeightRequest="500" Style="{StaticResource CardView}">
                                 <Grid Padding="0" ColumnDefinitions="125,*">
                                     <Image Aspect="AspectFill" Source="{Binding images[0]}"
                                     HeightRequest="125"
@@ -36,11 +64,8 @@
                                     VerticalOptions="Center">
                                         <Label Style="{StaticResource LargeLabel}" Text="{Binding name}" />
                                         <Label Style="{StaticResource SmallLabel}" Text="{Binding address}" />
-                                        <!--
-                                        Make this where you can click on the deals card and it opens this info
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding FoodDeals.Deals}" />
-                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding DrinkDeals.Deals}" />
-                                        -->
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding deals.events.food_deals[0]}" />
+                                        <Label Style="{StaticResource SmallLabel}" Text="{Binding deals.events.drink_deals[0]}" />
                                     </StackLayout>
                                 </Grid>
                             </Frame>
@@ -49,21 +74,6 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </RefreshView>
-
-        <!--<Button Text="See Local Deals"
-                Command="{Binding GetDealsCommand}"
-                IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="1"
-                Grid.Column="0"
-                Style="{StaticResource ButtonOutline}"
-                Margin="8"/>
-        <Button Text="Find Closest Deal"
-                Command="{Binding GetDealsCommand}"
-                IsEnabled="{Binding IsNotBusy}"
-                Grid.Row="1"
-                Grid.Column="1"
-                Style="{StaticResource ButtonOutline}"
-                Margin="8"/>-->
 
         <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"

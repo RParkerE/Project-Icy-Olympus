@@ -78,9 +78,10 @@
 	  <PackageReference Include="Mapsui.Maui" Version="4.0.0-beta.5" />
 	  <PackageReference Include="MonkeyCache" Version="2.0.0-beta" />
 	  <PackageReference Include="MonkeyCache.FileStore" Version="1.6.3" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	  <PackageReference Include="Plugin.InAppBilling" Version="6.7.0" />
 	  <PackageReference Include="SkiaSharp" Version="2.88.3" />
+	  <PackageReference Include="Syncfusion.Maui.ListView" Version="20.3.60" />
 	</ItemGroup>
 
 	<ItemGroup>

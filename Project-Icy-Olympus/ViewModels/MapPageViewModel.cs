@@ -59,7 +59,7 @@ namespace Project_Icy_Olympus.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Unable to get deals: {ex.Message}");
+                Debug.WriteLine(ex.Message);
                 await Application.Current.MainPage.DisplayAlert("Error!", ex.Message, "OK");
             }
             finally
@@ -113,13 +113,17 @@ namespace Project_Icy_Olympus.ViewModels
                 //Add busy levels, vibes, etc here
                 feature["name"] = p.name;
                 feature["address"] = p.address;
-                feature["mon"] = p.mon;
+                /*feature["mon"] = p.mon;
                 feature["tues"] = p.tues;
                 feature["weds"] = p.weds;
                 feature["thurs"] = p.thurs;
                 feature["fri"] = p.fri;
                 feature["sat"] = p.sat;
-                feature["sun"] = p.sun;
+                feature["sun"] = p.sun;*/
+                feature["vibes"] = p.vibes;
+                feature["ratings"] = p.rating;
+                feature["price"] = p.price;
+                feature["deals"] = p.deals;
                 var calloutStyle = CreateCalloutStyle(p.name);
                 feature.Styles.Add(calloutStyle);
                 return feature;

@@ -2,6 +2,7 @@
 using Project_Icy_Olympus.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,7 @@ namespace Project_Icy_Olympus.Services
 
             CollectionReference places = db.Collection("Venues");
             QuerySnapshot allDeals = await places.GetSnapshotAsync();
+            Debug.WriteLine(allDeals.ToString());
 
             if (allDeals != null)
             {
