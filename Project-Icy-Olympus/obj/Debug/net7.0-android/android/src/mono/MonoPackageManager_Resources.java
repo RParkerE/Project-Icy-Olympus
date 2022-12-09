@@ -62,11 +62,6 @@ public class MonoPackageManager_Resources {
 		"Svg.Custom.dll",
 		"Svg.Model.dll",
 		"Svg.Skia.dll",
-		"Syncfusion.Licensing.dll",
-		"Syncfusion.Maui.Core.dll",
-		"Syncfusion.Maui.DataSource.dll",
-		"Syncfusion.Maui.GridCommon.dll",
-		"Syncfusion.Maui.ListView.dll",
 		"System.Linq.Async.dll",
 		"Topten.RichTextKit.dll",
 		"Xamarin.Android.Glide.dll",
@@ -151,7 +146,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Kotlin.StdLib.Jdk8.dll",
 		"Xamarin.KotlinX.Coroutines.Android.dll",
 		"Xamarin.KotlinX.Coroutines.Core.Jvm.dll",
-		"Syncfusion.Maui.ListView.resources.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

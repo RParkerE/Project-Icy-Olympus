@@ -126,10 +126,6 @@
               "target": "Package",
               "version": "[2.88.3, )"
             },
-            "Syncfusion.Maui.ListView": {
-              "target": "Package",
-              "version": "[20.3.60, )"
-            },
             "Xamarin.Android.Glide": {
               "target": "Package",
               "version": "[4.13.2.2, )",
@@ -283,10 +279,6 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
-            },
-            "Syncfusion.Maui.ListView": {
-              "target": "Package",
-              "version": "[20.3.60, )"
             }
           },
           "imports": [
@@ -386,10 +378,6 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
-            },
-            "Syncfusion.Maui.ListView": {
-              "target": "Package",
-              "version": "[20.3.60, )"
             }
           },
           "imports": [
@@ -506,10 +494,6 @@
             "SkiaSharp": {
               "target": "Package",
               "version": "[2.88.3, )"
-            },
-            "Syncfusion.Maui.ListView": {
-              "target": "Package",
-              "version": "[20.3.60, )"
             }
           },
           "imports": [

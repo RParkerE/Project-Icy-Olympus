@@ -46,7 +46,6 @@ namespace Project_Icy_Olympus.Models
         public double lng { get; set; }
     }
 
-
     [FirestoreData()]
     public class Vibes
     {

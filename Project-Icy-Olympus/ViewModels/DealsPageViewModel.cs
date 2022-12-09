@@ -1,7 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Project_Icy_Olympus.Models;
 using Project_Icy_Olympus.Services;
-using Syncfusion.Maui.ListView;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

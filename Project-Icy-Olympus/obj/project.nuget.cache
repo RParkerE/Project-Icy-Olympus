@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5O9NHDku1035i28LgBhzUqAEOy7heLyVGb2yhiWTJhBXxX6vB3cDGHdGG0s/SHfk3CkUK41IeyDpxh0aISVNMw==",
+  "dgSpecHash": "9UxP9Vota+3JatLTCaauehc8sdE4GFI9cHN1lII19382ot4oVbW6BZgf8+OXdcbstdm9xJtJfceJKKq6/xcoxA==",
   "success": true,
   "projectFilePath": "F:\\Project-Icy-Olympus\\Project-Icy-Olympus\\Project-Icy-Olympus.csproj",
   "expectedPackageFiles": [
@@ -124,11 +124,6 @@
     "C:\\Users\\rpell\\.nuget\\packages\\svg.custom\\0.5.12\\svg.custom.0.5.12.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\svg.model\\0.5.12\\svg.model.0.5.12.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\svg.skia\\0.5.12\\svg.skia.0.5.12.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\syncfusion.licensing\\20.3.0.60\\syncfusion.licensing.20.3.0.60.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\syncfusion.maui.core\\20.3.60\\syncfusion.maui.core.20.3.60.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\syncfusion.maui.datasource\\20.3.60\\syncfusion.maui.datasource.20.3.60.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\syncfusion.maui.gridcommon\\20.3.60\\syncfusion.maui.gridcommon.20.3.60.nupkg.sha512",
-    "C:\\Users\\rpell\\.nuget\\packages\\syncfusion.maui.listview\\20.3.60\\syncfusion.maui.listview.20.3.60.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\rpell\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
