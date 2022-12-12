@@ -16,7 +16,7 @@ namespace Project_Icy_Olympus.ViewModels
         [ObservableProperty]
         bool isRefreshing;
 
-        public ObservableCollection<Venue> Venues { get; } = new();
+        public ObservableCollection<Venue> Venues { get; set;  } = new();
         public Command GetDealsCommand { get; }
         VenuesService venuesService;
 
@@ -53,8 +53,18 @@ namespace Project_Icy_Olympus.ViewModels
             }
             finally
             {
+                RemoveEmptyDeals(Venues);
                 IsBusy = false;
                 IsRefreshing = false;
+            }
+        }
+
+        private static void RemoveEmptyDeals(ObservableCollection<Venue> Venues) {
+            foreach (Venue v in Venues.ToList()) { 
+                if (v.deals.events.drink_deals.Contains("NONE") || v.deals.events.food_deals.Contains("NONE"))
+                {
+                    Venues.Remove(v);
+                }
             }
         }
     }
